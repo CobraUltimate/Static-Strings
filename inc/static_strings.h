@@ -9,6 +9,7 @@
  *
  * - Developed for the STM32F103.
  * - Global scope strings.
+ * - Configurable quantity and size of the memory arrays.
  * - No dynamic memory allocation.
  * - Customizable quantity and length of string types.
  * - Create custom string function to create local scope strings.
@@ -87,6 +88,29 @@
  * while(static_strings_string_splitter_get_next_token(&token)){
  *   HAL_UART_Transmit(&huart1,token.string,token.length,HAL_MAX_DELAY);
  * }
+ * @endcode
+ *
+ * \n
+ * **Configure quantity and size of the memory arrays**
+ * \n
+ *
+ * Just edit this constants in static_strings.h
+ *
+ * @code
+ * #define STATIC_STRINGS_VERY_SHORT_STRING_SIZE 50
+ * #define STATIC_STRINGS_VERY_SHORT_STRING_QUANTITY 10
+ *
+ * #define STATIC_STRINGS_SHORT_STRING_SIZE 100
+ * #define STATIC_STRINGS_SHORT_STRING_QUANTITY 6
+ *
+ * #define STATIC_STRINGS_MEDIUM_STRING_SIZE 200
+ * #define STATIC_STRINGS_MEDIUM_STRING_QUANTITY 2
+ *
+ * #define STATIC_STRINGS_LONG_STRING_SIZE 500
+ * #define STATIC_STRINGS_LONG_STRING_QUANTITY 1
+ *
+ * #define STATIC_STRINGS_VERY_LONG_STRING_SIZE 1000
+ * #define STATIC_STRINGS_VERY_LONG_STRING_QUANTITY 1
  * @endcode
  *
  */

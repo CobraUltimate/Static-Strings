@@ -13,6 +13,7 @@ August 2020
 \begin{DoxyItemize}
 \item Developed for the S\+T\+M32\+F103.
 \item Global scope strings.
+\item Configurable quantity and size of the memory arrays.
 \item No dynamic memory allocation.
 \item Customizable quantity and length of string types.
 \item Create custom string function to create local scope strings.
@@ -89,5 +90,28 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+E
 \DoxyCodeLine{\textcolor{keywordflow}{while}(\mbox{\hyperlink{static__strings_8h_a8c67d9ff9ff200807c4c020df9893cb2}{static\_strings\_string\_splitter\_get\_next\_token}}(\&token))\{}
 \DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,token.string,token.length,HAL\_MAX\_DELAY);}
 \DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+~\newline
+{\bfseries{Configure quantity and size of the memory arrays}} ~\newline
+ Just edit this constants in \mbox{\hyperlink{static__strings_8h}{static\+\_\+strings.\+h}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_VERY\_SHORT\_STRING\_SIZE 50}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_VERY\_SHORT\_STRING\_QUANTITY 10}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_SHORT\_STRING\_SIZE 100}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_SHORT\_STRING\_QUANTITY 6}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_MEDIUM\_STRING\_SIZE 200}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_MEDIUM\_STRING\_QUANTITY 2}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_LONG\_STRING\_SIZE 500}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_LONG\_STRING\_QUANTITY 1}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_VERY\_LONG\_STRING\_SIZE 1000}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_VERY\_LONG\_STRING\_QUANTITY 1}}
 \end{DoxyCode}
  
