@@ -37,7 +37,7 @@
  }
  ```
  
- DON'T FORGET TO DEALLOCATE AFTER USING.\n
+ DON'T FORGET TO DEALLOCATE AFTER USING.
  
  ## **Also a string can created this way**
  
@@ -58,7 +58,7 @@
  }
  ```
  
- DON'T FORGET TO DEALLOCATE AFTER USING.\n
+ DON'T FORGET TO DEALLOCATE AFTER USING.
  
  ## **Split a local scope string**
  
