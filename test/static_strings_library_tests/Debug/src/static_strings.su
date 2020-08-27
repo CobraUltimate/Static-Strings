@@ -1,0 +1,9 @@
+static_strings.c:9:6:static_strings_init	16	static
+static_strings.c:38:35:static_strings_allocate	24	static
+static_strings.c:89:35:static_strings_save	24	static
+static_strings.c:103:5:static_strings_create_custom_string	16	static
+static_strings.c:111:6:static_strings_deallocate	16	static
+static_strings.c:117:5:static_strings_is_line	16	static
+static_strings.c:124:10:static_strings_strlen	24	static
+static_strings.c:146:6:static_strings_string_splitter_set_parameters	16	static
+static_strings.c:152:5:static_strings_string_splitter_get_next_token	24	static

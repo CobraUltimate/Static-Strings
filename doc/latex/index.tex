@@ -1,0 +1,93 @@
+\begin{DoxyAuthor}{Author}
+Ramsés F. Pérez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0.\+1
+\end{DoxyVersion}
+{\bfseries{Features\+:}}
+
+
+\begin{DoxyItemize}
+\item Developed for the S\+T\+M32\+F103.
+\item Global scope strings.
+\item No dynamic memory allocation.
+\item Customizable quantity and length of string types.
+\item Create custom string function to create local scope strings.
+\item String length function.
+\item String can be \textbackslash{}0 terminated and \textbackslash{}r\textbackslash{}n terminated.
+\item String split function.
+\item Fast string creation with save.
+\item Low level string creation with allocate.
+\item Reusable memory with deallocate.
+\item is\+\_\+line function.
+\item String split.
+\end{DoxyItemize}
+
+~\newline
+{\bfseries{G\+E\+T\+T\+I\+NG S\+T\+A\+R\+T\+ED}}
+
+~\newline
+{\bfseries{Suggested names}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} string\_name;}
+\DoxyCodeLine{uint8\_t string\_name\_memory[];}
+\end{DoxyCode}
+
+
+~\newline
+{\bfseries{Creating a string}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t test\_memory[] = \textcolor{stringliteral}{"Hello Word\(\backslash\)r\(\backslash\)n"};}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *test = \mbox{\hyperlink{static__strings_8h_a279d5c443455117945d8725a6b09ca80}{static\_strings\_save}}(test\_memory);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(test == NULL)\{}
+\DoxyCodeLine{  Error Handling.}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{  Some work.}
+\DoxyCodeLine{  \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(test);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+ER U\+S\+I\+NG.~\newline
+ ~\newline
+{\bfseries{Also a string can created this way}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "string.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{uint8\_t test\_memory[] = \textcolor{stringliteral}{"Hello Word\(\backslash\)r\(\backslash\)n"};}
+\DoxyCodeLine{uint16\_t test\_length = \mbox{\hyperlink{static__strings_8h_a3dd086460d7aa9e829a66710973003f0}{static\_strings\_strlen}}(test\_memory);}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *test = \mbox{\hyperlink{static__strings_8h_a1eeaa84a1ce5796a99db77d98d792f0a}{static\_strings\_allocate}}(test\_length);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(test == NULL)\{}
+\DoxyCodeLine{  Error Handling.}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{  memcpy(test-\/>string,test\_memory,test\_length);}
+\DoxyCodeLine{  test-\/>length = test\_length;}
+\DoxyCodeLine{  Some work.}
+\DoxyCodeLine{  \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(test);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+ER U\+S\+I\+NG.~\newline
+ ~\newline
+{\bfseries{Split a local scope string}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t split\_memory[10] = \textcolor{stringliteral}{"123,56,8\(\backslash\)r\(\backslash\)n"};}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} split.}
+\DoxyCodeLine{static\_strings\_create\_custom\_string(\&split,split\_memory);}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} token;}
+\DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_a4e2cc6aaaa50e81a9f12018ccfe0409d}{static\_strings\_string\_splitter\_set\_parameters}}(split,\textcolor{charliteral}{','});}
+\DoxyCodeLine{\textcolor{keywordflow}{while}(\mbox{\hyperlink{static__strings_8h_a8c67d9ff9ff200807c4c020df9893cb2}{static\_strings\_string\_splitter\_get\_next\_token}}(\&token))\{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,token.string,token.length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 
