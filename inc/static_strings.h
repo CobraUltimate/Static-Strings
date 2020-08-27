@@ -94,7 +94,7 @@
  * **Configure quantity and size of the memory arrays**
  * \n
  *
- * Just edit this constants in static_strings.h
+ * Just edit these constants in static_strings.h
  *
  * @code
  * #define STATIC_STRINGS_VERY_SHORT_STRING_SIZE 50

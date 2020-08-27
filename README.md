@@ -3,7 +3,7 @@
  - Developed for the STM32F103.
  - Global scope strings.
  - No dynamic memory allocation.
- - Customizable quantity and length of string types.
+ - Customizable quantity and size of string types.
  - Create custom string function to create local scope strings.
  - String length function.
  - String can be \\0 terminated and \\r\\n terminated.
@@ -75,7 +75,7 @@
 
  ## **Configure quantity and size of the memory arrays**
 
- Just edit this constants in static_strings.h
+ Just edit these constants in static_strings.h
 
  ```C
  #define STATIC_STRINGS_VERY_SHORT_STRING_SIZE 50
