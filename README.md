@@ -1,4 +1,4 @@
- ##**Features:**
+ ## **Features:**
 
  - Developed for the STM32F103.
  - Global scope strings.
@@ -14,16 +14,16 @@
  - is_line function.
  - String split.
  
- #**GETTING STARTED**
+ # **GETTING STARTED**
  
- ##**Suggested names**
+ ## **Suggested names**
  
  ```C
  static_strings_string_descriptor string_name;
  uint8_t string_name_memory[];
  ```
  
- ##**Creating a string**
+ ## **Creating a string**
  
  ```C
  uint8_t test_memory[] = "Hello Word\r\n";
@@ -39,7 +39,7 @@
  
  DON'T FORGET TO DEALLOCATE AFTER USING.\n
  
- ##**Also a string can created this way**
+ ## **Also a string can created this way**
  
  ```C
  #include "string.h"
@@ -60,7 +60,7 @@
  
  DON'T FORGET TO DEALLOCATE AFTER USING.\n
  
- ##**Split a local scope string**
+ ## **Split a local scope string**
  
  ```C
  uint8_t split_memory[10] = "123,56,8\r\n";
