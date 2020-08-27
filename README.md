@@ -1,4 +1,4 @@
- **Features:**
+ ##**Features:**
 
  - Developed for the STM32F103.
  - Global scope strings.
@@ -13,19 +13,19 @@
  - Reusable memory with deallocate.
  - is_line function.
  - String split.
- \n
- **GETTING STARTED**
- \n
- **Suggested names**
- \n
- @code
+ 
+ #**GETTING STARTED**
+ 
+ ##**Suggested names**
+ 
+ ```C
  static_strings_string_descriptor string_name;
  uint8_t string_name_memory[];
- @endcode
-  \n
- **Creating a string**
- \n
- @code
+ ```
+ 
+ ##**Creating a string**
+ 
+ ```C
  uint8_t test_memory[] = "Hello Word\r\n";
  static_strings_string_descriptor *test = static_strings_save(test_memory);
  if(test == NULL){
@@ -35,12 +35,13 @@
    Some work.
    static_strings_deallocate(test);
  }
- @endcode
+ ```
+ 
  DON'T FORGET TO DEALLOCATE AFTER USING.\n
- \n
- **Also a string can created this way**
- \n
- @code
+ 
+ ##**Also a string can created this way**
+ 
+ ```C
  #include "string.h"
  
  uint8_t test_memory[] = "Hello Word\r\n";
@@ -55,13 +56,13 @@
    Some work.
    static_strings_deallocate(test);
  }
- @endcode
+ ```
  
  DON'T FORGET TO DEALLOCATE AFTER USING.\n
  
- **Split a local scope string**
+ ##**Split a local scope string**
  
- @code
+ ```C
  uint8_t split_memory[10] = "123,56,8\r\n";
  static_strings_string_descriptor split.
  static_strings_create_custom_string(&split,split_memory);
@@ -70,4 +71,4 @@
  while(static_strings_string_splitter_get_next_token(&token)){
    HAL_UART_Transmit(&huart1,token.string,token.length,HAL_MAX_DELAY);
  }
- @endcode
+ ```
