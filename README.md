@@ -72,3 +72,24 @@
    HAL_UART_Transmit(&huart1,token.string,token.length,HAL_MAX_DELAY);
  }
  ```
+
+ ## **Configure quantity and size of the memory arrays**
+
+ Just edit this constants in static_strings.h
+
+ ```C
+ #define STATIC_STRINGS_VERY_SHORT_STRING_SIZE 50
+ #define STATIC_STRINGS_VERY_SHORT_STRING_QUANTITY 10
+ 
+ #define STATIC_STRINGS_SHORT_STRING_SIZE 100
+ #define STATIC_STRINGS_SHORT_STRING_QUANTITY 6
+ 
+ #define STATIC_STRINGS_MEDIUM_STRING_SIZE 200
+ #define STATIC_STRINGS_MEDIUM_STRING_QUANTITY 2
+ 
+ #define STATIC_STRINGS_LONG_STRING_SIZE 500
+ #define STATIC_STRINGS_LONG_STRING_QUANTITY 1
+ 
+ #define STATIC_STRINGS_VERY_LONG_STRING_SIZE 1000
+ #define STATIC_STRINGS_VERY_LONG_STRING_QUANTITY 1
+ ```
