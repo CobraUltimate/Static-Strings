@@ -24,3 +24,11 @@ hu
 &string_name
 memcpy
 endcode
+sprintf
+&concatenate_at
+&concatenate_at
+&concatenate_at
+&concatenate_at
+&equal_a
+&non_equal
+&equal_b

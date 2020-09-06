@@ -24,7 +24,7 @@ August 2020
 \item Low level string creation with allocate.
 \item Reusable memory with deallocate.
 \item is\+\_\+line function.
-\item String split.
+\item Substring, concatenate, contains string, contains char and compare function.
 \end{DoxyItemize}
 
 ~\newline
@@ -85,10 +85,83 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+E
 \DoxyCodeLine{uint8\_t split\_memory[10] = \textcolor{stringliteral}{"123,56,8\(\backslash\)r\(\backslash\)n"};}
 \DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} split.}
 \DoxyCodeLine{static\_strings\_create\_custom\_string(\&split,split\_memory);}
-\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} token;}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *token;}
 \DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_a4e2cc6aaaa50e81a9f12018ccfe0409d}{static\_strings\_string\_splitter\_set\_parameters}}(split,\textcolor{charliteral}{','});}
-\DoxyCodeLine{\textcolor{keywordflow}{while}(\mbox{\hyperlink{static__strings_8h_a8c67d9ff9ff200807c4c020df9893cb2}{static\_strings\_string\_splitter\_get\_next\_token}}(\&token))\{}
-\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,token.string,token.length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\textcolor{keywordflow}{while}(\mbox{\hyperlink{static__strings_8h_ac6f737921cf90208b24245d293513891}{static\_strings\_string\_splitter\_get\_next\_token}}(\&token))\{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,token-\/>string,token-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+~\newline
+{\bfseries{Getting a substring}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t custom[10] = \textcolor{stringliteral}{"123,56,89\(\backslash\)0"};}
+\DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_ab59672cbad030fea13cdd23a06891ea3}{static\_strings\_create\_custom\_string}}(string\_descriptor,custom);}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *substring = \mbox{\hyperlink{static__strings_8h_a97ac4239ecc7a8e67f94f30e6b4f739c}{static\_strings\_substring}}(string\_descriptor,2,8);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(substring != NULL)\{}
+\DoxyCodeLine{     HAL\_UART\_Transmit(\&huart1,substring-\/>string,substring-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{     \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(substring);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+~\newline
+{\bfseries{Concatenate two strings and search for a substring and a character in the result}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t concatenate\_at\_memory[] = \textcolor{stringliteral}{"Hello \(\backslash\)0"};}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} concatenate\_at;}
+\DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_ab59672cbad030fea13cdd23a06891ea3}{static\_strings\_create\_custom\_string}}(\&concatenate\_at,concatenate\_at\_memory);}
+\DoxyCodeLine{uint8\_t concatenate\_memory[] = \textcolor{stringliteral}{"World\(\backslash\)r\(\backslash\)n"};}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} concatenate;}
+\DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_ab59672cbad030fea13cdd23a06891ea3}{static\_strings\_create\_custom\_string}}(\&concatenate,concatenate\_memory);}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *concatenated;}
+\DoxyCodeLine{concatenated = \mbox{\hyperlink{static__strings_8h_a9b449c5815fe472c22a37bc0d1ff7348}{static\_strings\_concatenate}}(\&concatenate\_at,\&concatenate);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (concatenated != NULL) \{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,concatenated-\/>string,concatenated-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{  \textcolor{keywordflow}{if}(\mbox{\hyperlink{static__strings_8h_a75d874016cceab1a187f151c1bf39ac2}{static\_strings\_contains\_string}}(concatenated,\&concatenate\_at))\{}
+\DoxyCodeLine{    HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"1\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{    HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"0\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{if}(\mbox{\hyperlink{static__strings_8h_a75d874016cceab1a187f151c1bf39ac2}{static\_strings\_contains\_string}}(concatenated,\textcolor{charliteral}{'W'}))\{}
+\DoxyCodeLine{    HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"1\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{    HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"0\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(concatenated);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+~\newline
+{\bfseries{Compare two equals and non equals strings}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t equal\_a\_memory[] = \textcolor{stringliteral}{"Hall\(\backslash\)0"};}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} equal\_a;}
+\DoxyCodeLine{uint8\_t equal\_b\_memory[] = \textcolor{stringliteral}{"Hall\(\backslash\)0"};}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} equal\_b;}
+\DoxyCodeLine{uint8\_t non\_equal\_memory[] = \textcolor{stringliteral}{"oil\(\backslash\)0"};}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} non\_equal;}
+\DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_ab59672cbad030fea13cdd23a06891ea3}{static\_strings\_create\_custom\_string}}(\&equal\_a,equal\_a\_memory);}
+\DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_ab59672cbad030fea13cdd23a06891ea3}{static\_strings\_create\_custom\_string}}(\&equal\_b,equal\_b\_memory);}
+\DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_ab59672cbad030fea13cdd23a06891ea3}{static\_strings\_create\_custom\_string}}(\&non\_equal,non\_equal\_memory);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{static__strings_8h_a0bade030b470fba4a545ae63ead6903b}{static\_strings\_compare}}(\&equal\_a,\&equal\_b))\{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"1\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"0\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{static__strings_8h_a0bade030b470fba4a545ae63ead6903b}{static\_strings\_compare}}(\&equal\_a,\&non\_equal))\{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"1\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"0\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
 \DoxyCodeLine{\}}
 \end{DoxyCode}
 

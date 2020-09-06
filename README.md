@@ -12,7 +12,7 @@
  - Low level string creation with allocate.
  - Reusable memory with deallocate.
  - is_line function.
- - String split.
+ - Substring, concatenate, contains string, contains char and compare function.
  
  # **GETTING STARTED**
  
@@ -66,10 +66,77 @@
  uint8_t split_memory[10] = "123,56,8\r\n";
  static_strings_string_descriptor split.
  static_strings_create_custom_string(&split,split_memory);
- static_strings_string_descriptor token;
+ static_strings_string_descriptor *token;
  static_strings_string_splitter_set_parameters(split,',');
  while(static_strings_string_splitter_get_next_token(&token)){
-   HAL_UART_Transmit(&huart1,token.string,token.length,HAL_MAX_DELAY);
+   HAL_UART_Transmit(&huart1,token->string,token->length,HAL_MAX_DELAY);
+ }
+ ```
+
+ ## **Getting a substring**
+
+ ```C
+ uint8_t custom[10] = "123,56,89\0";
+ static_strings_create_custom_string(string_descriptor,custom);
+ static_strings_string_descriptor *substring = static_strings_substring(string_descriptor,2,8);
+ if(substring != NULL){
+   HAL_UART_Transmit(&huart1,substring->string,substring->length,HAL_MAX_DELAY);
+   static_strings_deallocate(substring);
+ }
+ ```
+
+ ## **Concatenate two strings and search for a substring and a character in the result**
+
+ ```C
+ uint8_t concatenate_at_memory[] = "Hello \0";
+ static_strings_string_descriptor concatenate_at;
+ static_strings_create_custom_string(&concatenate_at,concatenate_at_memory);
+ uint8_t concatenate_memory[] = "World\r\n";
+ static_strings_string_descriptor concatenate;
+ static_strings_create_custom_string(&concatenate,concatenate_memory);
+ static_strings_string_descriptor *concatenated;
+ concatenated = static_strings_concatenate(&concatenate_at,&concatenate);
+ if (concatenated != NULL) {
+   HAL_UART_Transmit(&huart1,concatenated->string,concatenated->length,HAL_MAX_DELAY);
+   if(static_strings_contains_string(concatenated,&concatenate_at)){
+     HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+   }
+   else{
+     HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+   }
+   if(static_strings_contains_string(concatenated,'W')){
+     HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+   }
+   else{
+     HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+   }
+   static_strings_deallocate(concatenated);
+ }
+ ```
+
+ ## **Compare two equals and non equals strings**
+
+ ```C
+ uint8_t equal_a_memory[] = "Hall\0";
+ static_strings_string_descriptor equal_a;
+ uint8_t equal_b_memory[] = "Hall\0";
+ static_strings_string_descriptor equal_b;
+ uint8_t non_equal_memory[] = "oil\0";
+ static_strings_string_descriptor non_equal;
+ static_strings_create_custom_string(&equal_a,equal_a_memory);
+ static_strings_create_custom_string(&equal_b,equal_b_memory);
+ static_strings_create_custom_string(&non_equal,non_equal_memory);
+ if(static_strings_compare(&equal_a,&equal_b)){
+   HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+ }
+ else{
+   HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+ }
+ if(static_strings_compare(&equal_a,&non_equal)){
+   HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+ }
+ else{
+   HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
  }
  ```
 

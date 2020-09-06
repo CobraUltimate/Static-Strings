@@ -256,3 +256,93 @@ if next_token_result == b'0\r\n':
 else:
 	print(colored('fail test 34','red'))
 
+substring = ser.read(6)
+print(substring)
+if substring == b'3,56,8':
+	print(colored('success test 35','blue'))
+else:
+	print(colored('fail test 35','red'))
+
+substring = ser.read(9)
+print(substring)
+if substring == b'123,56,89':
+	print(colored('success test 36','blue'))
+else:
+	print(colored('fail test 36','red'))
+
+substring = ser.readline()
+print(substring)
+if substring == b'0\r\n':
+	print(colored('success test 37','blue'))
+else:
+	print(colored('fail test 37','red'))
+
+substring = ser.readline()
+print(substring)
+if substring == b'0\r\n':
+	print(colored('success test 38','blue'))
+else:
+	print(colored('fail test 38','red'))
+
+concatenated = ser.readline()
+print(concatenated)
+if concatenated == b'Hello World\r\n':
+	print(colored('success test 39','blue'))
+else:
+	print(colored('fail test 39','red'))
+
+contains = ser.readline()
+print(contains)
+if contains == b'1\r\n':
+	print(colored('success test 40','blue'))
+else:
+	print(colored('fail test 40','red'))
+
+contains = ser.readline()
+print(contains)
+if contains == b'1\r\n':
+	print(colored('success test 41','blue'))
+else:
+	print(colored('fail test 41','red'))
+
+contains = ser.readline()
+print(contains)
+if contains == b'0\r\n':
+	print(colored('success test 42','blue'))
+else:
+	print(colored('fail test 42','red'))
+
+contains = ser.readline()
+print(contains)
+if contains == b'1\r\n':
+	print(colored('success test 43','blue'))
+else:
+	print(colored('fail test 43','red'))
+
+contains = ser.readline()
+print(contains)
+if contains == b'1\r\n':
+	print(colored('success test 44','blue'))
+else:
+	print(colored('fail test 44','red'))
+
+contains = ser.readline()
+print(contains)
+if contains == b'0\r\n':
+	print(colored('success test 45','blue'))
+else:
+	print(colored('fail test 45','red'))
+
+equals = ser.readline()
+print(equals)
+if equals == b'1\r\n':
+	print(colored('success test 46','blue'))
+else:
+	print(colored('fail test 46','red'))
+
+equals = ser.readline()
+print(equals)
+if equals == b'0\r\n':
+	print(colored('success test 47','blue'))
+else:
+	print(colored('fail test 47','red'))

@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li>Low level string creation with allocate.</li>
 <li>Reusable memory with deallocate.</li>
 <li>is_line function.</li>
-<li>String split.</li>
+<li>Substring, concatenate, contains string, contains char and compare function.</li>
 </ul>
 <p><br  />
 <b>GETTING STARTED</b></p>
@@ -147,10 +147,68 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
  </p><div class="fragment"><div class="line">uint8_t split_memory[10] = <span class="stringliteral">&quot;123,56,8\r\n&quot;</span>;</div>
 <div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> split.</div>
 <div class="line">static_strings_create_custom_string(&amp;split,split_memory);</div>
-<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> token;</div>
+<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *token;</div>
 <div class="line"><a class="code" href="static__strings_8h.html#a4e2cc6aaaa50e81a9f12018ccfe0409d">static_strings_string_splitter_set_parameters</a>(split,<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="keywordflow">while</span>(<a class="code" href="static__strings_8h.html#a8c67d9ff9ff200807c4c020df9893cb2">static_strings_string_splitter_get_next_token</a>(&amp;token)){</div>
-<div class="line">  HAL_UART_Transmit(&amp;huart1,token.string,token.length,HAL_MAX_DELAY);</div>
+<div class="line"><span class="keywordflow">while</span>(<a class="code" href="static__strings_8h.html#ac6f737921cf90208b24245d293513891">static_strings_string_splitter_get_next_token</a>(&amp;token)){</div>
+<div class="line">  HAL_UART_Transmit(&amp;huart1,token-&gt;string,token-&gt;length,HAL_MAX_DELAY);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><br  />
+<b>Getting a substring</b> <br  />
+ </p><div class="fragment"><div class="line">uint8_t custom[10] = <span class="stringliteral">&quot;123,56,89\0&quot;</span>;</div>
+<div class="line"><a class="code" href="static__strings_8h.html#ab59672cbad030fea13cdd23a06891ea3">static_strings_create_custom_string</a>(string_descriptor,custom);</div>
+<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *substring = <a class="code" href="static__strings_8h.html#a97ac4239ecc7a8e67f94f30e6b4f739c">static_strings_substring</a>(string_descriptor,2,8);</div>
+<div class="line"><span class="keywordflow">if</span>(substring != NULL){</div>
+<div class="line">     HAL_UART_Transmit(&amp;huart1,substring-&gt;string,substring-&gt;length,HAL_MAX_DELAY);</div>
+<div class="line">     <a class="code" href="static__strings_8h.html#ad87f5f7a3206dd43cff96ec06631613c">static_strings_deallocate</a>(substring);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><br  />
+<b>Concatenate two strings and search for a substring and a character in the result</b> <br  />
+ </p><div class="fragment"><div class="line">uint8_t concatenate_at_memory[] = <span class="stringliteral">&quot;Hello \0&quot;</span>;</div>
+<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> concatenate_at;</div>
+<div class="line"><a class="code" href="static__strings_8h.html#ab59672cbad030fea13cdd23a06891ea3">static_strings_create_custom_string</a>(&amp;concatenate_at,concatenate_at_memory);</div>
+<div class="line">uint8_t concatenate_memory[] = <span class="stringliteral">&quot;World\r\n&quot;</span>;</div>
+<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> concatenate;</div>
+<div class="line"><a class="code" href="static__strings_8h.html#ab59672cbad030fea13cdd23a06891ea3">static_strings_create_custom_string</a>(&amp;concatenate,concatenate_memory);</div>
+<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *concatenated;</div>
+<div class="line">concatenated = <a class="code" href="static__strings_8h.html#a9b449c5815fe472c22a37bc0d1ff7348">static_strings_concatenate</a>(&amp;concatenate_at,&amp;concatenate);</div>
+<div class="line"><span class="keywordflow">if</span> (concatenated != NULL) {</div>
+<div class="line">  HAL_UART_Transmit(&amp;huart1,concatenated-&gt;string,concatenated-&gt;length,HAL_MAX_DELAY);</div>
+<div class="line">  <span class="keywordflow">if</span>(<a class="code" href="static__strings_8h.html#a75d874016cceab1a187f151c1bf39ac2">static_strings_contains_string</a>(concatenated,&amp;concatenate_at)){</div>
+<div class="line">    HAL_UART_Transmit(&amp;huart1,(uint8_t *)<span class="stringliteral">&quot;1\r\n&quot;</span>,3,HAL_MAX_DELAY);</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">else</span>{</div>
+<div class="line">    HAL_UART_Transmit(&amp;huart1,(uint8_t *)<span class="stringliteral">&quot;0\r\n&quot;</span>,3,HAL_MAX_DELAY);</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">if</span>(<a class="code" href="static__strings_8h.html#a75d874016cceab1a187f151c1bf39ac2">static_strings_contains_string</a>(concatenated,<span class="charliteral">&#39;W&#39;</span>)){</div>
+<div class="line">    HAL_UART_Transmit(&amp;huart1,(uint8_t *)<span class="stringliteral">&quot;1\r\n&quot;</span>,3,HAL_MAX_DELAY);</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">else</span>{</div>
+<div class="line">    HAL_UART_Transmit(&amp;huart1,(uint8_t *)<span class="stringliteral">&quot;0\r\n&quot;</span>,3,HAL_MAX_DELAY);</div>
+<div class="line">  }</div>
+<div class="line">  <a class="code" href="static__strings_8h.html#ad87f5f7a3206dd43cff96ec06631613c">static_strings_deallocate</a>(concatenated);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><br  />
+<b>Compare two equals and non equals strings</b> <br  />
+ </p><div class="fragment"><div class="line">uint8_t equal_a_memory[] = <span class="stringliteral">&quot;Hall\0&quot;</span>;</div>
+<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> equal_a;</div>
+<div class="line">uint8_t equal_b_memory[] = <span class="stringliteral">&quot;Hall\0&quot;</span>;</div>
+<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> equal_b;</div>
+<div class="line">uint8_t non_equal_memory[] = <span class="stringliteral">&quot;oil\0&quot;</span>;</div>
+<div class="line"><a class="code" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> non_equal;</div>
+<div class="line"><a class="code" href="static__strings_8h.html#ab59672cbad030fea13cdd23a06891ea3">static_strings_create_custom_string</a>(&amp;equal_a,equal_a_memory);</div>
+<div class="line"><a class="code" href="static__strings_8h.html#ab59672cbad030fea13cdd23a06891ea3">static_strings_create_custom_string</a>(&amp;equal_b,equal_b_memory);</div>
+<div class="line"><a class="code" href="static__strings_8h.html#ab59672cbad030fea13cdd23a06891ea3">static_strings_create_custom_string</a>(&amp;non_equal,non_equal_memory);</div>
+<div class="line"><span class="keywordflow">if</span>(<a class="code" href="static__strings_8h.html#a0bade030b470fba4a545ae63ead6903b">static_strings_compare</a>(&amp;equal_a,&amp;equal_b)){</div>
+<div class="line">  HAL_UART_Transmit(&amp;huart1,(uint8_t *)<span class="stringliteral">&quot;1\r\n&quot;</span>,3,HAL_MAX_DELAY);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">else</span>{</div>
+<div class="line">  HAL_UART_Transmit(&amp;huart1,(uint8_t *)<span class="stringliteral">&quot;0\r\n&quot;</span>,3,HAL_MAX_DELAY);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span>(<a class="code" href="static__strings_8h.html#a0bade030b470fba4a545ae63ead6903b">static_strings_compare</a>(&amp;equal_a,&amp;non_equal)){</div>
+<div class="line">  HAL_UART_Transmit(&amp;huart1,(uint8_t *)<span class="stringliteral">&quot;1\r\n&quot;</span>,3,HAL_MAX_DELAY);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">else</span>{</div>
+<div class="line">  HAL_UART_Transmit(&amp;huart1,(uint8_t *)<span class="stringliteral">&quot;0\r\n&quot;</span>,3,HAL_MAX_DELAY);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p><br  />
 <b>Configure quantity and size of the memory arrays</b> <br  />
@@ -172,13 +230,18 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astatic__strings_8h_html_ac6f737921cf90208b24245d293513891"><div class="ttname"><a href="static__strings_8h.html#ac6f737921cf90208b24245d293513891">static_strings_string_splitter_get_next_token</a></div><div class="ttdeci">int static_strings_string_splitter_get_next_token(static_strings_string_descriptor **string_descriptor)</div><div class="ttdoc">Bind the provided string descriptor with the next token data. Can be placed in a while condition as i...</div><div class="ttdef"><b>Definition:</b> static_strings.c:152</div></div>
+<div class="ttc" id="astatic__strings_8h_html_a97ac4239ecc7a8e67f94f30e6b4f739c"><div class="ttname"><a href="static__strings_8h.html#a97ac4239ecc7a8e67f94f30e6b4f739c">static_strings_substring</a></div><div class="ttdeci">static_strings_string_descriptor * static_strings_substring(static_strings_string_descriptor *string, uint16_t start_index, uint16_t finish_index)</div><div class="ttdoc">Return a new string with the characters between the start_index and the finish_index....</div><div class="ttdef"><b>Definition:</b> static_strings.c:173</div></div>
 <div class="ttc" id="astatic__strings_8h_html_a4e2cc6aaaa50e81a9f12018ccfe0409d"><div class="ttname"><a href="static__strings_8h.html#a4e2cc6aaaa50e81a9f12018ccfe0409d">static_strings_string_splitter_set_parameters</a></div><div class="ttdeci">void static_strings_string_splitter_set_parameters(static_strings_string_descriptor *string_descriptor, uint8_t delimiter)</div><div class="ttdoc">Set the parameters to the static_strings_string_splitter_get_next_token function.</div><div class="ttdef"><b>Definition:</b> static_strings.c:146</div></div>
+<div class="ttc" id="astatic__strings_8h_html_a0bade030b470fba4a545ae63ead6903b"><div class="ttname"><a href="static__strings_8h.html#a0bade030b470fba4a545ae63ead6903b">static_strings_compare</a></div><div class="ttdeci">int static_strings_compare(static_strings_string_descriptor *compare_string_one, static_strings_string_descriptor *compare_string_two)</div><div class="ttdoc">Compare two strings to see if they are equals.</div><div class="ttdef"><b>Definition:</b> static_strings.c:235</div></div>
 <div class="ttc" id="astatic__strings_8h_html_a1eeaa84a1ce5796a99db77d98d792f0a"><div class="ttname"><a href="static__strings_8h.html#a1eeaa84a1ce5796a99db77d98d792f0a">static_strings_allocate</a></div><div class="ttdeci">static_strings_string_descriptor * static_strings_allocate(uint16_t string_size)</div><div class="ttdoc">Request memory for a string with its size, the user must copy the string with the descriptor and spec...</div><div class="ttdef"><b>Definition:</b> static_strings.c:38</div></div>
 <div class="ttc" id="astatic__strings_8h_html_a3dd086460d7aa9e829a66710973003f0"><div class="ttname"><a href="static__strings_8h.html#a3dd086460d7aa9e829a66710973003f0">static_strings_strlen</a></div><div class="ttdeci">uint16_t static_strings_strlen(uint8_t *string)</div><div class="ttdoc">Calculate the length of a string that ends with \r\n or \0, line ending is included in length....</div><div class="ttdef"><b>Definition:</b> static_strings.c:124</div></div>
-<div class="ttc" id="astructstatic__strings__string__descriptor_html"><div class="ttname"><a href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a></div><div class="ttdoc">Meta data of a string.</div><div class="ttdef"><b>Definition:</b> static_strings.h:186</div></div>
+<div class="ttc" id="astructstatic__strings__string__descriptor_html"><div class="ttname"><a href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a></div><div class="ttdoc">Meta data of a string.</div><div class="ttdef"><b>Definition:</b> static_strings.h:260</div></div>
 <div class="ttc" id="astatic__strings_8h_html_a279d5c443455117945d8725a6b09ca80"><div class="ttname"><a href="static__strings_8h.html#a279d5c443455117945d8725a6b09ca80">static_strings_save</a></div><div class="ttdeci">static_strings_string_descriptor * static_strings_save(uint8_t *string)</div><div class="ttdoc">Calculate the string size, allocate memory, copy the string and set the size. String must end with \r...</div><div class="ttdef"><b>Definition:</b> static_strings.c:89</div></div>
-<div class="ttc" id="astatic__strings_8h_html_a8c67d9ff9ff200807c4c020df9893cb2"><div class="ttname"><a href="static__strings_8h.html#a8c67d9ff9ff200807c4c020df9893cb2">static_strings_string_splitter_get_next_token</a></div><div class="ttdeci">int static_strings_string_splitter_get_next_token(static_strings_string_descriptor *string_descriptor)</div><div class="ttdoc">Bind the provided string descriptor with the next token data. Can be placed in a while condition as i...</div><div class="ttdef"><b>Definition:</b> static_strings.c:152</div></div>
+<div class="ttc" id="astatic__strings_8h_html_a75d874016cceab1a187f151c1bf39ac2"><div class="ttname"><a href="static__strings_8h.html#a75d874016cceab1a187f151c1bf39ac2">static_strings_contains_string</a></div><div class="ttdeci">int static_strings_contains_string(static_strings_string_descriptor *search_in, static_strings_string_descriptor *search_for)</div><div class="ttdoc">Search a string in other string.</div><div class="ttdef"><b>Definition:</b> static_strings.c:204</div></div>
+<div class="ttc" id="astatic__strings_8h_html_a9b449c5815fe472c22a37bc0d1ff7348"><div class="ttname"><a href="static__strings_8h.html#a9b449c5815fe472c22a37bc0d1ff7348">static_strings_concatenate</a></div><div class="ttdeci">static_strings_string_descriptor * static_strings_concatenate(static_strings_string_descriptor *concatenate_at, static_strings_string_descriptor *concatenate)</div><div class="ttdoc">Concatenate the second string at the end of the first in a new string. To get all the string from a s...</div><div class="ttdef"><b>Definition:</b> static_strings.c:192</div></div>
 <div class="ttc" id="astatic__strings_8h_html_ad87f5f7a3206dd43cff96ec06631613c"><div class="ttname"><a href="static__strings_8h.html#ad87f5f7a3206dd43cff96ec06631613c">static_strings_deallocate</a></div><div class="ttdeci">void static_strings_deallocate(static_strings_string_descriptor *string_descriptor)</div><div class="ttdoc">Set the descriptor status as deallocated. Custom strings can't be deallocated.</div><div class="ttdef"><b>Definition:</b> static_strings.c:111</div></div>
+<div class="ttc" id="astatic__strings_8h_html_ab59672cbad030fea13cdd23a06891ea3"><div class="ttname"><a href="static__strings_8h.html#ab59672cbad030fea13cdd23a06891ea3">static_strings_create_custom_string</a></div><div class="ttdeci">int static_strings_create_custom_string(static_strings_string_descriptor *string_descriptor, uint8_t *string)</div><div class="ttdoc">Bind the provided string descriptor with the data of a string. String must end with \r\n or \0.</div><div class="ttdef"><b>Definition:</b> static_strings.c:103</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

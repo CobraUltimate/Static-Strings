@@ -20,7 +20,7 @@
  * - Low level string creation with allocate.
  * - Reusable memory with deallocate.
  * - is_line function.
- * - String split.
+ * - Substring, concatenate, contains string, contains char and compare function.
  *
  * \n
  * **GETTING STARTED**
@@ -83,10 +83,83 @@
  * uint8_t split_memory[10] = "123,56,8\r\n";
  * static_strings_string_descriptor split.
  * static_strings_create_custom_string(&split,split_memory);
- * static_strings_string_descriptor token;
+ * static_strings_string_descriptor *token;
  * static_strings_string_splitter_set_parameters(split,',');
  * while(static_strings_string_splitter_get_next_token(&token)){
- *   HAL_UART_Transmit(&huart1,token.string,token.length,HAL_MAX_DELAY);
+ *   HAL_UART_Transmit(&huart1,token->string,token->length,HAL_MAX_DELAY);
+ * }
+ * @endcode
+ *
+ * \n
+ * **Getting a substring**
+ * \n
+ *
+ * @code
+ * uint8_t custom[10] = "123,56,89\0";
+ * static_strings_create_custom_string(string_descriptor,custom);
+ * static_strings_string_descriptor *substring = static_strings_substring(string_descriptor,2,8);
+ * if(substring != NULL){
+ * 	 HAL_UART_Transmit(&huart1,substring->string,substring->length,HAL_MAX_DELAY);
+ * 	 static_strings_deallocate(substring);
+ * }
+ * @endcode
+ *
+ * \n
+ * **Concatenate two strings and search for a substring and a character in the result**
+ * \n
+ *
+ * @code
+ * uint8_t concatenate_at_memory[] = "Hello \0";
+ * static_strings_string_descriptor concatenate_at;
+ * static_strings_create_custom_string(&concatenate_at,concatenate_at_memory);
+ * uint8_t concatenate_memory[] = "World\r\n";
+ * static_strings_string_descriptor concatenate;
+ * static_strings_create_custom_string(&concatenate,concatenate_memory);
+ * static_strings_string_descriptor *concatenated;
+ * concatenated = static_strings_concatenate(&concatenate_at,&concatenate);
+ * if (concatenated != NULL) {
+ *   HAL_UART_Transmit(&huart1,concatenated->string,concatenated->length,HAL_MAX_DELAY);
+ *   if(static_strings_contains_string(concatenated,&concatenate_at)){
+ *     HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+ *   }
+ *   else{
+ *	   HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+ *   }
+ *   if(static_strings_contains_string(concatenated,'W')){
+ *     HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+ *   }
+ *   else{
+ *	   HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+ *   }
+ *   static_strings_deallocate(concatenated);
+ * }
+ * @endcode
+ *
+ * \n
+ * **Compare two equals and non equals strings**
+ * \n
+ *
+ * @code
+ * uint8_t equal_a_memory[] = "Hall\0";
+ * static_strings_string_descriptor equal_a;
+ * uint8_t equal_b_memory[] = "Hall\0";
+ * static_strings_string_descriptor equal_b;
+ * uint8_t non_equal_memory[] = "oil\0";
+ * static_strings_string_descriptor non_equal;
+ * static_strings_create_custom_string(&equal_a,equal_a_memory);
+ * static_strings_create_custom_string(&equal_b,equal_b_memory);
+ * static_strings_create_custom_string(&non_equal,non_equal_memory);
+ * if(static_strings_compare(&equal_a,&equal_b)){
+ *   HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+ * }
+ * else{
+ *   HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+ * }
+ * if(static_strings_compare(&equal_a,&non_equal)){
+ *   HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+ * }
+ * else{
+ *   HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
  * }
  * @endcode
  *
@@ -173,7 +246,8 @@
 #define STATIC_STRINGS_ERROR_CODE_NO_MEMORY_AVAILABLE 0
 #define STATIC_STRINGS_ERROR_CODE_INVALID_STRING 1
 #define STATIC_STRINGS_ERROR_CODE_STRING_TOO_LONG 2
-
+#define STATIC_STRINGS_ERROR_CODE_SUBSTRING_START_INDEX_OUT_OF_RANGE 3
+#define STATIC_STRINGS_ERROR_CODE_SUBSTRING_FINISH_INDEX_OUT_OF_RANGE 4
 /** static_strings_error_code
  * \brief Global variable to store error code.
  */
@@ -283,13 +357,59 @@ uint16_t static_strings_strlen(uint8_t *string);
  */
 void static_strings_string_splitter_set_parameters(static_strings_string_descriptor *string_descriptor,uint8_t delimiter);
 
-/** void static_strings_string_splitter_set_parameters(static_strings_string_descriptor *string_descriptor,uint8_t delimiter)
+/** int static_strings_string_splitter_get_next_token(static_strings_string_descriptor **string_descriptor)
  * \brief Bind the provided string descriptor with the next token data.
  * Can be placed in a while condition as it returns 1 if success or 0 if no token available and retrieves the token in the string_descriptor parameter.
  * If no delimiter the whole string is taken as token.
- * \param string_descriptor A pointer to a string descriptor that will contain the token.
+ * The token is placed in a new string.
+ * \param string_descriptor A pointer to a pointer to a string descriptor that will contain the token.
  * \return 1 if success or 0 if no token is available.
  */
-int static_strings_string_splitter_get_next_token(static_strings_string_descriptor *string_descriptor);
+int static_strings_string_splitter_get_next_token(static_strings_string_descriptor **string_descriptor);
+
+/** static_strings_string_descriptor *static_strings_substring(static_strings_string_descriptor* string_descriptor,uint16_t start_index,uint16_t finish_index)
+ * \brief Return a new string with the characters between the start_index and the finish_index.
+ * Not including the character at finish_index.
+ * Returned string has to be deallocated.
+ * To get all the string from a start index use the length in the finish_index.
+ * \param string_descriptor A pointer to the string which contains the substring.
+ * \param start_index The index of the first character.
+ * \param finish_index The index of the last character, not included.
+ * \return A pointer to the string descriptor of the substring, if NULL check static_strings_error_code.
+ */
+static_strings_string_descriptor *static_strings_substring(static_strings_string_descriptor* string,uint16_t start_index,uint16_t finish_index);
+
+/** static_strings_string_descriptor *static_strings_concatenate(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate)
+ * \brief Concatenate the second string at the end of the first in a new string.
+ * To get all the string from a start index use the length in the finish_index.
+ * \param concatenate_at A pointer to the string to concatenate at.
+ * \param concatenate A pointer to the string to concatenate at the end of the concatenate_at string.
+ * \return A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code.
+ */
+static_strings_string_descriptor *static_strings_concatenate(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate);
+
+/** int static_strings_contains_string(static_strings_string_descriptor* search_in,static_strings_string_descriptor* search_for)
+ * \brief Search a string in other string.
+ * \param search_in A pointer to the string in which the character will be search.
+ * \param search_for A pointer to the searched string.
+ * \return 1 if the string is found, 0 if not.
+ */
+int static_strings_contains_string(static_strings_string_descriptor* search_in,static_strings_string_descriptor* search_for);
+
+/** int static_strings_contains_char(static_strings_string_descriptor* search_in,uint8_t search_for)
+ * \brief Search a character in a string.
+ * \param search_in A pointer to the string in which the character will be search.
+ * \param search_for The searched character.
+ * \return 1 if the character is found, 0 if not.
+ */
+int static_strings_contains_char(static_strings_string_descriptor* search_in,uint8_t search_for);
+
+/** int static_strings_compare(static_strings_string_descriptor* compare_string_one,static_strings_string_descriptor* compare_string_two)
+ * \brief Compare two strings to see if they are equals.
+ * \param compare_string_one A pointer to the first string to compare.
+ * \param compare_string_two A pointer to the second string to compare.
+ * \return A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code.
+ */
+int static_strings_compare(static_strings_string_descriptor* compare_string_one,static_strings_string_descriptor* compare_string_two);
 
 #endif

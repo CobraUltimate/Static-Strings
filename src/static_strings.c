@@ -149,21 +149,92 @@ void static_strings_string_splitter_set_parameters(static_strings_string_descrip
 	static_strings_string_splitter.delimiter = delimiter;
 }
 
-int static_strings_string_splitter_get_next_token(static_strings_string_descriptor *string_descriptor){
+int static_strings_string_splitter_get_next_token(static_strings_string_descriptor **string_descriptor){
 	if(static_strings_string_splitter.next_token_start == static_strings_string_splitter.string_descriptor->string + static_strings_string_splitter.string_descriptor->length){
 		return 0;
 	}
 	uint8_t *current_position = static_strings_string_splitter.next_token_start;
 	while(*current_position++ != static_strings_string_splitter.delimiter && current_position < static_strings_string_splitter.string_descriptor->string + static_strings_string_splitter.string_descriptor->length);
-	string_descriptor->string = static_strings_string_splitter.next_token_start;
+
+	int token_length;
 	if(current_position == static_strings_string_splitter.string_descriptor->string + static_strings_string_splitter.string_descriptor->length){
-		string_descriptor->length = current_position - static_strings_string_splitter.next_token_start;
+		token_length = current_position - static_strings_string_splitter.next_token_start;
 	}
 	else{
-		string_descriptor->length = current_position - static_strings_string_splitter.next_token_start - 1;
+		token_length = current_position - static_strings_string_splitter.next_token_start - 1;
 	}
-	string_descriptor->type = STATIC_STRINGS_STRING_TYPE_CUSTOM;
-	string_descriptor->status = STATIC_STRINGS_STRING_STATUS_CONSTANT;
+	*string_descriptor = static_strings_allocate(token_length);
+	memcpy((*string_descriptor)->string,static_strings_string_splitter.next_token_start,token_length);
+	(*string_descriptor)->length = token_length;
 	static_strings_string_splitter.next_token_start = current_position;
 	return 1;
+}
+
+static_strings_string_descriptor *static_strings_substring(static_strings_string_descriptor* string,uint16_t start_index,uint16_t finish_index){
+	if(start_index < 0 || start_index >= string->length){
+		static_strings_error_code = STATIC_STRINGS_ERROR_CODE_SUBSTRING_START_INDEX_OUT_OF_RANGE;
+		return NULL;
+	}
+	if(finish_index <= 0 || finish_index > string->length){
+		static_strings_error_code = STATIC_STRINGS_ERROR_CODE_SUBSTRING_FINISH_INDEX_OUT_OF_RANGE;
+		return NULL;
+	}
+	uint16_t substring_length = finish_index - start_index;
+	static_strings_string_descriptor *substring = static_strings_allocate(substring_length);
+	if(substring == NULL){
+		return substring;
+	}
+	memcpy(substring->string,string->string + start_index,substring_length);
+	substring->length = substring_length;
+	return substring;
+}
+
+static_strings_string_descriptor *static_strings_concatenate(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate){
+	int concatenated_string_length = concatenate_at->length + concatenate->length;
+	static_strings_string_descriptor *concatenated_string = static_strings_allocate(concatenated_string_length);
+	if(concatenated_string == NULL){
+		return concatenated_string;
+	}
+	memcpy(concatenated_string->string,concatenate_at->string,concatenate_at->length);
+	memcpy(concatenated_string->string + concatenate_at->length,concatenate->string,concatenate->length);
+	concatenated_string->length = concatenated_string_length;
+	return concatenated_string;
+}
+
+int static_strings_contains_string(static_strings_string_descriptor* search_in,static_strings_string_descriptor* search_for){
+	if(search_in->length < search_for->length){
+		return 0;
+	}
+	int i,j;
+	int searched_string_found;
+	for(i = 0;search_for->length <= search_in->length - i;i++){
+		searched_string_found = 1;
+		for(j = 0; j < search_for->length;j++){
+			if( *(search_in->string + i + j) != *(search_for->string + j) ){
+				searched_string_found = 0;
+				break;
+			}
+		}
+		if(searched_string_found){
+			return 1;
+		}
+	}
+	return 0;
+}
+
+int static_strings_contains_char(static_strings_string_descriptor* search_in,uint8_t search_for){
+	int i;
+	for(i = 0;i < search_in->length;i++){
+		if( *(search_in->string + i) == search_for){
+			return 1;
+		}
+	}
+	return 0;
+}
+
+int static_strings_compare(static_strings_string_descriptor* compare_string_one,static_strings_string_descriptor* compare_string_two){
+	if(compare_string_one->length != compare_string_two->length){
+		return 0;
+	}
+	return static_strings_contains_string(compare_string_one,compare_string_two);
 }

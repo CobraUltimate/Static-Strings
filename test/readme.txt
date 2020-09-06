@@ -1,1 +1,0 @@
-* test needs colorama and termcolor.

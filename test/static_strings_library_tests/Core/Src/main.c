@@ -297,18 +297,161 @@ int main(void)
 	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
   }
 
+  // reset all descriptors
+  static_strings_init();
+
   // test 31-33
 
-  static_strings_string_descriptor token;
+  static_strings_string_descriptor *token;
   static_strings_string_splitter_set_parameters(string_descriptor,',');
   while(static_strings_string_splitter_get_next_token(&token)){
-	  HAL_UART_Transmit(&huart1,token.string,token.length,HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart1,token->string,token->length,HAL_MAX_DELAY);
+	  static_strings_deallocate(token);
   }
 
   // test 34
 
   int next_token_result = static_strings_string_splitter_get_next_token(&token);
   if(next_token_result){
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+  }
+  else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 35
+
+  static_strings_create_custom_string(string_descriptor,custom);
+  static_strings_string_descriptor *substring = static_strings_substring(string_descriptor,2,8);
+  if(substring != NULL){
+	  HAL_UART_Transmit(&huart1,substring->string,substring->length,HAL_MAX_DELAY);
+	  static_strings_deallocate(substring);
+  }
+
+  // test 36
+
+  substring = static_strings_substring(string_descriptor,0,string_descriptor->length);
+  if(substring != NULL){
+	  HAL_UART_Transmit(&huart1,substring->string,substring->length,HAL_MAX_DELAY);
+	  static_strings_deallocate(substring);
+  }
+
+  // test 37
+
+  substring = static_strings_substring(string_descriptor,0,12);
+  if (substring != NULL) {
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+	  static_strings_deallocate(substring);
+  }
+  else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 38
+
+  substring = static_strings_substring(string_descriptor,-2,5);
+  if (substring != NULL){
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+	  static_strings_deallocate(substring);
+  }
+  else{
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 39
+
+  uint8_t concatenate_at_memory[] = "Hello \0";
+  static_strings_string_descriptor concatenate_at;
+  static_strings_create_custom_string(&concatenate_at,concatenate_at_memory);
+  uint8_t concatenate_memory[] = "World\r\n";
+  static_strings_string_descriptor concatenate;
+  static_strings_create_custom_string(&concatenate,concatenate_memory);
+  static_strings_string_descriptor *concatenated;
+  concatenated = static_strings_concatenate(&concatenate_at,&concatenate);
+  if (concatenated != NULL) {
+  	  HAL_UART_Transmit(&huart1,concatenated->string,concatenated->length,HAL_MAX_DELAY);
+  	  static_strings_deallocate(concatenated);
+  }
+
+  // test 40
+
+  if(static_strings_contains_string(concatenated,&concatenate_at)){
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+  }
+  else{
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 41
+
+  if(static_strings_contains_string(concatenated,&concatenate)){
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+  }
+  else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 42
+
+  uint8_t non_contained_memory[] = "Hill\0";
+  static_strings_string_descriptor non_contained;
+  static_strings_create_custom_string(&non_contained,non_contained_memory);
+  if(static_strings_contains_string(concatenated,&non_contained)){
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+  }
+  else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 43
+
+  if(static_strings_contains_char(concatenated,'W')){
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+  }
+  else{
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 44
+
+  if(static_strings_contains_char(concatenated,'e')){
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+  }
+  else{
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 45
+
+  if(static_strings_contains_char(concatenated,'m')){
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+  }
+  else{
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 46
+
+  uint8_t equal_a_memory[] = "Hall\0";
+  static_strings_string_descriptor equal_a;
+  uint8_t equal_b_memory[] = "Hall\0";
+  static_strings_string_descriptor equal_b;
+  uint8_t non_equal_memory[] = "oil\0";
+  static_strings_string_descriptor non_equal;
+  static_strings_create_custom_string(&equal_a,equal_a_memory);
+  static_strings_create_custom_string(&equal_b,equal_b_memory);
+  static_strings_create_custom_string(&non_equal,non_equal_memory);
+
+  if(static_strings_compare(&equal_a,&equal_b)){
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
+  }
+  else{
+  	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+  }
+
+  // test 47
+
+  if(static_strings_compare(&equal_a,&non_equal)){
 	  HAL_UART_Transmit(&huart1,(uint8_t *)"1\r\n",3,HAL_MAX_DELAY);
   }
   else{
