@@ -35,6 +35,14 @@
  * @endcode
  *
  * \n
+ * **First of all initialize the library**
+ * \n
+ *
+ * @code
+ * static_strings_init();
+ * @endcode
+ *
+ * \n
  * **Creating a string**
  * \n
  *

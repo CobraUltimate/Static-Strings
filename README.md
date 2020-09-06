@@ -22,7 +22,13 @@
  static_strings_string_descriptor string_name;
  uint8_t string_name_memory[];
  ```
- 
+
+ ## **First of all initialize the library**
+
+ ```C
+ static_strings_init();
+ ```
+
  ## **Creating a string**
  
  ```C
