@@ -1,4 +1,3 @@
-
 /**
  * \mainpage Static Strings
  * \author Ramsés F. Pérez

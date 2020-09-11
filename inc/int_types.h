@@ -1,3 +1,8 @@
+/** \file int_types.h
+ * \brief The fprintf() PRI[d,u,x,o,i,X][8,16,32] macros for 32 bits signed and unsigned integers.
+ *
+ */
+
 #ifndef INT_TYPES_H
 #define INT_TYPES_H
 
