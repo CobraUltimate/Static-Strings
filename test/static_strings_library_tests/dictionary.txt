@@ -32,3 +32,15 @@ sprintf
 &equal_a
 &non_equal
 &equal_b
+lf
+hd
+ld
+lu
+hx
+lx
+ho
+lo
+hi
+li
+&equal_a
+&non_equal

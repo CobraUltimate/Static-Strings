@@ -346,3 +346,59 @@ if equals == b'0\r\n':
 	print(colored('success test 47','blue'))
 else:
 	print(colored('fail test 47','red'))
+
+number_string = ser.read(3)
+print(number_string)
+if number_string == b'200':
+	print(colored('success test 48','blue'))
+else:
+	print(colored('fail test 48','red'))
+
+number_string = ser.read(5)
+print(number_string)
+if number_string == b'64200':
+	print(colored('success test 49','blue'))
+else:
+	print(colored('fail test 49','red'))
+
+number_string = ser.read(10)
+print(number_string)
+if number_string == b'1000064200':
+	print(colored('success test 50','blue'))
+else:
+	print(colored('fail test 50','red'))
+
+number_string = ser.read(3)
+print(number_string)
+if number_string == b'100':
+	print(colored('success test 51','blue'))
+else:
+	print(colored('fail test 51','red'))
+
+number_string = ser.read(6)
+print(number_string)
+if number_string == b'-32100':
+	print(colored('success test 52','blue'))
+else:
+	print(colored('fail test 52','red'))
+
+number_string = ser.read(9)
+print(number_string)
+if number_string == b'500032100':
+	print(colored('success test 53','blue'))
+else:
+	print(colored('fail test 53','red'))
+
+number_string = ser.read(9)
+print(number_string)
+if number_string == b'19.602320':
+	print(colored('success test 54','blue'))
+else:
+	print(colored('fail test 54','red'))
+
+number_string = ser.read(12)
+print(number_string)
+if number_string == b'-1924.234200':
+	print(colored('success test 55','blue'))
+else:
+	print(colored('fail test 55','red'))

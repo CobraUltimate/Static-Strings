@@ -21,6 +21,7 @@
  * - Reusable memory with deallocate.
  * - is_line function.
  * - Substring, concatenate, contains string, contains char and compare function.
+ * - Transforms integers and floats to strings
  *
  * \n
  * **GETTING STARTED**
@@ -61,7 +62,7 @@
  * DON'T FORGET TO DEALLOCATE AFTER USING.\n
  *
  * \n
- * **Also a string can created this way**
+ * **Also a string can be created this way**
  * \n
  *
  * @code
@@ -172,6 +173,28 @@
  * @endcode
  *
  * \n
+ * **Transform a integer and a float to a string**
+ * \n
+ *
+ * @code
+ * static_strings_string_descriptor *var_string;
+ * uint8_t uint8 = 200;
+ * var_string = static_strings_uint8_to_string(uint8);
+ * if(var_string != NULL){
+ *   HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+ *   static_strings_deallocate(var_string);
+ * }
+ *
+ * float float_number = 19.60232;
+ * var_string = static_strings_float_to_string(float_number);
+ * if(var_string != NULL){
+ *   HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+ *   static_strings_deallocate(var_string);
+ * }
+
+ * @endcode
+ *
+ * \n
  * **Configure quantity and size of the memory arrays**
  * \n
  *
@@ -205,6 +228,8 @@
 
 #include "stm32f1xx_hal.h"
 #include "string.h"
+#include "int_types.h"
+#include "stdio.h"
 
 /** \defgroup string_types_sizes_quantities String types size and quantity
  * Constants to reserve a memory for the different types of strings according to their length
@@ -419,5 +444,61 @@ int static_strings_contains_char(static_strings_string_descriptor* search_in,uin
  * \return A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code.
  */
 int static_strings_compare(static_strings_string_descriptor* compare_string_one,static_strings_string_descriptor* compare_string_two);
+
+/** static_strings_string_descriptor *static_strings_uint8_to_string(uint8_t uint8)
+ * \brief Create a string with the value of the parameter.
+ * \param uint8 8 bits unsigned integer.
+ * \return A pointer to the string descriptor with the parameter as string.
+ */
+static_strings_string_descriptor *static_strings_uint8_to_string(uint8_t uint8);
+
+/** static_strings_string_descriptor *static_strings_uint16_to_string(uint16_t uint16)
+ * \brief Create a string with the value of the parameter.
+ * \param uint16 16 bits unsigned integer.
+ * \return A pointer to the string descriptor with the parameter as string.
+ */
+static_strings_string_descriptor *static_strings_uint16_to_string(uint16_t uint16);
+
+/** static_strings_string_descriptor *static_strings_uint32_to_string(uint32_t uint32)
+ * \brief Create a string with the value of the parameter.
+ * \param uint32 32 bits unsigned integer.
+ * \return A pointer to the string descriptor with the parameter as string.
+ */
+static_strings_string_descriptor *static_strings_uint32_to_string(uint32_t uint32);
+
+/** static_strings_string_descriptor *static_strings_int8_to_string(int8_t int8)
+ * \brief Create a string with the value of the parameter.
+ * \param int8 8 bits signed integer.
+ * \return A pointer to the string descriptor with the parameter as string.
+ */
+static_strings_string_descriptor *static_strings_int8_to_string(int8_t int8);
+
+/** static_strings_string_descriptor *static_strings_int16_to_string(int16_t int16)
+ * \brief Create a string with the value of the parameter.
+ * \param int16 16 bits signed integer.
+ * \return A pointer to the string descriptor with the parameter as string.
+ */
+static_strings_string_descriptor *static_strings_int16_to_string(int16_t int16);
+
+/** static_strings_string_descriptor *static_strings_int32_to_string(int32_t int32)
+ * \brief Create a string with the value of the parameter.
+ * \param int32 32 bits signed integer.
+ * \return A pointer to the string descriptor with the parameter as string.
+ */
+static_strings_string_descriptor *static_strings_int32_to_string(int32_t int32);
+
+/** static_strings_string_descriptor *static_strings_float_to_string(float float_arg)
+ * \brief Create a string with the value of the parameter.
+ * \param float_arg 16 bits signed float.
+ * \return A pointer to the string descriptor with the parameter as string.
+ */
+static_strings_string_descriptor *static_strings_float_to_string(float float_arg);
+
+/** static_strings_string_descriptor *static_strings_double_to_string(double double_arg)
+ * \brief Create a string with the value of the parameter.
+ * \param double_arg 32 bits signed float (double).
+ * \return A pointer to the string descriptor with the parameter as string.
+ */
+static_strings_string_descriptor *static_strings_double_to_string(double double_arg);
 
 #endif

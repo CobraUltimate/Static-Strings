@@ -25,6 +25,7 @@ August 2020
 \item Reusable memory with deallocate.
 \item is\+\_\+line function.
 \item Substring, concatenate, contains string, contains char and compare function.
+\item Transforms integers and floats to strings
 \end{DoxyItemize}
 
 ~\newline
@@ -36,6 +37,14 @@ August 2020
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} string\_name;}
 \DoxyCodeLine{uint8\_t string\_name\_memory[];}
+\end{DoxyCode}
+
+
+~\newline
+{\bfseries{First of all initialize the library}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{static__strings_8h_a755f8f841ccebea253245eaf7c467f43}{static\_strings\_init}}();}
 \end{DoxyCode}
 
 
@@ -57,7 +66,7 @@ August 2020
 
 D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+ER U\+S\+I\+NG.~\newline
  ~\newline
-{\bfseries{Also a string can created this way}} ~\newline
+{\bfseries{Also a string can be created this way}} ~\newline
  
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include "string.h"}}
@@ -162,6 +171,27 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+E
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,(uint8\_t *)\textcolor{stringliteral}{"0\(\backslash\)r\(\backslash\)n"},3,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+~\newline
+{\bfseries{Transform a integer and a float to a string}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *var\_string;}
+\DoxyCodeLine{uint8\_t uint8 = 200;}
+\DoxyCodeLine{var\_string = \mbox{\hyperlink{static__strings_8h_a72d2b081fd8cfd4370ff9b4bcb809917}{static\_strings\_uint8\_to\_string}}(uint8);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(var\_string != NULL)\{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,var\_string-\/>string,var\_string-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{  \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(var\_string);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{float} float\_number = 19.60232;}
+\DoxyCodeLine{var\_string = \mbox{\hyperlink{static__strings_8h_a2ca4a5ca61ea4e98f460dfba614d582f}{static\_strings\_float\_to\_string}}(float\_number);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(var\_string != NULL)\{}
+\DoxyCodeLine{  HAL\_UART\_Transmit(\&huart1,var\_string-\/>string,var\_string-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{  \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(var\_string);}
 \DoxyCodeLine{\}}
 \end{DoxyCode}
 

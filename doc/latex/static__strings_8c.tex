@@ -36,7 +36,23 @@ int \mbox{\hyperlink{static__strings_8c_a75d874016cceab1a187f151c1bf39ac2}{stati
 int \mbox{\hyperlink{static__strings_8c_acdbbe803d3bccbd8c36e0d64941b628d}{static\+\_\+strings\+\_\+contains\+\_\+char}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+in, uint8\+\_\+t search\+\_\+for)
 \begin{DoxyCompactList}\small\item\em Search a character in a string. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{static__strings_8c_a0bade030b470fba4a545ae63ead6903b}{static\+\_\+strings\+\_\+compare}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$compare\+\_\+string\+\_\+one, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$compare\+\_\+string\+\_\+two)
-\begin{DoxyCompactList}\small\item\em Compare two strings to see if they are equals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compare two strings to see if they are equals. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a72d2b081fd8cfd4370ff9b4bcb809917}{static\+\_\+strings\+\_\+uint8\+\_\+to\+\_\+string}} (uint8\+\_\+t uint8)
+\begin{DoxyCompactList}\small\item\em Create a string with the value of the parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a8c01d9034bdbd35f225bd84eb45a5c79}{static\+\_\+strings\+\_\+uint16\+\_\+to\+\_\+string}} (uint16\+\_\+t uint16)
+\begin{DoxyCompactList}\small\item\em Create a string with the value of the parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a5c0159303e872732c2f436112e2d25be}{static\+\_\+strings\+\_\+uint32\+\_\+to\+\_\+string}} (uint32\+\_\+t uint32)
+\begin{DoxyCompactList}\small\item\em Create a string with the value of the parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a75322ee39debe088cc189142cf62d886}{static\+\_\+strings\+\_\+int8\+\_\+to\+\_\+string}} (int8\+\_\+t int8)
+\begin{DoxyCompactList}\small\item\em Create a string with the value of the parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a7d4d4492155bb34124b67eb1f108f2f7}{static\+\_\+strings\+\_\+int16\+\_\+to\+\_\+string}} (int16\+\_\+t int16)
+\begin{DoxyCompactList}\small\item\em Create a string with the value of the parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_ab3df5dd8d61e3ac2068ba5830304b2c4}{static\+\_\+strings\+\_\+int32\+\_\+to\+\_\+string}} (int32\+\_\+t int32)
+\begin{DoxyCompactList}\small\item\em Create a string with the value of the parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a2ca4a5ca61ea4e98f460dfba614d582f}{static\+\_\+strings\+\_\+float\+\_\+to\+\_\+string}} (float float\+\_\+arg)
+\begin{DoxyCompactList}\small\item\em Create a string with the value of the parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a38dcc48edfb205c485bc70f13e109472}{static\+\_\+strings\+\_\+double\+\_\+to\+\_\+string}} (double double\+\_\+arg)
+\begin{DoxyCompactList}\small\item\em Create a string with the value of the parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -183,6 +199,42 @@ void \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{stat
 {\em string\+\_\+descriptor} & A pointer to the string descriptor to deallocate. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{static__strings_8c_a38dcc48edfb205c485bc70f13e109472}\label{static__strings_8c_a38dcc48edfb205c485bc70f13e109472}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_double\_to\_string@{static\_strings\_double\_to\_string}}
+\index{static\_strings\_double\_to\_string@{static\_strings\_double\_to\_string}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_double\_to\_string()}{static\_strings\_double\_to\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+double\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{double}]{double\+\_\+arg }\end{DoxyParamCaption})}
+
+
+
+Create a string with the value of the parameter. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+double\+\_\+to\+\_\+string(double double\+\_\+arg) 
+\begin{DoxyParams}{Parameters}
+{\em double\+\_\+arg} & 32 bits signed float (double). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the parameter as string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a2ca4a5ca61ea4e98f460dfba614d582f}\label{static__strings_8c_a2ca4a5ca61ea4e98f460dfba614d582f}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_float\_to\_string@{static\_strings\_float\_to\_string}}
+\index{static\_strings\_float\_to\_string@{static\_strings\_float\_to\_string}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_float\_to\_string()}{static\_strings\_float\_to\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+float\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{float}]{float\+\_\+arg }\end{DoxyParamCaption})}
+
+
+
+Create a string with the value of the parameter. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+float\+\_\+to\+\_\+string(float float\+\_\+arg) 
+\begin{DoxyParams}{Parameters}
+{\em float\+\_\+arg} & 16 bits signed float. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the parameter as string. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{static__strings_8c_a755f8f841ccebea253245eaf7c467f43}\label{static__strings_8c_a755f8f841ccebea253245eaf7c467f43}} 
 \index{static\_strings.c@{static\_strings.c}!static\_strings\_init@{static\_strings\_init}}
 \index{static\_strings\_init@{static\_strings\_init}!static\_strings.c@{static\_strings.c}}
@@ -193,7 +245,61 @@ void \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{stat
 
 Link the descriptors with the arrays and initialize the status as deallocated. 
 
-void \mbox{\hyperlink{static__strings_8h_a755f8f841ccebea253245eaf7c467f43}{static\+\_\+strings\+\_\+init()}} \mbox{\Hypertarget{static__strings_8c_a22d98db5ae636c46717d463cc2cd8c31}\label{static__strings_8c_a22d98db5ae636c46717d463cc2cd8c31}} 
+void \mbox{\hyperlink{static__strings_8h_a755f8f841ccebea253245eaf7c467f43}{static\+\_\+strings\+\_\+init()}} \mbox{\Hypertarget{static__strings_8c_a7d4d4492155bb34124b67eb1f108f2f7}\label{static__strings_8c_a7d4d4492155bb34124b67eb1f108f2f7}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_int16\_to\_string@{static\_strings\_int16\_to\_string}}
+\index{static\_strings\_int16\_to\_string@{static\_strings\_int16\_to\_string}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_int16\_to\_string()}{static\_strings\_int16\_to\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+int16\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{int16 }\end{DoxyParamCaption})}
+
+
+
+Create a string with the value of the parameter. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+int16\+\_\+to\+\_\+string(int16\+\_\+t int16) 
+\begin{DoxyParams}{Parameters}
+{\em int16} & 16 bits signed integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the parameter as string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_ab3df5dd8d61e3ac2068ba5830304b2c4}\label{static__strings_8c_ab3df5dd8d61e3ac2068ba5830304b2c4}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_int32\_to\_string@{static\_strings\_int32\_to\_string}}
+\index{static\_strings\_int32\_to\_string@{static\_strings\_int32\_to\_string}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_int32\_to\_string()}{static\_strings\_int32\_to\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+int32\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{int32 }\end{DoxyParamCaption})}
+
+
+
+Create a string with the value of the parameter. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+int32\+\_\+to\+\_\+string(int32\+\_\+t int32) 
+\begin{DoxyParams}{Parameters}
+{\em int32} & 32 bits signed integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the parameter as string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a75322ee39debe088cc189142cf62d886}\label{static__strings_8c_a75322ee39debe088cc189142cf62d886}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_int8\_to\_string@{static\_strings\_int8\_to\_string}}
+\index{static\_strings\_int8\_to\_string@{static\_strings\_int8\_to\_string}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_int8\_to\_string()}{static\_strings\_int8\_to\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+int8\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{int8 }\end{DoxyParamCaption})}
+
+
+
+Create a string with the value of the parameter. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+int8\+\_\+to\+\_\+string(int8\+\_\+t int8) 
+\begin{DoxyParams}{Parameters}
+{\em int8} & 8 bits signed integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the parameter as string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a22d98db5ae636c46717d463cc2cd8c31}\label{static__strings_8c_a22d98db5ae636c46717d463cc2cd8c31}} 
 \index{static\_strings.c@{static\_strings.c}!static\_strings\_is\_line@{static\_strings\_is\_line}}
 \index{static\_strings\_is\_line@{static\_strings\_is\_line}!static\_strings.c@{static\_strings.c}}
 \doxysubsubsection{\texorpdfstring{static\_strings\_is\_line()}{static\_strings\_is\_line()}}
@@ -303,6 +409,60 @@ Return a new string with the characters between the start\+\_\+index and the fin
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A pointer to the string descriptor of the substring, if N\+U\+LL check static\+\_\+strings\+\_\+error\+\_\+code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a8c01d9034bdbd35f225bd84eb45a5c79}\label{static__strings_8c_a8c01d9034bdbd35f225bd84eb45a5c79}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_uint16\_to\_string@{static\_strings\_uint16\_to\_string}}
+\index{static\_strings\_uint16\_to\_string@{static\_strings\_uint16\_to\_string}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_uint16\_to\_string()}{static\_strings\_uint16\_to\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+uint16\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{uint16 }\end{DoxyParamCaption})}
+
+
+
+Create a string with the value of the parameter. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+uint16\+\_\+to\+\_\+string(uint16\+\_\+t uint16) 
+\begin{DoxyParams}{Parameters}
+{\em uint16} & 16 bits unsigned integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the parameter as string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a5c0159303e872732c2f436112e2d25be}\label{static__strings_8c_a5c0159303e872732c2f436112e2d25be}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_uint32\_to\_string@{static\_strings\_uint32\_to\_string}}
+\index{static\_strings\_uint32\_to\_string@{static\_strings\_uint32\_to\_string}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_uint32\_to\_string()}{static\_strings\_uint32\_to\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+uint32\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{uint32 }\end{DoxyParamCaption})}
+
+
+
+Create a string with the value of the parameter. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+uint32\+\_\+to\+\_\+string(uint32\+\_\+t uint32) 
+\begin{DoxyParams}{Parameters}
+{\em uint32} & 32 bits unsigned integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the parameter as string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a72d2b081fd8cfd4370ff9b4bcb809917}\label{static__strings_8c_a72d2b081fd8cfd4370ff9b4bcb809917}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_uint8\_to\_string@{static\_strings\_uint8\_to\_string}}
+\index{static\_strings\_uint8\_to\_string@{static\_strings\_uint8\_to\_string}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_uint8\_to\_string()}{static\_strings\_uint8\_to\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+uint8\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{uint8 }\end{DoxyParamCaption})}
+
+
+
+Create a string with the value of the parameter. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+uint8\+\_\+to\+\_\+string(uint8\+\_\+t uint8) 
+\begin{DoxyParams}{Parameters}
+{\em uint8} & 8 bits unsigned integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the parameter as string. 
 \end{DoxyReturn}
 
 

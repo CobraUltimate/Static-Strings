@@ -13,7 +13,8 @@
  - Reusable memory with deallocate.
  - is_line function.
  - Substring, concatenate, contains string, contains char and compare function.
- 
+ - Transforms integers and floats to strings
+
  # **GETTING STARTED**
  
  ## **Suggested names**
@@ -143,6 +144,24 @@
  }
  else{
    HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
+ }
+ ```
+
+ ## **Transform a integer and a float to a string**
+ ```C
+ static_strings_string_descriptor *var_string;
+ uint8_t uint8 = 200;
+ var_string = static_strings_uint8_to_string(uint8);
+ if(var_string != NULL){
+   HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+   static_strings_deallocate(var_string);
+ }
+ 
+ float float_number = 19.60232;
+ var_string = static_strings_float_to_string(float_number);
+ if(var_string != NULL){
+   HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+   static_strings_deallocate(var_string);
  }
  ```
 

@@ -98,6 +98,8 @@ $(document).ready(function(){initNavTree('static__strings_8h.html',''); initResi
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;stm32f1xx_hal.h&quot;</code><br />
 <code>#include &quot;string.h&quot;</code><br />
+<code>#include &quot;int_types.h&quot;</code><br />
+<code>#include &quot;stdio.h&quot;</code><br />
 </div>
 <p><a href="static__strings_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -238,6 +240,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a0bade030b470fba4a545ae63ead6903b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a0bade030b470fba4a545ae63ead6903b">static_strings_compare</a> (<a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *compare_string_one, <a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *compare_string_two)</td></tr>
 <tr class="memdesc:a0bade030b470fba4a545ae63ead6903b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two strings to see if they are equals.  <a href="static__strings_8h.html#a0bade030b470fba4a545ae63ead6903b">More...</a><br /></td></tr>
 <tr class="separator:a0bade030b470fba4a545ae63ead6903b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72d2b081fd8cfd4370ff9b4bcb809917"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a72d2b081fd8cfd4370ff9b4bcb809917">static_strings_uint8_to_string</a> (uint8_t uint8)</td></tr>
+<tr class="memdesc:a72d2b081fd8cfd4370ff9b4bcb809917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string with the value of the parameter.  <a href="static__strings_8h.html#a72d2b081fd8cfd4370ff9b4bcb809917">More...</a><br /></td></tr>
+<tr class="separator:a72d2b081fd8cfd4370ff9b4bcb809917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c01d9034bdbd35f225bd84eb45a5c79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a8c01d9034bdbd35f225bd84eb45a5c79">static_strings_uint16_to_string</a> (uint16_t uint16)</td></tr>
+<tr class="memdesc:a8c01d9034bdbd35f225bd84eb45a5c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string with the value of the parameter.  <a href="static__strings_8h.html#a8c01d9034bdbd35f225bd84eb45a5c79">More...</a><br /></td></tr>
+<tr class="separator:a8c01d9034bdbd35f225bd84eb45a5c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0159303e872732c2f436112e2d25be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a5c0159303e872732c2f436112e2d25be">static_strings_uint32_to_string</a> (uint32_t uint32)</td></tr>
+<tr class="memdesc:a5c0159303e872732c2f436112e2d25be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string with the value of the parameter.  <a href="static__strings_8h.html#a5c0159303e872732c2f436112e2d25be">More...</a><br /></td></tr>
+<tr class="separator:a5c0159303e872732c2f436112e2d25be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75322ee39debe088cc189142cf62d886"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a75322ee39debe088cc189142cf62d886">static_strings_int8_to_string</a> (int8_t int8)</td></tr>
+<tr class="memdesc:a75322ee39debe088cc189142cf62d886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string with the value of the parameter.  <a href="static__strings_8h.html#a75322ee39debe088cc189142cf62d886">More...</a><br /></td></tr>
+<tr class="separator:a75322ee39debe088cc189142cf62d886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4d4492155bb34124b67eb1f108f2f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a7d4d4492155bb34124b67eb1f108f2f7">static_strings_int16_to_string</a> (int16_t int16)</td></tr>
+<tr class="memdesc:a7d4d4492155bb34124b67eb1f108f2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string with the value of the parameter.  <a href="static__strings_8h.html#a7d4d4492155bb34124b67eb1f108f2f7">More...</a><br /></td></tr>
+<tr class="separator:a7d4d4492155bb34124b67eb1f108f2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3df5dd8d61e3ac2068ba5830304b2c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#ab3df5dd8d61e3ac2068ba5830304b2c4">static_strings_int32_to_string</a> (int32_t int32)</td></tr>
+<tr class="memdesc:ab3df5dd8d61e3ac2068ba5830304b2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string with the value of the parameter.  <a href="static__strings_8h.html#ab3df5dd8d61e3ac2068ba5830304b2c4">More...</a><br /></td></tr>
+<tr class="separator:ab3df5dd8d61e3ac2068ba5830304b2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca4a5ca61ea4e98f460dfba614d582f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a2ca4a5ca61ea4e98f460dfba614d582f">static_strings_float_to_string</a> (float float_arg)</td></tr>
+<tr class="memdesc:a2ca4a5ca61ea4e98f460dfba614d582f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string with the value of the parameter.  <a href="static__strings_8h.html#a2ca4a5ca61ea4e98f460dfba614d582f">More...</a><br /></td></tr>
+<tr class="separator:a2ca4a5ca61ea4e98f460dfba614d582f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38dcc48edfb205c485bc70f13e109472"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a38dcc48edfb205c485bc70f13e109472">static_strings_double_to_string</a> (double double_arg)</td></tr>
+<tr class="memdesc:a38dcc48edfb205c485bc70f13e109472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string with the value of the parameter.  <a href="static__strings_8h.html#a38dcc48edfb205c485bc70f13e109472">More...</a><br /></td></tr>
+<tr class="separator:a38dcc48edfb205c485bc70f13e109472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -523,6 +549,60 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>static_strings_ver
 
 </div>
 </div>
+<a id="a38dcc48edfb205c485bc70f13e109472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38dcc48edfb205c485bc70f13e109472">&#9670;&nbsp;</a></span>static_strings_double_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_double_to_string </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>double_arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string with the value of the parameter. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_double_to_string(double double_arg) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">double_arg</td><td>32 bits signed float (double). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the parameter as string. </dd></dl>
+
+</div>
+</div>
+<a id="a2ca4a5ca61ea4e98f460dfba614d582f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca4a5ca61ea4e98f460dfba614d582f">&#9670;&nbsp;</a></span>static_strings_float_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_float_to_string </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>float_arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string with the value of the parameter. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_float_to_string(float float_arg) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">float_arg</td><td>16 bits signed float. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the parameter as string. </dd></dl>
+
+</div>
+</div>
 <a id="a755f8f841ccebea253245eaf7c467f43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a755f8f841ccebea253245eaf7c467f43">&#9670;&nbsp;</a></span>static_strings_init()</h2>
 
@@ -540,6 +620,87 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>static_strings_ver
 
 <p>Link the descriptors with the arrays and initialize the status as deallocated. </p>
 <p>void <a class="el" href="static__strings_8h.html#a755f8f841ccebea253245eaf7c467f43" title="Link the descriptors with the arrays and initialize the status as deallocated.">static_strings_init()</a> </p>
+
+</div>
+</div>
+<a id="a7d4d4492155bb34124b67eb1f108f2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4d4492155bb34124b67eb1f108f2f7">&#9670;&nbsp;</a></span>static_strings_int16_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_int16_to_string </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>int16</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string with the value of the parameter. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_int16_to_string(int16_t int16) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int16</td><td>16 bits signed integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the parameter as string. </dd></dl>
+
+</div>
+</div>
+<a id="ab3df5dd8d61e3ac2068ba5830304b2c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3df5dd8d61e3ac2068ba5830304b2c4">&#9670;&nbsp;</a></span>static_strings_int32_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_int32_to_string </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>int32</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string with the value of the parameter. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_int32_to_string(int32_t int32) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int32</td><td>32 bits signed integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the parameter as string. </dd></dl>
+
+</div>
+</div>
+<a id="a75322ee39debe088cc189142cf62d886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75322ee39debe088cc189142cf62d886">&#9670;&nbsp;</a></span>static_strings_int8_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_int8_to_string </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>int8</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string with the value of the parameter. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_int8_to_string(int8_t int8) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int8</td><td>8 bits signed integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the parameter as string. </dd></dl>
 
 </div>
 </div>
@@ -730,6 +891,87 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>static_strings_ver
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor of the substring, if NULL check static_strings_error_code. </dd></dl>
+
+</div>
+</div>
+<a id="a8c01d9034bdbd35f225bd84eb45a5c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c01d9034bdbd35f225bd84eb45a5c79">&#9670;&nbsp;</a></span>static_strings_uint16_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_uint16_to_string </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>uint16</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string with the value of the parameter. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_uint16_to_string(uint16_t uint16) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint16</td><td>16 bits unsigned integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the parameter as string. </dd></dl>
+
+</div>
+</div>
+<a id="a5c0159303e872732c2f436112e2d25be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0159303e872732c2f436112e2d25be">&#9670;&nbsp;</a></span>static_strings_uint32_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_uint32_to_string </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>uint32</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string with the value of the parameter. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_uint32_to_string(uint32_t uint32) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint32</td><td>32 bits unsigned integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the parameter as string. </dd></dl>
+
+</div>
+</div>
+<a id="a72d2b081fd8cfd4370ff9b4bcb809917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72d2b081fd8cfd4370ff9b4bcb809917">&#9670;&nbsp;</a></span>static_strings_uint8_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_uint8_to_string </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>uint8</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a string with the value of the parameter. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_uint8_to_string(uint8_t uint8) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8</td><td>8 bits unsigned integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the parameter as string. </dd></dl>
 
 </div>
 </div>

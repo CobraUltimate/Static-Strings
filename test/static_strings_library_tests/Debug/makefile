@@ -48,7 +48,7 @@ all: static_strings_library_tests.elf secondary-outputs
 
 # Tool invocations
 static_strings_library_tests.elf: $(OBJS) $(USER_OBJS) C:\Users\carro\STM32CubeIDE\workspace_1.4.0\static_strings\test\static_strings_library_tests\STM32F103C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "static_strings_library_tests.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\carro\STM32CubeIDE\workspace_1.4.0\static_strings\test\static_strings_library_tests\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="static_strings_library_tests.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "static_strings_library_tests.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\carro\STM32CubeIDE\workspace_1.4.0\static_strings\test\static_strings_library_tests\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="static_strings_library_tests.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

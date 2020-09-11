@@ -236,5 +236,115 @@ int static_strings_compare(static_strings_string_descriptor* compare_string_one,
 	if(compare_string_one->length != compare_string_two->length){
 		return 0;
 	}
-	return static_strings_contains_string(compare_string_one,compare_string_two);
+	int i;
+	for(i = 0;i < compare_string_one->length;i++){
+		if(*(compare_string_one->string + i) != *(compare_string_two->string + i)){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+static_strings_string_descriptor *static_strings_uint8_to_string(uint8_t uint8){
+	uint8_t uint8_temp_string[50];
+	sprintf((char *)uint8_temp_string,"%" PRIu8,uint8);
+	uint16_t uint8_string_length = static_strings_strlen(uint8_temp_string);
+	static_strings_string_descriptor *uint8_string = static_strings_allocate(uint8_string_length);
+	if(uint8_string == NULL){
+		return uint8_string;
+	}
+	memcpy(uint8_string->string,uint8_temp_string,uint8_string_length);
+	uint8_string->length = uint8_string_length;
+	return uint8_string;
+}
+
+static_strings_string_descriptor *static_strings_uint16_to_string(uint16_t uint16){
+	uint8_t uint16_temp_string[50];
+	sprintf((char *)uint16_temp_string,"%" PRIu16,uint16);
+	uint16_t uint16_string_length = static_strings_strlen(uint16_temp_string);
+	static_strings_string_descriptor *uint16_string = static_strings_allocate(uint16_string_length);
+	if(uint16_string == NULL){
+		return uint16_string;
+	}
+	memcpy(uint16_string->string,uint16_temp_string,uint16_string_length);
+	uint16_string->length = uint16_string_length;
+	return uint16_string;
+}
+
+static_strings_string_descriptor *static_strings_uint32_to_string(uint32_t uint32){
+	uint8_t uint32_temp_string[50];
+	sprintf((char *)uint32_temp_string,"%" PRIu32,uint32);
+	uint16_t uint32_string_length = static_strings_strlen(uint32_temp_string);
+	static_strings_string_descriptor *uint32_string = static_strings_allocate(uint32_string_length);
+	if(uint32_string == NULL){
+		return uint32_string;
+	}
+	memcpy(uint32_string->string,uint32_temp_string,uint32_string_length);
+	uint32_string->length = uint32_string_length;
+	return uint32_string;
+}
+
+static_strings_string_descriptor *static_strings_int8_to_string(int8_t int8){
+	uint8_t int8_temp_string[50];
+	sprintf((char *)int8_temp_string,"%" PRId8,int8);
+	uint16_t int8_string_length = static_strings_strlen(int8_temp_string);
+	static_strings_string_descriptor *int8_string = static_strings_allocate(int8_string_length);
+	if(int8_string == NULL){
+		return int8_string;
+	}
+	memcpy(int8_string->string,int8_temp_string,int8_string_length);
+	int8_string->length = int8_string_length;
+	return int8_string;
+}
+
+static_strings_string_descriptor *static_strings_int16_to_string(int16_t int16){
+	uint8_t int16_temp_string[50];
+	sprintf((char *)int16_temp_string,"%" PRId16,int16);
+	int16_t int16_string_length = static_strings_strlen(int16_temp_string);
+	static_strings_string_descriptor *int16_string = static_strings_allocate(int16_string_length);
+	if(int16_string == NULL){
+		return int16_string;
+	}
+	memcpy(int16_string->string,int16_temp_string,int16_string_length);
+	int16_string->length = int16_string_length;
+	return int16_string;
+}
+
+static_strings_string_descriptor *static_strings_int32_to_string(int32_t int32){
+	uint8_t int32_temp_string[50];
+	sprintf((char *)int32_temp_string,"%" PRId32,int32);
+	int16_t int32_string_length = static_strings_strlen(int32_temp_string);
+	static_strings_string_descriptor *int32_string = static_strings_allocate(int32_string_length);
+	if(int32_string == NULL){
+		return int32_string;
+	}
+	memcpy(int32_string->string,int32_temp_string,int32_string_length);
+	int32_string->length = int32_string_length;
+	return int32_string;
+}
+
+static_strings_string_descriptor *static_strings_float_to_string(float float_arg){
+	uint8_t float_temp_string[50];
+	sprintf((char *)float_temp_string,"%f",float_arg);
+	int16_t float_string_length = static_strings_strlen(float_temp_string);
+	static_strings_string_descriptor *float_string = static_strings_allocate(float_string_length);
+	if(float_string == NULL){
+		return float_string;
+	}
+	memcpy(float_string->string,float_temp_string,float_string_length);
+	float_string->length = float_string_length;
+	return float_string;
+}
+
+static_strings_string_descriptor *static_strings_double_to_string(double double_arg){
+	uint8_t double_temp_string[50];
+	sprintf((char *)double_temp_string,"%lf",double_arg);
+	int16_t double_string_length = static_strings_strlen(double_temp_string);
+	static_strings_string_descriptor *double_string = static_strings_allocate(double_string_length);
+	if(double_string == NULL){
+		return double_string;
+	}
+	memcpy(double_string->string,double_temp_string,double_string_length);
+	double_string->length = double_string_length;
+	return double_string;
 }

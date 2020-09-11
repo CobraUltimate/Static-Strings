@@ -458,6 +458,79 @@ int main(void)
 	  HAL_UART_Transmit(&huart1,(uint8_t *)"0\r\n",3,HAL_MAX_DELAY);
   }
 
+  // test 48
+
+  static_strings_string_descriptor *var_string;
+  uint8_t uint8 = 200;
+  var_string = static_strings_uint8_to_string(uint8);
+  if(var_string != NULL){
+	  HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+  	  static_strings_deallocate(var_string);
+  }
+
+  // test 49
+
+  uint16_t uint16 = 64200;
+  var_string = static_strings_uint16_to_string(uint16);
+  if(var_string != NULL){
+	  HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+	  static_strings_deallocate(var_string);
+  }
+
+  // test 50
+
+  uint32_t uint32 = 1000064200;
+  var_string = static_strings_uint32_to_string(uint32);
+  if(var_string != NULL){
+	  HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+  	  static_strings_deallocate(var_string);
+  }
+
+  // test 51
+
+  int8_t int8 = 100;
+  var_string = static_strings_int8_to_string(int8);
+  if(var_string != NULL){
+  	  HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+  	  static_strings_deallocate(var_string);
+  }
+
+  // test 52
+
+  int16_t int16 = -32100;
+  var_string = static_strings_int16_to_string(int16);
+  if(var_string != NULL){
+  	  HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+  	  static_strings_deallocate(var_string);
+  }
+
+  // test 53
+
+  int32_t int32 = 500032100;
+  var_string = static_strings_uint32_to_string(int32);
+  if(var_string != NULL){
+  	  HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+  	  static_strings_deallocate(var_string);
+  }
+
+  // test 54
+
+  float float_number = 19.60232;
+  var_string = static_strings_float_to_string(float_number);
+  if(var_string != NULL){
+  	  HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+  	  static_strings_deallocate(var_string);
+  }
+
+  // test 55
+
+  double double_number = -1924.2342;
+  var_string = static_strings_double_to_string(double_number);
+  if(var_string != NULL){
+  	  HAL_UART_Transmit(&huart1,var_string->string,var_string->length,HAL_MAX_DELAY);
+  	  static_strings_deallocate(var_string);
+  }
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

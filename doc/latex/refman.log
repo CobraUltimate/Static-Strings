@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.6)  6 SEP 2020 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.6)  11 SEP 2020 18:23
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -847,7 +847,9 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 169.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 169.
- [1] [2]
+ [1] [2] [3] [4
+
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 171.
 
 Chapter 1.
@@ -889,54 +891,63 @@ File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 14.
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 36
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 37
 .
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
 [1
 
-
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
+Underfull \hbox (badness 10000) in paragraph at lines 51--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 141--143
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
  []
 
@@ -955,7 +966,11 @@ Chapter 3.
 
 ]
 Chapter 4.
-(files.tex) [9] [10
+(files.tex
+
+LaTeX Warning: Reference `int__types_8h' on page 9 undefined on input line 3.
+
+) [9] [10
 
 ]
 Chapter 5.
@@ -1045,176 +1060,261 @@ ng[]_[]one, []
  []
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 57.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 73.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 57.
-
-Underfull \hbox (badness 10000) detected at line 68
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 73.
+[20]
+Underfull \hbox (badness 10000) detected at line 84
 [][][]
  []
 
-[20]
-Overfull \hbox (84.31416pt too wide) in paragraph at lines 81--82
+
+Overfull \hbox (84.31416pt too wide) in paragraph at lines 97--98
 []\T1/phv/m/n/10 int [] 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 88
+Underfull \hbox (badness 10000) detected at line 104
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 [][] \T1/phv/m/sl/10 static[]_[]strings[]_[]concatenate([] \T1/phv/m/n/10 conca
 tenate[]_[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 108
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+Underfull \hbox (badness 10000) detected at line 124
 [][][]
  []
 
-[21] [22]
-Underfull \hbox (badness 10000) detected at line 128
+
+Underfull \hbox (badness 10000) detected at line 144
 [][][]
  []
 
 
-Overfull \hbox (28.11922pt too wide) in paragraph at lines 141--142
+Overfull \hbox (28.11922pt too wide) in paragraph at lines 157--158
 []\T1/phv/m/n/10 int [] 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 148
+Underfull \hbox (badness 10000) detected at line 164
+[][][]
+ []
+
+[22]
+Underfull \hbox (badness 10000) detected at line 184
 [][][]
  []
 
 [23]
-Underfull \hbox (badness 10000) detected at line 168
+Underfull \hbox (badness 10000) detected at line 217
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 211
+Underfull \hbox (badness 10000) detected at line 235
 [][][]
  []
 
 [24]
-Underfull \hbox (badness 10000) detected at line 229
+Underfull \hbox (badness 10000) detected at line 263
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 247
+Underfull \hbox (badness 10000) detected at line 281
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 299
 [][][]
  []
 
 [25]
-Underfull \hbox (badness 10000) detected at line 282
+Underfull \hbox (badness 10000) detected at line 317
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 335
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 353
 [][][]
  []
 
 [26]
-Underfull \hbox (badness 10000) detected at line 304
+Underfull \hbox (badness 10000) detected at line 388
 [][][]
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 3
-14.
+[27]
+Underfull \hbox (badness 10000) detected at line 410
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 428
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 446
+[][][]
+ []
+
+[28]
+Underfull \hbox (badness 10000) detected at line 464
+[][][]
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 4
+74.
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )) (static__strings_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--10
+Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 []\T1/phv/m/n/10 void [] ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 string[]_[]desc
 riptor,
  []
 
-
-Overfull \hbox (21.08574pt too wide) in paragraph at lines 106--107
+[30]
+Overfull \hbox (21.08574pt too wide) in paragraph at lines 108--109
 []\T1/phv/m/n/10 int [] ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 compare[]_[]stri
 ng[]_[]one, []
  []
 
-[28] [29]
-Underfull \hbox (badness 10000) detected at line 158
+[31]
+Underfull \hbox (badness 10000) detected at line 176
 [][][]
  []
 
 
-Overfull \hbox (84.31416pt too wide) in paragraph at lines 171--172
+Overfull \hbox (84.31416pt too wide) in paragraph at lines 189--190
 []\T1/phv/m/n/10 int [] 
  []
 
-
-Underfull \hbox (badness 10000) detected at line 178
+[32]
+Underfull \hbox (badness 10000) detected at line 196
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 [][] \T1/phv/m/sl/10 static[]_[]strings[]_[]concatenate([] \T1/phv/m/n/10 conca
 tenate[]_[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 198
-[][][]
- []
-
-[30]
-Underfull \hbox (badness 10000) detected at line 218
-[][][]
- []
-
-
-Overfull \hbox (28.11922pt too wide) in paragraph at lines 231--232
-[]\T1/phv/m/n/10 int [] 
- []
-
-
-Underfull \hbox (badness 10000) detected at line 238
-[][][]
- []
-
-[31]
-Underfull \hbox (badness 10000) detected at line 258
-[][][]
- []
-
-[32]
-Underfull \hbox (badness 10000) detected at line 301
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 319
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 337
+Underfull \hbox (badness 10000) detected at line 216
 [][][]
  []
 
 [33]
-Underfull \hbox (badness 10000) detected at line 372
+Underfull \hbox (badness 10000) detected at line 236
+[][][]
+ []
+
+
+Overfull \hbox (28.11922pt too wide) in paragraph at lines 249--250
+[]\T1/phv/m/n/10 int [] 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 256
 [][][]
  []
 
 [34]
-Underfull \hbox (badness 10000) detected at line 394
+Underfull \hbox (badness 10000) detected at line 276
 [][][]
  []
 
-) [35] [36
 
-] (refman.ind [37
+Underfull \hbox (badness 10000) detected at line 309
+[][][]
+ []
 
+[35]
+Underfull \hbox (badness 10000) detected at line 327
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 355
+[][][]
+ []
+
+[36]
+Underfull \hbox (badness 10000) detected at line 373
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 391
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 409
+[][][]
+ []
+
+[37]
+Underfull \hbox (badness 10000) detected at line 427
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 445
+[][][]
+ []
+
+[38]
+Underfull \hbox (badness 10000) detected at line 480
+[][][]
+ []
+
+[39]
+Underfull \hbox (badness 10000) detected at line 502
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 520
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 538
+[][][]
+ []
+
+[40]
+Underfull \hbox (badness 10000) detected at line 556
+[][][]
+ []
+
+) [41] [42
+
+] (refman.ind [43
+
+
+] [44
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
@@ -1225,16 +1325,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 205.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: A43E34AC140A8A0512B5743469956D02;15359.
+(rerunfilecheck)             Checksum: 29A5EE8C3DA0C9C95653D81FED8CC478;20163.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 17029 strings out of 480790
- 255751 string characters out of 2907056
- 573270 words of memory out of 3000000
- 32434 multiletter control sequences out of 15000+200000
+ 17133 strings out of 480790
+ 258529 string characters out of 2907056
+ 586706 words of memory out of 3000000
+ 32483 multiletter control sequences out of 15000+200000
  590594 words of font info for 95 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,16n,96p,944b,629s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,15n,96p,944b,629s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
@@ -1245,9 +1349,9 @@ nts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helv
 etic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><
 C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/M
 iKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (41 pages, 296896 bytes).
+Output written on refman.pdf (50 pages, 351648 bytes).
 PDF statistics:
- 1006 PDF objects out of 1200 (max. 8388607)
- 233 named destinations out of 1000 (max. 500000)
- 537 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1266 PDF objects out of 1440 (max. 8388607)
+ 288 named destinations out of 1000 (max. 500000)
+ 665 words of extra memory for PDF output out of 10000 (max. 10000000)
 

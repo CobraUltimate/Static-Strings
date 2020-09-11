@@ -11,4 +11,12 @@ static_strings.c:173:35:static_strings_substring	24	static
 static_strings.c:192:35:static_strings_concatenate	24	static
 static_strings.c:204:5:static_strings_contains_string	32	static
 static_strings.c:225:5:static_strings_contains_char	24	static
-static_strings.c:235:5:static_strings_compare	16	static
+static_strings.c:235:5:static_strings_compare	24	static
+static_strings.c:248:35:static_strings_uint8_to_string	80	static
+static_strings.c:261:35:static_strings_uint16_to_string	80	static
+static_strings.c:274:35:static_strings_uint32_to_string	80	static
+static_strings.c:287:35:static_strings_int8_to_string	80	static
+static_strings.c:300:35:static_strings_int16_to_string	80	static
+static_strings.c:313:35:static_strings_int32_to_string	80	static
+static_strings.c:326:35:static_strings_float_to_string	88	static
+static_strings.c:339:35:static_strings_double_to_string	80	static
