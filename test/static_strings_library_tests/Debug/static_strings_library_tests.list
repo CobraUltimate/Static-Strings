@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  000201dc  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00008731  00000000  00000000  00020205  2**0
+ 12 .debug_info   00008847  00000000  00000000  00020205  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 00001687  00000000  00000000  00028936  2**0
+ 13 .debug_abbrev 000016b2  00000000  00000000  00028a4c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_aranges 000006a0  00000000  00000000  00029fc0  2**3
+ 14 .debug_aranges 000006c0  00000000  00000000  0002a100  2**3
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 000005e8  00000000  00000000  0002a660  2**3
+ 15 .debug_ranges 00000608  00000000  00000000  0002a7c0  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_macro  00013eea  00000000  00000000  0002ac48  2**0
+ 16 .debug_macro  00013ef1  00000000  00000000  0002adc8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   000063a2  00000000  00000000  0003eb32  2**0
+ 17 .debug_line   0000640a  00000000  00000000  0003ecb9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    0006b3ca  00000000  00000000  00044ed4  2**0
+ 18 .debug_str    0006b4a2  00000000  00000000  000450c3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  000b029e  2**0
+ 19 .comment      0000007b  00000000  00000000  000b0565  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000023a8  00000000  00000000  000b031c  2**2
+ 20 .debug_frame  0000243c  00000000  00000000  000b05e0  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -7074,6 +7074,10 @@ void static_strings_init(){
  80033f8:	20000210 	.word	0x20000210
 
 080033fc <static_strings_allocate>:
+	static_strings_deallocate(move_from);
+	return move_to;
+}
+
 
 static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
  80033fc:	b480      	push	{r7}
@@ -7405,9 +7409,9 @@ void static_strings_deallocate(static_strings_string_descriptor *string_descript
  80035fa:	b083      	sub	sp, #12
  80035fc:	af00      	add	r7, sp, #0
  80035fe:	6078      	str	r0, [r7, #4]
-	if(string_descriptor->type != STATIC_STRINGS_STRING_STATUS_CONSTANT){
+	if(string_descriptor->status != STATIC_STRINGS_STRING_STATUS_CONSTANT){
  8003600:	687b      	ldr	r3, [r7, #4]
- 8003602:	799b      	ldrb	r3, [r3, #6]
+ 8003602:	79db      	ldrb	r3, [r3, #7]
  8003604:	2b02      	cmp	r3, #2
  8003606:	d002      	beq.n	800360e <static_strings_deallocate+0x16>
 		string_descriptor->status = STATIC_STRINGS_STRING_STATUS_DEALLOCATED;
@@ -7842,6 +7846,10 @@ static_strings_string_descriptor *static_strings_concatenate(static_strings_stri
  80038ac:	bd80      	pop	{r7, pc}
 
 080038ae <static_strings_contains_string>:
+	memcpy(concatenated_string->string + concatenate_at->length,concatenate->string,concatenate->length);
+	concatenated_string->length = concatenated_string_length;
+	return concatenated_string;
+}
 
 int static_strings_contains_string(static_strings_string_descriptor* search_in,static_strings_string_descriptor* search_for){
  80038ae:	b480      	push	{r7}

@@ -280,6 +280,7 @@
 #define STATIC_STRINGS_ERROR_CODE_STRING_TOO_LONG 2
 #define STATIC_STRINGS_ERROR_CODE_SUBSTRING_START_INDEX_OUT_OF_RANGE 3
 #define STATIC_STRINGS_ERROR_CODE_SUBSTRING_FINISH_INDEX_OUT_OF_RANGE 4
+#define STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW 5
 /** static_strings_error_code
  * \brief Global variable to store error code.
  */
@@ -334,6 +335,33 @@ static_strings_string_descriptor static_strings_very_long_strings_descriptors[ST
  * \brief Link the descriptors with the arrays and initialize the status as deallocated.
  */
 void static_strings_init();
+
+/** int static_strings_get_string_max_length(static_strings_string_descriptor *string)
+ * \brief get the maximum length allowed by the type of the string.
+ * \param string A pointer to a string descriptor.
+ * \return The maximum allowed length of the string as an integer.
+ */
+int static_strings_get_string_max_length(static_strings_string_descriptor *string);
+
+/** static_strings_string_descriptor *static_strings_copy(static_strings_string_descriptor *copy_to,static_strings_string_descriptor *copy_from,uint16_t copy_to_offset)
+ * \brief Copy a string into another at determinate offset.
+ * Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW.
+ * \param copy_to Pointer to the string to copy in.
+ * \param copy_from Pointer to the string to copy from.
+ * \param copy_to_offset Start copy index.
+ * \return A pointer to the descriptor with the copied string if success, if an error occur return NULL, check static_strings_error_code for further information.
+ */
+static_strings_string_descriptor *static_strings_copy(static_strings_string_descriptor *copy_to,static_strings_string_descriptor *copy_from,uint16_t copy_to_offset);
+
+/** static_strings_string_descriptor *static_strings_move(static_strings_string_descriptor *move_to,static_strings_string_descriptor *move_from,uint16_t move_to_offset)
+ * \brief Move a string into another at determinate offset, if success the move_to string is deallocated.
+ * Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW.
+ * \param move_to Pointer to the string to move in.
+ * \param move_from Pointer to the string to move from.
+ * \param move_to_offset Start move index.
+ * \return A pointer to the descriptor with the moved string if success, if an error occur return NULL, check static_strings_error_code for further information.
+ */
+static_strings_string_descriptor *static_strings_move(static_strings_string_descriptor *move_to,static_strings_string_descriptor *move_from,uint16_t move_to_offset);
 
 /** static_strings_string_descriptor *static_strings_allocate(uint16_t string_size)
  * \brief Request memory for a string with its size, the user must copy the string with the descriptor and specify the size.
@@ -413,12 +441,21 @@ static_strings_string_descriptor *static_strings_substring(static_strings_string
 
 /** static_strings_string_descriptor *static_strings_concatenate(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate)
  * \brief Concatenate the second string at the end of the first in a new string.
- * To get all the string from a start index use the length in the finish_index.
  * \param concatenate_at A pointer to the string to concatenate at.
  * \param concatenate A pointer to the string to concatenate at the end of the concatenate_at string.
  * \return A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code.
  */
 static_strings_string_descriptor *static_strings_concatenate(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate);
+
+/** static_strings_string_descriptor *static_strings_concatenate_and_clean(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate)
+ * \brief Concatenate the second string at the end of the first.
+ * If there is available space in the first string the same string is used.
+ * If there is no available space in the first string a new string is used and the concatena_at original string is deallocated.
+ * \param concatenate_at A pointer to the string to concatenate at.
+ * \param concatenate A pointer to the string to concatenate at the end of the concatenate_at string.
+ * \return A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code.
+ */
+static_strings_string_descriptor *static_strings_concatenate_and_clean(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate);
 
 /** int static_strings_contains_string(static_strings_string_descriptor* search_in,static_strings_string_descriptor* search_for)
  * \brief Search a string in other string.

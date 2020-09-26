@@ -35,6 +35,53 @@ void static_strings_init(){
 	}
 }
 
+int static_strings_get_string_max_length(static_strings_string_descriptor *string){
+	if(string->type == STATIC_STRINGS_STRING_TYPE_CUSTOM){
+		return 0;
+	}
+	else{
+		switch(string->type){
+			case STATIC_STRINGS_STRING_TYPE_VERY_SHORT:
+				return STATIC_STRINGS_VERY_SHORT_STRING_SIZE;
+				break;
+			case STATIC_STRINGS_STRING_TYPE_SHORT:
+				return STATIC_STRINGS_SHORT_STRING_SIZE;
+				break;
+			case STATIC_STRINGS_STRING_TYPE_MEDIUM:
+				return STATIC_STRINGS_MEDIUM_STRING_SIZE;
+				break;
+			case STATIC_STRINGS_STRING_TYPE_LONG:
+				return STATIC_STRINGS_LONG_STRING_SIZE;
+				break;
+			case STATIC_STRINGS_STRING_TYPE_VERY_LONG:
+				return STATIC_STRINGS_VERY_LONG_STRING_SIZE;
+				break;
+		}
+	}
+	return 0;
+}
+
+static_strings_string_descriptor *static_strings_copy(static_strings_string_descriptor *copy_to,static_strings_string_descriptor *copy_from,uint16_t copy_to_offset){
+	if(copy_to == NULL || copy_from == NULL){
+		return NULL;
+	}
+	if(static_strings_get_string_max_length(copy_from) < copy_from->length + copy_to_offset){
+		static_strings_error_code = STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW;
+		return NULL;
+	}
+	memcpy(copy_to->string + copy_to_offset,copy_from->string,copy_from->length);
+	return copy_to;
+}
+
+static_strings_string_descriptor *static_strings_move(static_strings_string_descriptor *move_to,static_strings_string_descriptor *move_from,uint16_t move_to_offset){
+	if(static_strings_copy(move_to,move_from,move_to_offset)){
+		return NULL;
+	}
+	static_strings_deallocate(move_from);
+	return move_to;
+}
+
+
 static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
 	int i;
 	if(string_size <= STATIC_STRINGS_VERY_SHORT_STRING_SIZE){
@@ -109,7 +156,7 @@ int static_strings_create_custom_string(static_strings_string_descriptor *string
 }
 
 void static_strings_deallocate(static_strings_string_descriptor *string_descriptor){
-	if(string_descriptor->type != STATIC_STRINGS_STRING_STATUS_CONSTANT){
+	if(string_descriptor->status != STATIC_STRINGS_STRING_STATUS_CONSTANT){
 		string_descriptor->status = STATIC_STRINGS_STRING_STATUS_DEALLOCATED;
 	}
 }
@@ -191,6 +238,21 @@ static_strings_string_descriptor *static_strings_substring(static_strings_string
 
 static_strings_string_descriptor *static_strings_concatenate(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate){
 	int concatenated_string_length = concatenate_at->length + concatenate->length;
+	static_strings_string_descriptor *concatenated_string = static_strings_allocate(concatenated_string_length);
+	if(concatenated_string == NULL){
+		return concatenated_string;
+	}
+	memcpy(concatenated_string->string,concatenate_at->string,concatenate_at->length);
+	memcpy(concatenated_string->string + concatenate_at->length,concatenate->string,concatenate->length);
+	concatenated_string->length = concatenated_string_length;
+	return concatenated_string;
+}
+
+static_strings_string_descriptor *static_strings_concatenate_and_clean(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate){
+	int concatenated_string_length = concatenate_at->length + concatenate->length;
+	if(concatenate_at->length <= static_strings_get_string_max_length(concatenate_at)){
+
+	}
 	static_strings_string_descriptor *concatenated_string = static_strings_allocate(concatenated_string_length);
 	if(concatenated_string == NULL){
 		return concatenated_string;
