@@ -21,7 +21,8 @@ Core/Src/stm32f1xx_hal_msp.o: ../Core/Src/stm32f1xx_hal_msp.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- c:\users\carro\stm32cubeide\workspace_1.4.0\static_strings\inc\static_strings.h
+ c:\users\carro\stm32cubeide\workspace_1.4.0\static_strings\inc\static_strings.h \
+ c:\users\carro\stm32cubeide\workspace_1.4.0\static_strings\inc\int_types.h
 
 ../Core/Inc/main.h:
 
@@ -70,3 +71,5 @@ Core/Src/stm32f1xx_hal_msp.o: ../Core/Src/stm32f1xx_hal_msp.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
 c:\users\carro\stm32cubeide\workspace_1.4.0\static_strings\inc\static_strings.h:
+
+c:\users\carro\stm32cubeide\workspace_1.4.0\static_strings\inc\int_types.h:

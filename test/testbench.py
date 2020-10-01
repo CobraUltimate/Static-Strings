@@ -402,3 +402,11 @@ if number_string == b'-1924.234200':
 	print(colored('success test 55','blue'))
 else:
 	print(colored('fail test 55','red'))
+
+copy_string = ser.readline()
+print(copy_string)
+if copy_string == b'I am a copy test\r\n':
+	print(colored('success test 56','blue'))
+else:
+	print(colored('fail test 56','red'))
+	print(ser.read())

@@ -531,6 +531,28 @@ int main(void)
   	  static_strings_deallocate(var_string);
   }
 
+  // test 56
+
+  static_strings_string_descriptor *copy_test_source_string = static_strings_save((uint8_t *)"I am a copy test\r\n");
+  if(copy_test_source_string != NULL){
+	  static_strings_string_descriptor *copy_test_target_string = static_strings_allocate(100);
+	  if(static_strings_copy(copy_test_target_string,copy_test_source_string,0) != NULL){
+		  HAL_UART_Transmit(&huart1,copy_test_target_string->string,copy_test_target_string->length,HAL_MAX_DELAY);
+		  static_strings_deallocate(copy_test_source_string);
+		  static_strings_deallocate(copy_test_target_string);
+	  }
+	  else{
+		  HAL_UART_Transmit(&huart1,(uint8_t *)"error2\r\n",8,HAL_MAX_DELAY);
+		  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+	  }
+  }
+  else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"error1\r\n",8,HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+  }
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

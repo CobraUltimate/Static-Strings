@@ -11,6 +11,12 @@ Strings allocation with static memory.
 \item 
 void \mbox{\hyperlink{static__strings_8c_a755f8f841ccebea253245eaf7c467f43}{static\+\_\+strings\+\_\+init}} ()
 \begin{DoxyCompactList}\small\item\em Link the descriptors with the arrays and initialize the status as deallocated. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{static__strings_8c_a04d1917b2d23ead78a97b325cf2d61d0}{static\+\_\+strings\+\_\+get\+\_\+string\+\_\+max\+\_\+length}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$string)
+\begin{DoxyCompactList}\small\item\em get the maximum length allowed by the type of the string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_ad4114a5410a819771dbf95b69653a8c4}{static\+\_\+strings\+\_\+copy}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+to, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+from, uint16\+\_\+t copy\+\_\+to\+\_\+offset)
+\begin{DoxyCompactList}\small\item\em Copy a string into another at determinate offset. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a15fb80b02b23dd3d8b95d322d91c02c1}{static\+\_\+strings\+\_\+move}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$move\+\_\+to, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$move\+\_\+from, uint16\+\_\+t move\+\_\+to\+\_\+offset)
+\begin{DoxyCompactList}\small\item\em Move a string into another at determinate offset, if success the move\+\_\+to string is deallocated. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a1eeaa84a1ce5796a99db77d98d792f0a}{static\+\_\+strings\+\_\+allocate}} (uint16\+\_\+t string\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Request memory for a string with its size, the user must copy the string with the descriptor and specify the size. Also see static\+\_\+strings\+\_\+save. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a279d5c443455117945d8725a6b09ca80}{static\+\_\+strings\+\_\+save}} (uint8\+\_\+t $\ast$string)
@@ -30,7 +36,9 @@ int \mbox{\hyperlink{static__strings_8c_ac6f737921cf90208b24245d293513891}{stati
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a97ac4239ecc7a8e67f94f30e6b4f739c}{static\+\_\+strings\+\_\+substring}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$string, uint16\+\_\+t start\+\_\+index, uint16\+\_\+t finish\+\_\+index)
 \begin{DoxyCompactList}\small\item\em Return a new string with the characters between the start\+\_\+index and the finish\+\_\+index. Not including the character at finish\+\_\+index. Returned string has to be deallocated. To get all the string from a start index use the length in the finish\+\_\+index. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a9b449c5815fe472c22a37bc0d1ff7348}{static\+\_\+strings\+\_\+concatenate}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate\+\_\+at, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate)
-\begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first in a new string. To get all the string from a start index use the length in the finish\+\_\+index. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first in a new string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a65ec0229070ea29795656a30c4cd3c84}{static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate\+\_\+at, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate)
+\begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first. If there is available space in the first string the same string is used. If there is no available space in the first string a new string is used and the concatena\+\_\+at original string is deallocated. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{static__strings_8c_a75d874016cceab1a187f151c1bf39ac2}{static\+\_\+strings\+\_\+contains\+\_\+string}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+in, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+for)
 \begin{DoxyCompactList}\small\item\em Search a string in other string. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{static__strings_8c_acdbbe803d3bccbd8c36e0d64941b628d}{static\+\_\+strings\+\_\+contains\+\_\+char}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+in, uint8\+\_\+t search\+\_\+for)
@@ -112,9 +120,29 @@ A pointer to the string descriptor with the concatenated string, if N\+U\+LL che
 
 
 
-Concatenate the second string at the end of the first in a new string. To get all the string from a start index use the length in the finish\+\_\+index. 
+Concatenate the second string at the end of the first in a new string. 
 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} {\itshape static\+\_\+strings\+\_\+concatenate(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}} concatenate\+\_\+at,static\+\_\+strings\+\_\+string\+\_\+descriptor$\ast$ concatenate) 
+\begin{DoxyParams}{Parameters}
+{\em concatenate\+\_\+at} & A pointer to the string to concatenate at. \\
+\hline
+{\em concatenate} & A pointer to the string to concatenate at the end of the concatenate\+\_\+at string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the concatenated string, if N\+U\+LL check static\+\_\+strings\+\_\+error\+\_\+code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a65ec0229070ea29795656a30c4cd3c84}\label{static__strings_8c_a65ec0229070ea29795656a30c4cd3c84}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_concatenate\_and\_clean@{static\_strings\_concatenate\_and\_clean}}
+\index{static\_strings\_concatenate\_and\_clean@{static\_strings\_concatenate\_and\_clean}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_concatenate\_and\_clean()}{static\_strings\_concatenate\_and\_clean()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{concatenate\+\_\+at,  }\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{concatenate }\end{DoxyParamCaption})}
+
+
+
+Concatenate the second string at the end of the first. If there is available space in the first string the same string is used. If there is no available space in the first string a new string is used and the concatena\+\_\+at original string is deallocated. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} {\itshape static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}} concatenate\+\_\+at,static\+\_\+strings\+\_\+string\+\_\+descriptor$\ast$ concatenate) 
 \begin{DoxyParams}{Parameters}
 {\em concatenate\+\_\+at} & A pointer to the string to concatenate at. \\
 \hline
@@ -163,6 +191,28 @@ int \mbox{\hyperlink{static__strings_8h_a75d874016cceab1a187f151c1bf39ac2}{stati
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 1 if the string is found, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_ad4114a5410a819771dbf95b69653a8c4}\label{static__strings_8c_ad4114a5410a819771dbf95b69653a8c4}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_copy@{static\_strings\_copy}}
+\index{static\_strings\_copy@{static\_strings\_copy}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_copy()}{static\_strings\_copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{copy\+\_\+to,  }\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{copy\+\_\+from,  }\item[{uint16\+\_\+t}]{copy\+\_\+to\+\_\+offset }\end{DoxyParamCaption})}
+
+
+
+Copy a string into another at determinate offset. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+copy(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+to,\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+from,uint16\+\_\+t copy\+\_\+to\+\_\+offset) 
+\begin{DoxyParams}{Parameters}
+{\em copy\+\_\+to} & Pointer to the string to copy in. \\
+\hline
+{\em copy\+\_\+from} & Pointer to the string to copy from. \\
+\hline
+{\em copy\+\_\+to\+\_\+offset} & Start copy index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the descriptor with the copied string if success, if an error occur return N\+U\+LL, check static\+\_\+strings\+\_\+error\+\_\+code for further information. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{static__strings_8c_ab59672cbad030fea13cdd23a06891ea3}\label{static__strings_8c_ab59672cbad030fea13cdd23a06891ea3}} 
 \index{static\_strings.c@{static\_strings.c}!static\_strings\_create\_custom\_string@{static\_strings\_create\_custom\_string}}
@@ -234,6 +284,24 @@ Create a string with the value of the parameter.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A pointer to the string descriptor with the parameter as string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a04d1917b2d23ead78a97b325cf2d61d0}\label{static__strings_8c_a04d1917b2d23ead78a97b325cf2d61d0}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_get\_string\_max\_length@{static\_strings\_get\_string\_max\_length}}
+\index{static\_strings\_get\_string\_max\_length@{static\_strings\_get\_string\_max\_length}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_get\_string\_max\_length()}{static\_strings\_get\_string\_max\_length()}}
+{\footnotesize\ttfamily int static\+\_\+strings\+\_\+get\+\_\+string\+\_\+max\+\_\+length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+get the maximum length allowed by the type of the string. 
+
+int \mbox{\hyperlink{static__strings_8h_a04d1917b2d23ead78a97b325cf2d61d0}{static\+\_\+strings\+\_\+get\+\_\+string\+\_\+max\+\_\+length(static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$string)}} 
+\begin{DoxyParams}{Parameters}
+{\em string} & A pointer to a string descriptor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The maximum allowed length of the string as an integer. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{static__strings_8c_a755f8f841ccebea253245eaf7c467f43}\label{static__strings_8c_a755f8f841ccebea253245eaf7c467f43}} 
 \index{static\_strings.c@{static\_strings.c}!static\_strings\_init@{static\_strings\_init}}
@@ -316,6 +384,28 @@ int \mbox{\hyperlink{static__strings_8h_a22d98db5ae636c46717d463cc2cd8c31}{stati
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Return 0 if the string does\textquotesingle{}t have a line ending \textbackslash{}r\textbackslash{}n and 1 if the string has a line ending \textbackslash{}r\textbackslash{}n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a15fb80b02b23dd3d8b95d322d91c02c1}\label{static__strings_8c_a15fb80b02b23dd3d8b95d322d91c02c1}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_move@{static\_strings\_move}}
+\index{static\_strings\_move@{static\_strings\_move}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_move()}{static\_strings\_move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{move\+\_\+to,  }\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{move\+\_\+from,  }\item[{uint16\+\_\+t}]{move\+\_\+to\+\_\+offset }\end{DoxyParamCaption})}
+
+
+
+Move a string into another at determinate offset, if success the move\+\_\+to string is deallocated. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+move(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$move\+\_\+to,\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$move\+\_\+from,uint16\+\_\+t move\+\_\+to\+\_\+offset) 
+\begin{DoxyParams}{Parameters}
+{\em move\+\_\+to} & Pointer to the string to move in. \\
+\hline
+{\em move\+\_\+from} & Pointer to the string to move from. \\
+\hline
+{\em move\+\_\+to\+\_\+offset} & Start move index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the descriptor with the moved string if success, if an error occur return N\+U\+LL, check static\+\_\+strings\+\_\+error\+\_\+code for further information. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{static__strings_8c_a279d5c443455117945d8725a6b09ca80}\label{static__strings_8c_a279d5c443455117945d8725a6b09ca80}} 
 \index{static\_strings.c@{static\_strings.c}!static\_strings\_save@{static\_strings\_save}}

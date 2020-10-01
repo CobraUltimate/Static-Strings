@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['static_20strings_71',['Static Strings',['../index.html',1,'']]]
+  ['static_20strings_79',['Static Strings',['../index.html',1,'']]]
 ];

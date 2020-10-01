@@ -65,7 +65,14 @@ static_strings_string_descriptor *static_strings_copy(static_strings_string_desc
 	if(copy_to == NULL || copy_from == NULL){
 		return NULL;
 	}
-	if(static_strings_get_string_max_length(copy_from) < copy_from->length + copy_to_offset){
+	int copy_to_max_length;
+	if(copy_to->type == STATIC_STRINGS_STRING_TYPE_CUSTOM){
+		copy_to_max_length = copy_to->length;
+	}
+	else{
+		copy_to_max_length = copy_from->length + copy_to_offset;
+	}
+	if(static_strings_get_string_max_length(copy_to) < copy_to_max_length){
 		static_strings_error_code = STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW;
 		return NULL;
 	}
@@ -81,6 +88,18 @@ static_strings_string_descriptor *static_strings_move(static_strings_string_desc
 	return move_to;
 }
 
+static_strings_string_descriptor *static_strings_clone(static_strings_string_descriptor *clone_from){
+	if(clone_from == NULL){
+		return NULL;
+	}
+	static_strings_string_descriptor *cloned_string = static_strings_allocate(clone_from->length);
+	if(cloned_string == NULL){
+		return NULL;
+	}
+	memcpy(cloned_string->string,clone_from->string,clone_from->length);
+	cloned_string->length = clone_from->length;
+	return cloned_string;
+}
 
 static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
 	int i;

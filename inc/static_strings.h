@@ -346,7 +346,7 @@ int static_strings_get_string_max_length(static_strings_string_descriptor *strin
 /** static_strings_string_descriptor *static_strings_copy(static_strings_string_descriptor *copy_to,static_strings_string_descriptor *copy_from,uint16_t copy_to_offset)
  * \brief Copy a string into another at determinate offset.
  * Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW.
- * \param copy_to Pointer to the string to copy in.
+ * \param copy_to Pointer to the string to copy in. String must have a defined type and length before use this function
  * \param copy_from Pointer to the string to copy from.
  * \param copy_to_offset Start copy index.
  * \return A pointer to the descriptor with the copied string if success, if an error occur return NULL, check static_strings_error_code for further information.
@@ -356,12 +356,19 @@ static_strings_string_descriptor *static_strings_copy(static_strings_string_desc
 /** static_strings_string_descriptor *static_strings_move(static_strings_string_descriptor *move_to,static_strings_string_descriptor *move_from,uint16_t move_to_offset)
  * \brief Move a string into another at determinate offset, if success the move_to string is deallocated.
  * Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW.
- * \param move_to Pointer to the string to move in.
+ * \param move_to Pointer to the string to move in. String must have a defined type and length before use this function
  * \param move_from Pointer to the string to move from.
  * \param move_to_offset Start move index.
  * \return A pointer to the descriptor with the moved string if success, if an error occur return NULL, check static_strings_error_code for further information.
  */
 static_strings_string_descriptor *static_strings_move(static_strings_string_descriptor *move_to,static_strings_string_descriptor *move_from,uint16_t move_to_offset);
+
+/** static_strings_string_descriptor *static_strings_clone(static_strings_string_descriptor *clone_from)
+ * \brief Clone a string into a new one.
+ * \param clone_from Pointer to the string to clone.
+ * \return A pointer to the descriptor with the cloned string if success, if an error occur return NULL, check static_strings_error_code for further information.
+ */
+static_strings_string_descriptor *static_strings_clone(static_strings_string_descriptor *clone_from);
 
 /** static_strings_string_descriptor *static_strings_allocate(uint16_t string_size)
  * \brief Request memory for a string with its size, the user must copy the string with the descriptor and specify the size.
