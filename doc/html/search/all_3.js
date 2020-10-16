@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['static_20strings_2',['Static Strings',['../index.html',1,'']]],
   ['static_20memory_20arrays_3',['Static memory arrays',['../group__static__memory__arrays.html',1,'']]],
   ['static_5fstrings_2ec_4',['static_strings.c',['../static__strings_8c.html',1,'']]],
   ['static_5fstrings_2eh_5',['static_strings.h',['../static__strings_8h.html',1,'']]],

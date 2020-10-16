@@ -6,7 +6,7 @@ from termcolor import colored
 init()
 
 ser = serial.Serial()
-ser.port = 'COM4'
+ser.port = 'COM3'
 ser.baudrate = 115200
 ser.open()
 
@@ -409,4 +409,36 @@ if copy_string == b'I am a copy test\r\n':
 	print(colored('success test 56','blue'))
 else:
 	print(colored('fail test 56','red'))
+	print(ser.read())
+
+clone_string = ser.readline()
+print(clone_string)
+if clone_string == b'I am a clone test\r\n':
+	print(colored('success test 57','blue'))
+else:
+	print(colored('fail test 57','red'))
+	print(ser.read())
+
+move_string = ser.readline()
+print(move_string)
+if move_string == b'.I am a move test\r\n':
+	print(colored('success test 58','blue'))
+else:
+	print(colored('fail test 58','red'))
+	print(ser.read())
+
+concatenate_string = ser.readline()
+print(concatenate_string)
+if concatenate_string == b'I am a concatenate test\r\n':
+	print(colored('success test 59','blue'))
+else:
+	print(colored('fail test 59','red'))
+	print(ser.read())
+
+concatenate_string = ser.readline()
+print(concatenate_string)
+if concatenate_string == b'I am a concatenate all test\r\n':
+	print(colored('success test 60','blue'))
+else:
+	print(colored('fail test 60','red'))
 	print(ser.read())

@@ -25,7 +25,24 @@
 var NAVTREE =
 [
   [ "Statics Strings", "index.html", [
-    [ "Static Strings", "index.html", null ],
+    [ "Static Strings", "index.html", [
+      [ "Features:", "index.html#autotoc_md0", null ],
+      [ "Getting Started", "index.html#autotoc_md1", [
+        [ "Suggested names", "index.html#autotoc_md2", null ],
+        [ "First of all initialize the library", "index.html#autotoc_md3", null ],
+        [ "Creating a string", "index.html#autotoc_md4", null ],
+        [ "Also a string can created this way", "index.html#autotoc_md5", null ],
+        [ "Split a local scope string", "index.html#autotoc_md6", null ],
+        [ "Getting a substring", "index.html#autotoc_md7", null ],
+        [ "Concatenate two strings and search for a substring and a character in the result", "index.html#autotoc_md8", null ],
+        [ "Compare two equals and non equals strings", "index.html#autotoc_md9", null ],
+        [ "Transform a integer and a float to a string", "index.html#autotoc_md10", null ],
+        [ "Copy, move and clone a string", "index.html#autotoc_md11", null ],
+        [ "Concatenate and clean two strings", "index.html#autotoc_md12", null ],
+        [ "Concatenate multiple strings", "index.html#autotoc_md13", null ],
+        [ "Configure quantity and size of the memory arrays", "index.html#autotoc_md14", null ]
+      ] ]
+    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],

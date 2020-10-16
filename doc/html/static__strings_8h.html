@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('static__strings_8h.html',''); initResi
 <div class="textblock"><code>#include &quot;stm32f1xx_hal.h&quot;</code><br />
 <code>#include &quot;string.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="int__types_8h_source.html">int_types.h</a>&quot;</code><br />
+<code>#include &quot;stdarg.h&quot;</code><br />
 <code>#include &quot;stdio.h&quot;</code><br />
 </div>
 <p><a href="static__strings_8h_source.html">Go to the source code of this file.</a></p>
@@ -208,11 +209,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:a04d1917b2d23ead78a97b325cf2d61d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the maximum length allowed by the type of the string.  <a href="static__strings_8h.html#a04d1917b2d23ead78a97b325cf2d61d0">More...</a><br /></td></tr>
 <tr class="separator:a04d1917b2d23ead78a97b325cf2d61d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4114a5410a819771dbf95b69653a8c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#ad4114a5410a819771dbf95b69653a8c4">static_strings_copy</a> (<a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *copy_to, <a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *copy_from, uint16_t copy_to_offset)</td></tr>
-<tr class="memdesc:ad4114a5410a819771dbf95b69653a8c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a string into another at determinate offset. Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW.  <a href="static__strings_8h.html#ad4114a5410a819771dbf95b69653a8c4">More...</a><br /></td></tr>
+<tr class="memdesc:ad4114a5410a819771dbf95b69653a8c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a string into another at determinate offset. Leaves intact the string values before the offset. Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW.  <a href="static__strings_8h.html#ad4114a5410a819771dbf95b69653a8c4">More...</a><br /></td></tr>
 <tr class="separator:ad4114a5410a819771dbf95b69653a8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15fb80b02b23dd3d8b95d322d91c02c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a15fb80b02b23dd3d8b95d322d91c02c1">static_strings_move</a> (<a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *move_to, <a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *move_from, uint16_t move_to_offset)</td></tr>
-<tr class="memdesc:a15fb80b02b23dd3d8b95d322d91c02c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move a string into another at determinate offset, if success the move_to string is deallocated. Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW.  <a href="static__strings_8h.html#a15fb80b02b23dd3d8b95d322d91c02c1">More...</a><br /></td></tr>
+<tr class="memdesc:a15fb80b02b23dd3d8b95d322d91c02c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move a string into another at determinate offset, if success the move_to string is deallocated. Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW. Leaves intact the string values before the offset.  <a href="static__strings_8h.html#a15fb80b02b23dd3d8b95d322d91c02c1">More...</a><br /></td></tr>
 <tr class="separator:a15fb80b02b23dd3d8b95d322d91c02c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ed2bd7609d9906794c273b93db1c5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a92ed2bd7609d9906794c273b93db1c5d">static_strings_clone</a> (<a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *clone_from)</td></tr>
+<tr class="memdesc:a92ed2bd7609d9906794c273b93db1c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone a string into a new one.  <a href="static__strings_8h.html#a92ed2bd7609d9906794c273b93db1c5d">More...</a><br /></td></tr>
+<tr class="separator:a92ed2bd7609d9906794c273b93db1c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eeaa84a1ce5796a99db77d98d792f0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a1eeaa84a1ce5796a99db77d98d792f0a">static_strings_allocate</a> (uint16_t string_size)</td></tr>
 <tr class="memdesc:a1eeaa84a1ce5796a99db77d98d792f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request memory for a string with its size, the user must copy the string with the descriptor and specify the size. Also see static_strings_save.  <a href="static__strings_8h.html#a1eeaa84a1ce5796a99db77d98d792f0a">More...</a><br /></td></tr>
 <tr class="separator:a1eeaa84a1ce5796a99db77d98d792f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,8 +248,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a9b449c5815fe472c22a37bc0d1ff7348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenate the second string at the end of the first in a new string.  <a href="static__strings_8h.html#a9b449c5815fe472c22a37bc0d1ff7348">More...</a><br /></td></tr>
 <tr class="separator:a9b449c5815fe472c22a37bc0d1ff7348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65ec0229070ea29795656a30c4cd3c84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a65ec0229070ea29795656a30c4cd3c84">static_strings_concatenate_and_clean</a> (<a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *concatenate_at, <a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *concatenate)</td></tr>
-<tr class="memdesc:a65ec0229070ea29795656a30c4cd3c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenate the second string at the end of the first. If there is available space in the first string the same string is used. If there is no available space in the first string a new string is used and the concatena_at original string is deallocated.  <a href="static__strings_8h.html#a65ec0229070ea29795656a30c4cd3c84">More...</a><br /></td></tr>
+<tr class="memdesc:a65ec0229070ea29795656a30c4cd3c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenate the second string at the end of the first in a new string and deallocate the concatenate at parameter if success.  <a href="static__strings_8h.html#a65ec0229070ea29795656a30c4cd3c84">More...</a><br /></td></tr>
 <tr class="separator:a65ec0229070ea29795656a30c4cd3c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a066ed88b7d60d317eef83b3f4cffe28b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a066ed88b7d60d317eef83b3f4cffe28b">static_strings_concatenate_all</a> (uint16_t arguments_quantity,...)</td></tr>
+<tr class="memdesc:a066ed88b7d60d317eef83b3f4cffe28b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter. This function must be used careful.  <a href="static__strings_8h.html#a066ed88b7d60d317eef83b3f4cffe28b">More...</a><br /></td></tr>
+<tr class="separator:a066ed88b7d60d317eef83b3f4cffe28b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75d874016cceab1a187f151c1bf39ac2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="static__strings_8h.html#a75d874016cceab1a187f151c1bf39ac2">static_strings_contains_string</a> (<a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *search_in, <a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *search_for)</td></tr>
 <tr class="memdesc:a75d874016cceab1a187f151c1bf39ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search a string in other string.  <a href="static__strings_8h.html#a75d874016cceab1a187f151c1bf39ac2">More...</a><br /></td></tr>
 <tr class="separator:a75d874016cceab1a187f151c1bf39ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -348,6 +355,33 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>static_strings_ver
 
 </div>
 </div>
+<a id="a92ed2bd7609d9906794c273b93db1c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ed2bd7609d9906794c273b93db1c5d">&#9670;&nbsp;</a></span>static_strings_clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a> *&#160;</td>
+          <td class="paramname"><em>clone_from</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clone a string into a new one. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_clone(<a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *clone_from) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clone_from</td><td>Pointer to the string to clone. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the descriptor with the cloned string if success, if an error occur return NULL, check static_strings_error_code for further information. </dd></dl>
+
+</div>
+</div>
 <a id="a0bade030b470fba4a545ae63ead6903b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0bade030b470fba4a545ae63ead6903b">&#9670;&nbsp;</a></span>static_strings_compare()</h2>
 
@@ -424,6 +458,44 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>static_strings_ver
 
 </div>
 </div>
+<a id="a066ed88b7d60d317eef83b3f4cffe28b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a066ed88b7d60d317eef83b3f4cffe28b">&#9670;&nbsp;</a></span>static_strings_concatenate_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstatic__strings__string__descriptor.html">static_strings_string_descriptor</a>* static_strings_concatenate_all </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>arguments_quantity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter. This function must be used careful. </p>
+<p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_concatenate_all(uint16_t arguments_quantity,...) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arguments_quantity</td><td>The number of strings to concatenate. </td></tr>
+    <tr><td class="paramname">...</td><td>Multiple arguments of type static_strigs_string_descriptor pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code. </dd></dl>
+
+</div>
+</div>
 <a id="a65ec0229070ea29795656a30c4cd3c84"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65ec0229070ea29795656a30c4cd3c84">&#9670;&nbsp;</a></span>static_strings_concatenate_and_clean()</h2>
 
@@ -450,10 +522,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>static_strings_ver
       </table>
 </div><div class="memdoc">
 
-<p>Concatenate the second string at the end of the first. If there is available space in the first string the same string is used. If there is no available space in the first string a new string is used and the concatena_at original string is deallocated. </p>
+<p>Concatenate the second string at the end of the first in a new string and deallocate the concatenate at parameter if success. </p>
 <p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> <em>static_strings_concatenate_and_clean(<a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a></em> concatenate_at,static_strings_string_descriptor* concatenate) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">concatenate_at</td><td>A pointer to the string to concatenate at. </td></tr>
+    <tr><td class="paramname">concatenate_at</td><td>A pointer to the string to concatenate at, it is deallocates if success. </td></tr>
     <tr><td class="paramname">concatenate</td><td>A pointer to the string to concatenate at the end of the concatenate_at string. </td></tr>
   </table>
   </dd>
@@ -570,10 +642,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>static_strings_ver
       </table>
 </div><div class="memdoc">
 
-<p>Copy a string into another at determinate offset. Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW. </p>
+<p>Copy a string into another at determinate offset. Leaves intact the string values before the offset. Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW. </p>
 <p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_copy(<a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *copy_to,<a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *copy_from,uint16_t copy_to_offset) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">copy_to</td><td>Pointer to the string to copy in. </td></tr>
+    <tr><td class="paramname">copy_to</td><td>Pointer to the string to copy in. String must have a defined type and length before use this function </td></tr>
     <tr><td class="paramname">copy_from</td><td>Pointer to the string to copy from. </td></tr>
     <tr><td class="paramname">copy_to_offset</td><td>Start copy index. </td></tr>
   </table>
@@ -888,10 +960,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>static_strings_ver
       </table>
 </div><div class="memdoc">
 
-<p>Move a string into another at determinate offset, if success the move_to string is deallocated. Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW. </p>
+<p>Move a string into another at determinate offset, if success the move_to string is deallocated. Can throw STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW. Leaves intact the string values before the offset. </p>
 <p><a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *static_strings_move(<a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *move_to,<a class="el" href="structstatic__strings__string__descriptor.html" title="Meta data of a string.">static_strings_string_descriptor</a> *move_from,uint16_t move_to_offset) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">move_to</td><td>Pointer to the string to move in. </td></tr>
+    <tr><td class="paramname">move_to</td><td>Pointer to the string to move in. String must have a defined type and length before use this function </td></tr>
     <tr><td class="paramname">move_from</td><td>Pointer to the string to move from. </td></tr>
     <tr><td class="paramname">move_to_offset</td><td>Start move index. </td></tr>
   </table>

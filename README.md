@@ -1,4 +1,7 @@
- ## **Features:**
+Static Strings {#mainpage}
+============
+
+## Features:
 
  - Developed for the STM32F103.
  - Global scope strings.
@@ -12,26 +15,28 @@
  - Low level string creation with allocate.
  - Reusable memory with deallocate.
  - is_line function.
- - Substring, concatenate, contains string, contains char and compare function.
+ - Substring, concatenate, concatenate and clean, concatenate all.
+ - Contains string, contains char and compare function.
  - Transforms integers and floats to strings
+ - Get string maximum length.
 
- # **GETTING STARTED**
- 
- ## **Suggested names**
- 
+ # Getting Started
+
+ ## Suggested names
+
  ```C
  static_strings_string_descriptor string_name;
  uint8_t string_name_memory[];
  ```
 
- ## **First of all initialize the library**
+ ## First of all initialize the library
 
  ```C
  static_strings_init();
  ```
 
- ## **Creating a string**
- 
+ ## Creating a string
+
  ```C
  uint8_t test_memory[] = "Hello Word\r\n";
  static_strings_string_descriptor *test = static_strings_save(test_memory);
@@ -43,11 +48,11 @@
    static_strings_deallocate(test);
  }
  ```
- 
+
  DON'T FORGET TO DEALLOCATE AFTER USING.
- 
- ## **Also a string can created this way**
- 
+
+ ## Also a string can created this way
+
  ```C
  #include "string.h"
  
@@ -64,11 +69,11 @@
    static_strings_deallocate(test);
  }
  ```
- 
+
  DON'T FORGET TO DEALLOCATE AFTER USING.
- 
- ## **Split a local scope string**
- 
+
+ ## Split a local scope string
+
  ```C
  uint8_t split_memory[10] = "123,56,8\r\n";
  static_strings_string_descriptor split.
@@ -80,7 +85,7 @@
  }
  ```
 
- ## **Getting a substring**
+ ## Getting a substring
 
  ```C
  uint8_t custom[10] = "123,56,89\0";
@@ -92,7 +97,7 @@
  }
  ```
 
- ## **Concatenate two strings and search for a substring and a character in the result**
+ ## Concatenate two strings and search for a substring and a character in the result
 
  ```C
  uint8_t concatenate_at_memory[] = "Hello \0";
@@ -121,7 +126,7 @@
  }
  ```
 
- ## **Compare two equals and non equals strings**
+ ## Compare two equals and non equals strings
 
  ```C
  uint8_t equal_a_memory[] = "Hall\0";
@@ -147,7 +152,7 @@
  }
  ```
 
- ## **Transform a integer and a float to a string**
+ ## Transform a integer and a float to a string
  ```C
  static_strings_string_descriptor *var_string;
  uint8_t uint8 = 200;
@@ -165,7 +170,75 @@
  }
  ```
 
- ## **Configure quantity and size of the memory arrays**
+## Copy, move and clone a string
+
+ ```C
+static_strings_string_descriptor *copy_test_source_string = static_strings_save((uint8_t *)"I am a copy test\r\n");
+    if(copy_test_source_string != NULL){
+        static_strings_string_descriptor *copy_test_target_string = static_strings_allocate(100);
+        if(static_strings_copy(copy_test_target_string,copy_test_source_string,0) != NULL){
+            HAL_UART_Transmit(&huart1,copy_test_target_string->string,copy_test_target_string->length,HAL_MAX_DELAY);
+            static_strings_deallocate(copy_test_source_string);
+            static_strings_deallocate(copy_test_target_string);
+        }
+    }
+}
+
+static_strings_string_descriptor *move_test_source_string = static_strings_save((uint8_t *)"I am a move test\r\n");
+if(copy_test_source_string != NULL){
+    static_strings_string_descriptor *move_test_target_string = static_strings_allocate(100);
+    *move_test_target_string->string = '.';
+    if(static_strings_move(move_test_target_string,move_test_source_string,1) != NULL){
+        HAL_UART_Transmit(&huart1,move_test_target_string->string,move_test_target_string->length,HAL_MAX_DELAY);
+        static_strings_deallocate(move_test_source_string);
+    }
+}
+
+static_strings_string_descriptor *clone_test_source_string = static_strings_save((uint8_t *)"I am a clone test\r\n");
+if(copy_test_source_string != NULL){
+    static_strings_string_descriptor *clone_test_target_string = static_strings_clone(clone_test_source_string);
+    if(clone_test_target_string != NULL){
+        HAL_UART_Transmit(&huart1,clone_test_target_string->string,clone_test_target_string->length,HAL_MAX_DELAY);
+        static_strings_deallocate(clone_test_source_string);
+        static_strings_deallocate(clone_test_target_string);
+    }
+}
+ ```
+
+## Concatenate and clean two strings
+
+ ```C
+static_strings_string_descriptor *concatenate_at = static_strings_save((uint8_t *)"I am a ");
+static_strings_string_descriptor *concatenate = static_strings_save((uint8_t *)"concatenate test\r\n");
+if(concatenate_at != NULL && concatenate != NULL){
+	static_strings_string_descriptor *concatenated_string = static_strings_concatenate_and_clean(concatenate_at,concatenate);
+	if(concatenated_string != NULL){
+    	HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
+		static_strings_deallocate(concatenate);
+		static_strings_deallocate(concatenated_string);
+    }
+}
+ ```
+
+## Concatenate multiple strings
+
+ ```C
+static_strings_string_descriptor *one = static_strings_save((uint8_t *)"I am a ");
+static_strings_string_descriptor *two = static_strings_save((uint8_t *)"concatenate all ");
+static_strings_string_descriptor *three = static_strings_save((uint8_t *)"test\r\n");
+if(one != NULL && two != NULL && three != NULL){
+	static_strings_string_descriptor *concatenated_string = static_strings_concatenate_all(3,one,two,three);
+	if(concatenated_string != NULL){
+    	HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
+		static_strings_deallocate(one);
+        static_strings_deallocate(two);
+        static_strings_deallocate(three);
+		static_strings_deallocate(concatenated_string);
+    }
+}
+ ```
+
+ ## Configure quantity and size of the memory arrays
 
  Just edit these constants in static_strings.h
 

@@ -551,7 +551,106 @@ int main(void)
 	  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
   }
 
+  // test 57
 
+  static_strings_string_descriptor *clone_test_source_string = static_strings_save((uint8_t *)"I am a clone test\r\n");
+  if(copy_test_source_string != NULL){
+	  static_strings_string_descriptor *clone_test_target_string = static_strings_clone(clone_test_source_string);
+	  if(clone_test_target_string != NULL){
+		  HAL_UART_Transmit(&huart1,clone_test_target_string->string,clone_test_target_string->length,HAL_MAX_DELAY);
+		  static_strings_deallocate(clone_test_source_string);
+		  static_strings_deallocate(clone_test_target_string);
+	  }
+	  else{
+		  HAL_UART_Transmit(&huart1,(uint8_t *)"error2\r\n",8,HAL_MAX_DELAY);
+		  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+	  }
+  }
+  else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"error1\r\n",8,HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+  }
+
+  // test 58
+
+	static_strings_string_descriptor *move_test_source_string = static_strings_save((uint8_t *)"I am a move test\r\n");
+	if(copy_test_source_string != NULL){
+	  static_strings_string_descriptor *move_test_target_string = static_strings_allocate(100);
+	  *move_test_target_string->string = '.';
+	  if(static_strings_move(move_test_target_string,move_test_source_string,1) != NULL){
+		  if(move_test_source_string->status == STATIC_STRINGS_STRING_STATUS_DEALLOCATED){
+			HAL_UART_Transmit(&huart1,move_test_target_string->string,move_test_target_string->length,HAL_MAX_DELAY);
+		  }
+		  else{
+			HAL_UART_Transmit(&huart1,(uint8_t *)"error3\r\n",8,HAL_MAX_DELAY);
+		  }
+		  static_strings_deallocate(move_test_source_string);
+	  }
+	  else{
+		  HAL_UART_Transmit(&huart1,(uint8_t *)"error2\r\n",8,HAL_MAX_DELAY);
+		  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+	  }
+	}
+	else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"error1\r\n",8,HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+	}
+
+	// test 59
+
+	static_strings_string_descriptor *concatenate_and_clean_concatenate_at_test = static_strings_save((uint8_t *)"I am a ");
+	static_strings_string_descriptor *concatenate_and_clean_concatenate_test = static_strings_save((uint8_t *)"concatenate test\r\n");
+	if(concatenate_and_clean_concatenate_at_test != NULL && concatenate_and_clean_concatenate_test != NULL){
+	  static_strings_string_descriptor *concatenated_string = static_strings_concatenate_and_clean(concatenate_and_clean_concatenate_at_test,concatenate_and_clean_concatenate_test);
+	  if(concatenated_string != NULL){
+		  if(concatenate_and_clean_concatenate_at_test->status == STATIC_STRINGS_STRING_STATUS_DEALLOCATED){
+			  HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
+		  }
+		  else{
+			  HAL_UART_Transmit(&huart1,(uint8_t *)"error3\r\n",8,HAL_MAX_DELAY);
+		  }
+		  static_strings_deallocate(concatenate_and_clean_concatenate_at_test);
+		  static_strings_deallocate(concatenate_and_clean_concatenate_test);
+		  static_strings_deallocate(concatenated_string);
+	  }
+	  else{
+		  HAL_UART_Transmit(&huart1,(uint8_t *)"error2\r\n",8,HAL_MAX_DELAY);
+		  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+	  }
+	}
+	else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"error1\r\n",8,HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+	}
+
+	// test 60
+
+	static_strings_string_descriptor *concatenate_all_test_one = static_strings_save((uint8_t *)"I am a ");
+	static_strings_string_descriptor *concatenate_all_test_two = static_strings_save((uint8_t *)"concatenate all ");
+	static_strings_string_descriptor *concatenate_all_test_three = static_strings_save((uint8_t *)"test\r\n");
+	if(concatenate_all_test_one != NULL && concatenate_all_test_two != NULL && concatenate_all_test_three != NULL){
+	  static_strings_string_descriptor *concatenated_string = static_strings_concatenate_all(3,concatenate_all_test_one,concatenate_all_test_two,concatenate_all_test_three);
+	  if(concatenated_string != NULL){
+		  if(concatenate_all_test_one->status == STATIC_STRINGS_STRING_STATUS_ALLOCATED){
+			HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
+		  }
+		  else{
+			HAL_UART_Transmit(&huart1,(uint8_t *)"error3\r\n",8,HAL_MAX_DELAY);
+		  }
+		  static_strings_deallocate(concatenate_all_test_one);
+		  static_strings_deallocate(concatenate_all_test_two);
+		  static_strings_deallocate(concatenate_all_test_three);
+		  static_strings_deallocate(concatenated_string);
+	  }
+	  else{
+		  HAL_UART_Transmit(&huart1,(uint8_t *)"error2\r\n",8,HAL_MAX_DELAY);
+		  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+	  }
+	}
+	else{
+	  HAL_UART_Transmit(&huart1,(uint8_t *)"error1\r\n",8,HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
+	}
 
   /* USER CODE END 2 */
 

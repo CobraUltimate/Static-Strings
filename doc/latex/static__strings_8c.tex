@@ -14,9 +14,11 @@ void \mbox{\hyperlink{static__strings_8c_a755f8f841ccebea253245eaf7c467f43}{stat
 int \mbox{\hyperlink{static__strings_8c_a04d1917b2d23ead78a97b325cf2d61d0}{static\+\_\+strings\+\_\+get\+\_\+string\+\_\+max\+\_\+length}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$string)
 \begin{DoxyCompactList}\small\item\em get the maximum length allowed by the type of the string. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_ad4114a5410a819771dbf95b69653a8c4}{static\+\_\+strings\+\_\+copy}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+to, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+from, uint16\+\_\+t copy\+\_\+to\+\_\+offset)
-\begin{DoxyCompactList}\small\item\em Copy a string into another at determinate offset. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Copy a string into another at determinate offset. Leaves intact the string values before the offset. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a15fb80b02b23dd3d8b95d322d91c02c1}{static\+\_\+strings\+\_\+move}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$move\+\_\+to, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$move\+\_\+from, uint16\+\_\+t move\+\_\+to\+\_\+offset)
-\begin{DoxyCompactList}\small\item\em Move a string into another at determinate offset, if success the move\+\_\+to string is deallocated. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Move a string into another at determinate offset, if success the move\+\_\+to string is deallocated. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. Leaves intact the string values before the offset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a92ed2bd7609d9906794c273b93db1c5d}{static\+\_\+strings\+\_\+clone}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$clone\+\_\+from)
+\begin{DoxyCompactList}\small\item\em Clone a string into a new one. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a1eeaa84a1ce5796a99db77d98d792f0a}{static\+\_\+strings\+\_\+allocate}} (uint16\+\_\+t string\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Request memory for a string with its size, the user must copy the string with the descriptor and specify the size. Also see static\+\_\+strings\+\_\+save. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a279d5c443455117945d8725a6b09ca80}{static\+\_\+strings\+\_\+save}} (uint8\+\_\+t $\ast$string)
@@ -38,7 +40,9 @@ int \mbox{\hyperlink{static__strings_8c_ac6f737921cf90208b24245d293513891}{stati
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a9b449c5815fe472c22a37bc0d1ff7348}{static\+\_\+strings\+\_\+concatenate}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate\+\_\+at, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate)
 \begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first in a new string. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a65ec0229070ea29795656a30c4cd3c84}{static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate\+\_\+at, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate)
-\begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first. If there is available space in the first string the same string is used. If there is no available space in the first string a new string is used and the concatena\+\_\+at original string is deallocated. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first in a new string and deallocate the concatenate at parameter if success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a066ed88b7d60d317eef83b3f4cffe28b}{static\+\_\+strings\+\_\+concatenate\+\_\+all}} (uint16\+\_\+t arguments\+\_\+quantity,...)
+\begin{DoxyCompactList}\small\item\em Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter. This function must be used careful. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{static__strings_8c_a75d874016cceab1a187f151c1bf39ac2}{static\+\_\+strings\+\_\+contains\+\_\+string}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+in, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+for)
 \begin{DoxyCompactList}\small\item\em Search a string in other string. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{static__strings_8c_acdbbe803d3bccbd8c36e0d64941b628d}{static\+\_\+strings\+\_\+contains\+\_\+char}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+in, uint8\+\_\+t search\+\_\+for)
@@ -92,6 +96,24 @@ Request memory for a string with its size, the user must copy the string with th
 \begin{DoxyReturn}{Returns}
 A pointer to the string descriptor, if N\+U\+LL check static\+\_\+strings\+\_\+error\+\_\+code. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a92ed2bd7609d9906794c273b93db1c5d}\label{static__strings_8c_a92ed2bd7609d9906794c273b93db1c5d}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_clone@{static\_strings\_clone}}
+\index{static\_strings\_clone@{static\_strings\_clone}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_clone()}{static\_strings\_clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{clone\+\_\+from }\end{DoxyParamCaption})}
+
+
+
+Clone a string into a new one. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+clone(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$clone\+\_\+from) 
+\begin{DoxyParams}{Parameters}
+{\em clone\+\_\+from} & Pointer to the string to clone. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the descriptor with the cloned string if success, if an error occur return N\+U\+LL, check static\+\_\+strings\+\_\+error\+\_\+code for further information. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{static__strings_8c_a0bade030b470fba4a545ae63ead6903b}\label{static__strings_8c_a0bade030b470fba4a545ae63ead6903b}} 
 \index{static\_strings.c@{static\_strings.c}!static\_strings\_compare@{static\_strings\_compare}}
 \index{static\_strings\_compare@{static\_strings\_compare}!static\_strings.c@{static\_strings.c}}
@@ -132,6 +154,26 @@ Concatenate the second string at the end of the first in a new string.
 \begin{DoxyReturn}{Returns}
 A pointer to the string descriptor with the concatenated string, if N\+U\+LL check static\+\_\+strings\+\_\+error\+\_\+code. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a066ed88b7d60d317eef83b3f4cffe28b}\label{static__strings_8c_a066ed88b7d60d317eef83b3f4cffe28b}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_concatenate\_all@{static\_strings\_concatenate\_all}}
+\index{static\_strings\_concatenate\_all@{static\_strings\_concatenate\_all}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_concatenate\_all()}{static\_strings\_concatenate\_all()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+concatenate\+\_\+all (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{arguments\+\_\+quantity,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter. This function must be used careful. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+concatenate\+\_\+all(uint16\+\_\+t arguments\+\_\+quantity,...) 
+\begin{DoxyParams}{Parameters}
+{\em arguments\+\_\+quantity} & The number of strings to concatenate. \\
+\hline
+{\em ...} & Multiple arguments of type static\+\_\+strigs\+\_\+string\+\_\+descriptor pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the concatenated string, if N\+U\+LL check static\+\_\+strings\+\_\+error\+\_\+code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{static__strings_8c_a65ec0229070ea29795656a30c4cd3c84}\label{static__strings_8c_a65ec0229070ea29795656a30c4cd3c84}} 
 \index{static\_strings.c@{static\_strings.c}!static\_strings\_concatenate\_and\_clean@{static\_strings\_concatenate\_and\_clean}}
 \index{static\_strings\_concatenate\_and\_clean@{static\_strings\_concatenate\_and\_clean}!static\_strings.c@{static\_strings.c}}
@@ -140,11 +182,11 @@ A pointer to the string descriptor with the concatenated string, if N\+U\+LL che
 
 
 
-Concatenate the second string at the end of the first. If there is available space in the first string the same string is used. If there is no available space in the first string a new string is used and the concatena\+\_\+at original string is deallocated. 
+Concatenate the second string at the end of the first in a new string and deallocate the concatenate at parameter if success. 
 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} {\itshape static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}} concatenate\+\_\+at,static\+\_\+strings\+\_\+string\+\_\+descriptor$\ast$ concatenate) 
 \begin{DoxyParams}{Parameters}
-{\em concatenate\+\_\+at} & A pointer to the string to concatenate at. \\
+{\em concatenate\+\_\+at} & A pointer to the string to concatenate at, it is deallocates if success. \\
 \hline
 {\em concatenate} & A pointer to the string to concatenate at the end of the concatenate\+\_\+at string. \\
 \hline
@@ -200,11 +242,11 @@ int \mbox{\hyperlink{static__strings_8h_a75d874016cceab1a187f151c1bf39ac2}{stati
 
 
 
-Copy a string into another at determinate offset. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. 
+Copy a string into another at determinate offset. Leaves intact the string values before the offset. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. 
 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+copy(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+to,\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+from,uint16\+\_\+t copy\+\_\+to\+\_\+offset) 
 \begin{DoxyParams}{Parameters}
-{\em copy\+\_\+to} & Pointer to the string to copy in. \\
+{\em copy\+\_\+to} & Pointer to the string to copy in. String must have a defined type and length before use this function \\
 \hline
 {\em copy\+\_\+from} & Pointer to the string to copy from. \\
 \hline
@@ -393,11 +435,11 @@ Return 0 if the string does\textquotesingle{}t have a line ending \textbackslash
 
 
 
-Move a string into another at determinate offset, if success the move\+\_\+to string is deallocated. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. 
+Move a string into another at determinate offset, if success the move\+\_\+to string is deallocated. Can throw S\+T\+A\+T\+I\+C\+\_\+\+S\+T\+R\+I\+N\+G\+S\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+D\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+O\+V\+E\+R\+F\+L\+OW. Leaves intact the string values before the offset. 
 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+move(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$move\+\_\+to,\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$move\+\_\+from,uint16\+\_\+t move\+\_\+to\+\_\+offset) 
 \begin{DoxyParams}{Parameters}
-{\em move\+\_\+to} & Pointer to the string to move in. \\
+{\em move\+\_\+to} & Pointer to the string to move in. String must have a defined type and length before use this function \\
 \hline
 {\em move\+\_\+from} & Pointer to the string to move from. \\
 \hline
