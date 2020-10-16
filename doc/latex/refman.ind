@@ -12,151 +12,161 @@
   \item {Static memory arrays}, \hyperpage{15}
   \item {static\_strings.c}, \hyperpage{19}
     \subitem {static\_strings\_allocate}, \hyperpage{21}
+    \subitem {static\_strings\_clone}, \hyperpage{22}
     \subitem {static\_strings\_compare}, \hyperpage{22}
-    \subitem {static\_strings\_concatenate}, \hyperpage{22}
-    \subitem {static\_strings\_concatenate\_and\_clean}, \hyperpage{22}
-    \subitem {static\_strings\_contains\_char}, \hyperpage{23}
-    \subitem {static\_strings\_contains\_string}, \hyperpage{23}
-    \subitem {static\_strings\_copy}, \hyperpage{24}
-    \subitem {static\_strings\_create\_custom\_string}, \hyperpage{24}
-    \subitem {static\_strings\_deallocate}, \hyperpage{25}
-    \subitem {static\_strings\_double\_to\_string}, \hyperpage{25}
-    \subitem {static\_strings\_float\_to\_string}, \hyperpage{25}
+    \subitem {static\_strings\_concatenate}, \hyperpage{23}
+    \subitem {static\_strings\_concatenate\_all}, \hyperpage{23}
+    \subitem {static\_strings\_concatenate\_and\_clean}, \hyperpage{23}
+    \subitem {static\_strings\_contains\_char}, \hyperpage{24}
+    \subitem {static\_strings\_contains\_string}, \hyperpage{24}
+    \subitem {static\_strings\_copy}, \hyperpage{26}
+    \subitem {static\_strings\_create\_custom\_string}, \hyperpage{26}
+    \subitem {static\_strings\_deallocate}, \hyperpage{27}
+    \subitem {static\_strings\_double\_to\_string}, \hyperpage{27}
+    \subitem {static\_strings\_float\_to\_string}, \hyperpage{27}
     \subitem {static\_strings\_get\_string\_max\_length}, 
-		\hyperpage{26}
-    \subitem {static\_strings\_init}, \hyperpage{26}
-    \subitem {static\_strings\_int16\_to\_string}, \hyperpage{26}
-    \subitem {static\_strings\_int32\_to\_string}, \hyperpage{27}
-    \subitem {static\_strings\_int8\_to\_string}, \hyperpage{27}
-    \subitem {static\_strings\_is\_line}, \hyperpage{27}
-    \subitem {static\_strings\_move}, \hyperpage{28}
-    \subitem {static\_strings\_save}, \hyperpage{28}
-    \subitem {static\_strings\_string\_splitter}, \hyperpage{33}
+		\hyperpage{28}
+    \subitem {static\_strings\_init}, \hyperpage{28}
+    \subitem {static\_strings\_int16\_to\_string}, \hyperpage{28}
+    \subitem {static\_strings\_int32\_to\_string}, \hyperpage{29}
+    \subitem {static\_strings\_int8\_to\_string}, \hyperpage{29}
+    \subitem {static\_strings\_is\_line}, \hyperpage{29}
+    \subitem {static\_strings\_move}, \hyperpage{30}
+    \subitem {static\_strings\_save}, \hyperpage{30}
+    \subitem {static\_strings\_string\_splitter}, \hyperpage{34}
     \subitem {static\_strings\_string\_splitter\_get\_next\_token}, 
-		\hyperpage{30}
+		\hyperpage{31}
     \subitem {static\_strings\_string\_splitter\_set\_parameters}, 
-		\hyperpage{30}
-    \subitem {static\_strings\_strlen}, \hyperpage{30}
-    \subitem {static\_strings\_substring}, \hyperpage{31}
-    \subitem {static\_strings\_uint16\_to\_string}, \hyperpage{31}
+		\hyperpage{31}
+    \subitem {static\_strings\_strlen}, \hyperpage{32}
+    \subitem {static\_strings\_substring}, \hyperpage{32}
+    \subitem {static\_strings\_uint16\_to\_string}, \hyperpage{32}
     \subitem {static\_strings\_uint32\_to\_string}, \hyperpage{33}
     \subitem {static\_strings\_uint8\_to\_string}, \hyperpage{33}
   \item {static\_strings.h}, \hyperpage{34}
     \subitem {static\_strings\_allocate}, \hyperpage{37}
-    \subitem {static\_strings\_compare}, \hyperpage{37}
-    \subitem {static\_strings\_concatenate}, \hyperpage{37}
-    \subitem {static\_strings\_concatenate\_and\_clean}, \hyperpage{38}
-    \subitem {static\_strings\_contains\_char}, \hyperpage{38}
-    \subitem {static\_strings\_contains\_string}, \hyperpage{39}
-    \subitem {static\_strings\_copy}, \hyperpage{39}
-    \subitem {static\_strings\_create\_custom\_string}, \hyperpage{40}
-    \subitem {static\_strings\_deallocate}, \hyperpage{40}
-    \subitem {static\_strings\_double\_to\_string}, \hyperpage{40}
-    \subitem {static\_strings\_float\_to\_string}, \hyperpage{41}
+    \subitem {static\_strings\_clone}, \hyperpage{38}
+    \subitem {static\_strings\_compare}, \hyperpage{38}
+    \subitem {static\_strings\_concatenate}, \hyperpage{39}
+    \subitem {static\_strings\_concatenate\_all}, \hyperpage{39}
+    \subitem {static\_strings\_concatenate\_and\_clean}, \hyperpage{39}
+    \subitem {static\_strings\_contains\_char}, \hyperpage{40}
+    \subitem {static\_strings\_contains\_string}, \hyperpage{40}
+    \subitem {static\_strings\_copy}, \hyperpage{42}
+    \subitem {static\_strings\_create\_custom\_string}, \hyperpage{42}
+    \subitem {static\_strings\_deallocate}, \hyperpage{43}
+    \subitem {static\_strings\_double\_to\_string}, \hyperpage{43}
+    \subitem {static\_strings\_float\_to\_string}, \hyperpage{43}
     \subitem {static\_strings\_get\_string\_max\_length}, 
-		\hyperpage{41}
-    \subitem {static\_strings\_init}, \hyperpage{42}
-    \subitem {static\_strings\_int16\_to\_string}, \hyperpage{42}
-    \subitem {static\_strings\_int32\_to\_string}, \hyperpage{42}
-    \subitem {static\_strings\_int8\_to\_string}, \hyperpage{43}
-    \subitem {static\_strings\_is\_line}, \hyperpage{43}
-    \subitem {static\_strings\_move}, \hyperpage{43}
-    \subitem {static\_strings\_save}, \hyperpage{44}
-    \subitem {static\_strings\_string\_splitter}, \hyperpage{47}
-    \subitem {static\_strings\_string\_splitter\_get\_next\_token}, 
 		\hyperpage{44}
+    \subitem {static\_strings\_init}, \hyperpage{44}
+    \subitem {static\_strings\_int16\_to\_string}, \hyperpage{44}
+    \subitem {static\_strings\_int32\_to\_string}, \hyperpage{45}
+    \subitem {static\_strings\_int8\_to\_string}, \hyperpage{45}
+    \subitem {static\_strings\_is\_line}, \hyperpage{45}
+    \subitem {static\_strings\_move}, \hyperpage{46}
+    \subitem {static\_strings\_save}, \hyperpage{46}
+    \subitem {static\_strings\_string\_splitter}, \hyperpage{50}
+    \subitem {static\_strings\_string\_splitter\_get\_next\_token}, 
+		\hyperpage{47}
     \subitem {static\_strings\_string\_splitter\_set\_parameters}, 
-		\hyperpage{45}
-    \subitem {static\_strings\_strlen}, \hyperpage{45}
-    \subitem {static\_strings\_substring}, \hyperpage{46}
-    \subitem {static\_strings\_uint16\_to\_string}, \hyperpage{46}
-    \subitem {static\_strings\_uint32\_to\_string}, \hyperpage{46}
-    \subitem {static\_strings\_uint8\_to\_string}, \hyperpage{47}
+		\hyperpage{47}
+    \subitem {static\_strings\_strlen}, \hyperpage{48}
+    \subitem {static\_strings\_substring}, \hyperpage{48}
+    \subitem {static\_strings\_uint16\_to\_string}, \hyperpage{48}
+    \subitem {static\_strings\_uint32\_to\_string}, \hyperpage{49}
+    \subitem {static\_strings\_uint8\_to\_string}, \hyperpage{49}
   \item {static\_strings\_allocate}
     \subitem {static\_strings.c}, \hyperpage{21}
     \subitem {static\_strings.h}, \hyperpage{37}
+  \item {static\_strings\_clone}
+    \subitem {static\_strings.c}, \hyperpage{22}
+    \subitem {static\_strings.h}, \hyperpage{38}
   \item {static\_strings\_compare}
     \subitem {static\_strings.c}, \hyperpage{22}
-    \subitem {static\_strings.h}, \hyperpage{37}
+    \subitem {static\_strings.h}, \hyperpage{38}
   \item {static\_strings\_concatenate}
-    \subitem {static\_strings.c}, \hyperpage{22}
-    \subitem {static\_strings.h}, \hyperpage{37}
+    \subitem {static\_strings.c}, \hyperpage{23}
+    \subitem {static\_strings.h}, \hyperpage{39}
+  \item {static\_strings\_concatenate\_all}
+    \subitem {static\_strings.c}, \hyperpage{23}
+    \subitem {static\_strings.h}, \hyperpage{39}
   \item {static\_strings\_concatenate\_and\_clean}
-    \subitem {static\_strings.c}, \hyperpage{22}
-    \subitem {static\_strings.h}, \hyperpage{38}
+    \subitem {static\_strings.c}, \hyperpage{23}
+    \subitem {static\_strings.h}, \hyperpage{39}
   \item {static\_strings\_contains\_char}
-    \subitem {static\_strings.c}, \hyperpage{23}
-    \subitem {static\_strings.h}, \hyperpage{38}
+    \subitem {static\_strings.c}, \hyperpage{24}
+    \subitem {static\_strings.h}, \hyperpage{40}
   \item {static\_strings\_contains\_string}
-    \subitem {static\_strings.c}, \hyperpage{23}
-    \subitem {static\_strings.h}, \hyperpage{39}
+    \subitem {static\_strings.c}, \hyperpage{24}
+    \subitem {static\_strings.h}, \hyperpage{40}
   \item {static\_strings\_copy}
-    \subitem {static\_strings.c}, \hyperpage{24}
-    \subitem {static\_strings.h}, \hyperpage{39}
+    \subitem {static\_strings.c}, \hyperpage{26}
+    \subitem {static\_strings.h}, \hyperpage{42}
   \item {static\_strings\_create\_custom\_string}
-    \subitem {static\_strings.c}, \hyperpage{24}
-    \subitem {static\_strings.h}, \hyperpage{40}
+    \subitem {static\_strings.c}, \hyperpage{26}
+    \subitem {static\_strings.h}, \hyperpage{42}
   \item {static\_strings\_deallocate}
-    \subitem {static\_strings.c}, \hyperpage{25}
-    \subitem {static\_strings.h}, \hyperpage{40}
+    \subitem {static\_strings.c}, \hyperpage{27}
+    \subitem {static\_strings.h}, \hyperpage{43}
   \item {static\_strings\_double\_to\_string}
-    \subitem {static\_strings.c}, \hyperpage{25}
-    \subitem {static\_strings.h}, \hyperpage{40}
+    \subitem {static\_strings.c}, \hyperpage{27}
+    \subitem {static\_strings.h}, \hyperpage{43}
   \item {static\_strings\_error\_code}
     \subitem {Error handling}, \hyperpage{14}
   \item {static\_strings\_float\_to\_string}
-    \subitem {static\_strings.c}, \hyperpage{25}
-    \subitem {static\_strings.h}, \hyperpage{41}
+    \subitem {static\_strings.c}, \hyperpage{27}
+    \subitem {static\_strings.h}, \hyperpage{43}
   \item {static\_strings\_get\_string\_max\_length}
-    \subitem {static\_strings.c}, \hyperpage{26}
-    \subitem {static\_strings.h}, \hyperpage{41}
-  \item {static\_strings\_init}
-    \subitem {static\_strings.c}, \hyperpage{26}
-    \subitem {static\_strings.h}, \hyperpage{42}
-  \item {static\_strings\_int16\_to\_string}
-    \subitem {static\_strings.c}, \hyperpage{26}
-    \subitem {static\_strings.h}, \hyperpage{42}
-  \item {static\_strings\_int32\_to\_string}
-    \subitem {static\_strings.c}, \hyperpage{27}
-    \subitem {static\_strings.h}, \hyperpage{42}
-  \item {static\_strings\_int8\_to\_string}
-    \subitem {static\_strings.c}, \hyperpage{27}
-    \subitem {static\_strings.h}, \hyperpage{43}
-  \item {static\_strings\_is\_line}
-    \subitem {static\_strings.c}, \hyperpage{27}
-    \subitem {static\_strings.h}, \hyperpage{43}
-  \item {static\_strings\_move}
-    \subitem {static\_strings.c}, \hyperpage{28}
-    \subitem {static\_strings.h}, \hyperpage{43}
-  \item {static\_strings\_save}
     \subitem {static\_strings.c}, \hyperpage{28}
     \subitem {static\_strings.h}, \hyperpage{44}
+  \item {static\_strings\_init}
+    \subitem {static\_strings.c}, \hyperpage{28}
+    \subitem {static\_strings.h}, \hyperpage{44}
+  \item {static\_strings\_int16\_to\_string}
+    \subitem {static\_strings.c}, \hyperpage{28}
+    \subitem {static\_strings.h}, \hyperpage{44}
+  \item {static\_strings\_int32\_to\_string}
+    \subitem {static\_strings.c}, \hyperpage{29}
+    \subitem {static\_strings.h}, \hyperpage{45}
+  \item {static\_strings\_int8\_to\_string}
+    \subitem {static\_strings.c}, \hyperpage{29}
+    \subitem {static\_strings.h}, \hyperpage{45}
+  \item {static\_strings\_is\_line}
+    \subitem {static\_strings.c}, \hyperpage{29}
+    \subitem {static\_strings.h}, \hyperpage{45}
+  \item {static\_strings\_move}
+    \subitem {static\_strings.c}, \hyperpage{30}
+    \subitem {static\_strings.h}, \hyperpage{46}
+  \item {static\_strings\_save}
+    \subitem {static\_strings.c}, \hyperpage{30}
+    \subitem {static\_strings.h}, \hyperpage{46}
   \item {static\_strings\_string\_descriptor}, \hyperpage{17}
   \item {static\_strings\_string\_splitter}
-    \subitem {static\_strings.c}, \hyperpage{33}
-    \subitem {static\_strings.h}, \hyperpage{47}
+    \subitem {static\_strings.c}, \hyperpage{34}
+    \subitem {static\_strings.h}, \hyperpage{50}
   \item {static\_strings\_string\_splitter\_get\_next\_token}
-    \subitem {static\_strings.c}, \hyperpage{30}
-    \subitem {static\_strings.h}, \hyperpage{44}
+    \subitem {static\_strings.c}, \hyperpage{31}
+    \subitem {static\_strings.h}, \hyperpage{47}
   \item {static\_strings\_string\_splitter\_parameters}, \hyperpage{17}
   \item {static\_strings\_string\_splitter\_set\_parameters}
-    \subitem {static\_strings.c}, \hyperpage{30}
-    \subitem {static\_strings.h}, \hyperpage{45}
+    \subitem {static\_strings.c}, \hyperpage{31}
+    \subitem {static\_strings.h}, \hyperpage{47}
   \item {static\_strings\_strlen}
-    \subitem {static\_strings.c}, \hyperpage{30}
-    \subitem {static\_strings.h}, \hyperpage{45}
+    \subitem {static\_strings.c}, \hyperpage{32}
+    \subitem {static\_strings.h}, \hyperpage{48}
   \item {static\_strings\_substring}
-    \subitem {static\_strings.c}, \hyperpage{31}
-    \subitem {static\_strings.h}, \hyperpage{46}
+    \subitem {static\_strings.c}, \hyperpage{32}
+    \subitem {static\_strings.h}, \hyperpage{48}
   \item {static\_strings\_uint16\_to\_string}
-    \subitem {static\_strings.c}, \hyperpage{31}
-    \subitem {static\_strings.h}, \hyperpage{46}
+    \subitem {static\_strings.c}, \hyperpage{32}
+    \subitem {static\_strings.h}, \hyperpage{48}
   \item {static\_strings\_uint32\_to\_string}
     \subitem {static\_strings.c}, \hyperpage{33}
-    \subitem {static\_strings.h}, \hyperpage{46}
+    \subitem {static\_strings.h}, \hyperpage{49}
   \item {static\_strings\_uint8\_to\_string}
     \subitem {static\_strings.c}, \hyperpage{33}
-    \subitem {static\_strings.h}, \hyperpage{47}
+    \subitem {static\_strings.h}, \hyperpage{49}
   \item {String descriptors}, \hyperpage{16}
   \item {String status}, \hyperpage{13}
   \item {String types}, \hyperpage{12}
