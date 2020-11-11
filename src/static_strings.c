@@ -101,6 +101,8 @@ static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
 		for(i = 0; i < STATIC_STRINGS_VERY_SHORT_STRING_QUANTITY;i++){
 			if(static_strings_very_short_strings_descriptors[i].status == STATIC_STRINGS_STRING_STATUS_DEALLOCATED){
 				static_strings_very_short_strings_descriptors[i].status = STATIC_STRINGS_STRING_STATUS_ALLOCATED;
+				static_strings_very_short_strings_descriptors[i].length = 0;
+				memset(static_strings_very_short_strings_descriptors[i].string,0,STATIC_STRINGS_VERY_SHORT_STRING_SIZE);
 				return &static_strings_very_short_strings_descriptors[i];
 			}
 		}
@@ -109,6 +111,8 @@ static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
 		for(i = 0; i < STATIC_STRINGS_SHORT_STRING_QUANTITY;i++){
 			if(static_strings_short_strings_descriptors[i].status == STATIC_STRINGS_STRING_STATUS_DEALLOCATED){
 				static_strings_short_strings_descriptors[i].status = STATIC_STRINGS_STRING_STATUS_ALLOCATED;
+				static_strings_short_strings_descriptors[i].length = 0;
+				memset(static_strings_short_strings_descriptors[i].string,0,STATIC_STRINGS_SHORT_STRING_SIZE);
 				return &static_strings_short_strings_descriptors[i];
 			}
 		}
@@ -117,6 +121,8 @@ static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
 		for(i = 0; i < STATIC_STRINGS_MEDIUM_STRING_QUANTITY;i++){
 			if(static_strings_medium_strings_descriptors[i].status == STATIC_STRINGS_STRING_STATUS_DEALLOCATED){
 				static_strings_medium_strings_descriptors[i].status = STATIC_STRINGS_STRING_STATUS_ALLOCATED;
+				static_strings_medium_strings_descriptors[i].length = 0;
+				memset(static_strings_medium_strings_descriptors[i].string,0,STATIC_STRINGS_MEDIUM_STRING_SIZE);
 				return &static_strings_medium_strings_descriptors[i];
 			}
 		}
@@ -125,6 +131,8 @@ static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
 		for(i = 0; i < STATIC_STRINGS_LONG_STRING_QUANTITY;i++){
 			if(static_strings_long_strings_descriptors[i].status == STATIC_STRINGS_STRING_STATUS_DEALLOCATED){
 				static_strings_long_strings_descriptors[i].status = STATIC_STRINGS_STRING_STATUS_ALLOCATED;
+				static_strings_long_strings_descriptors[i].length = 0;
+				memset(static_strings_long_strings_descriptors[i].string,0,STATIC_STRINGS_LONG_STRING_SIZE);
 				return &static_strings_long_strings_descriptors[i];
 			}
 		}
@@ -133,6 +141,8 @@ static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
 		for(i = 0; i < STATIC_STRINGS_VERY_LONG_STRING_QUANTITY;i++){
 			if(static_strings_very_long_strings_descriptors[i].status == STATIC_STRINGS_STRING_STATUS_DEALLOCATED){
 				static_strings_very_long_strings_descriptors[i].status = STATIC_STRINGS_STRING_STATUS_ALLOCATED;
+				static_strings_very_long_strings_descriptors[i].length = 0;
+				memset(static_strings_very_long_strings_descriptors[i].string,0,STATIC_STRINGS_VERY_LONG_STRING_SIZE);
 				return &static_strings_very_long_strings_descriptors[i];
 			}
 		}
@@ -184,22 +194,22 @@ int static_strings_is_line(static_strings_string_descriptor *string_descriptor){
 uint16_t static_strings_strlen(uint8_t *string){
 	uint16_t length;
 	for(length = 0;length < STATIC_STRINGS_VERY_LONG_STRING_SIZE;length++){
-		if( *(string + length) == '\r'){
-			break;
+		if( *(string + length) == '\r' && length < STATIC_STRINGS_VERY_LONG_STRING_SIZE - 1){
+			if(*(string + length + 1) == '\n'){
+				length += 2;
+				break;
+			}
 		}
 		if( *(string + length) == '\0'){
-			return length;
+			break;
 		}
 	}
-	if(length >= 999){
-		static_strings_error_code = STATIC_STRINGS_ERROR_CODE_INVALID_STRING;
+	if(length >= STATIC_STRINGS_VERY_LONG_STRING_SIZE){
+		static_strings_error_code = STATIC_STRINGS_ERROR_CODE_STRING_TOO_LONG;
 		return 0;
 	}
 	else{
-		if(*(string + length + 1) != '\n'){
-			*(string + length + 1) = '\n';
-		}
-		return length + 2;
+		return length;
 	}
 }
 
@@ -253,6 +263,7 @@ static_strings_string_descriptor *static_strings_concatenate(static_strings_stri
 	int concatenated_string_length = concatenate_at->length + concatenate->length;
 	static_strings_string_descriptor *concatenated_string = static_strings_allocate(concatenated_string_length);
 	if(concatenated_string == NULL){
+		static_strings_error_code = STATIC_STRINGS_ERROR_CODE_STRING_TOO_LONG;
 		return concatenated_string;
 	}
 	memcpy(concatenated_string->string,concatenate_at->string,concatenate_at->length);
@@ -270,6 +281,16 @@ static_strings_string_descriptor *static_strings_concatenate_and_clean(static_st
 	return concatenated_string;
 }
 
+static_strings_string_descriptor *static_strings_concatenate_and_clean_both(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate){
+	static_strings_string_descriptor* concatenated_string = static_strings_concatenate(concatenate_at,concatenate);
+	if(concatenated_string == NULL){
+		return concatenated_string;
+	}
+	static_strings_deallocate(concatenate_at);
+	static_strings_deallocate(concatenate);
+	return concatenated_string;
+}
+
 static_strings_string_descriptor *static_strings_concatenate_all(uint16_t arguments_quantity,...){
 	va_list arguments_list;
 	int i;
@@ -280,6 +301,22 @@ static_strings_string_descriptor *static_strings_concatenate_all(uint16_t argume
 	for (i = 0; i < arguments_quantity;i++){
 		next_string_to_concatenate = va_arg(arguments_list, static_strings_string_descriptor *);
 		concatenated_string = static_strings_concatenate_and_clean(concatenated_string,next_string_to_concatenate);
+	}
+	va_end(arguments_list);
+	return concatenated_string;
+}
+
+static_strings_string_descriptor *static_strings_concatenate_and_clean_all(uint16_t arguments_quantity,...){
+	va_list arguments_list;
+	int i;
+	va_start(arguments_list, arguments_quantity);
+	static_strings_string_descriptor *next_string_to_concatenate;
+	static_strings_string_descriptor *concatenated_string = static_strings_allocate(0);
+	concatenated_string->length = 0;
+	for (i = 0; i < arguments_quantity;i++){
+		next_string_to_concatenate = va_arg(arguments_list, static_strings_string_descriptor *);
+		concatenated_string = static_strings_concatenate_and_clean(concatenated_string,next_string_to_concatenate);
+		static_strings_deallocate(next_string_to_concatenate);
 	}
 	va_end(arguments_list);
 	return concatenated_string;

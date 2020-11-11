@@ -26,10 +26,10 @@
 #define STATIC_STRINGS_MEDIUM_STRING_QUANTITY 2
 
 #define STATIC_STRINGS_LONG_STRING_SIZE 500
-#define STATIC_STRINGS_LONG_STRING_QUANTITY 1
+#define STATIC_STRINGS_LONG_STRING_QUANTITY 2
 
-#define STATIC_STRINGS_VERY_LONG_STRING_SIZE 1000
-#define STATIC_STRINGS_VERY_LONG_STRING_QUANTITY 1
+#define STATIC_STRINGS_VERY_LONG_STRING_SIZE 1500
+#define STATIC_STRINGS_VERY_LONG_STRING_QUANTITY 2
 /**@}*/
 
 /** \defgroup string_types String types
@@ -57,12 +57,13 @@
  * \brief Error codes.
  */
 ///@{
-#define STATIC_STRINGS_ERROR_CODE_NO_MEMORY_AVAILABLE 0
-#define STATIC_STRINGS_ERROR_CODE_INVALID_STRING 1
-#define STATIC_STRINGS_ERROR_CODE_STRING_TOO_LONG 2
-#define STATIC_STRINGS_ERROR_CODE_SUBSTRING_START_INDEX_OUT_OF_RANGE 3
-#define STATIC_STRINGS_ERROR_CODE_SUBSTRING_FINISH_INDEX_OUT_OF_RANGE 4
-#define STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW 5
+#define STATIC_STRINGS_ERROR_CODE_NO_ERROR 0
+#define STATIC_STRINGS_ERROR_CODE_NO_MEMORY_AVAILABLE 1
+#define STATIC_STRINGS_ERROR_CODE_INVALID_STRING 2
+#define STATIC_STRINGS_ERROR_CODE_STRING_TOO_LONG 3
+#define STATIC_STRINGS_ERROR_CODE_SUBSTRING_START_INDEX_OUT_OF_RANGE 4
+#define STATIC_STRINGS_ERROR_CODE_SUBSTRING_FINISH_INDEX_OUT_OF_RANGE 5
+#define STATIC_STRINGS_ERROR_CODE_STRING_OVERFLOW 6
 /** static_strings_error_code
  * \brief Global variable to store error code.
  */
@@ -115,6 +116,7 @@ static_strings_string_descriptor static_strings_very_long_strings_descriptors[ST
 
 /** void static_strings_init()
  * \brief Link the descriptors with the arrays and initialize the status as deallocated.
+ * Also can be used to reset the state of all the string descriptors.
  */
 void static_strings_init();
 
@@ -246,6 +248,14 @@ static_strings_string_descriptor *static_strings_concatenate(static_strings_stri
  */
 static_strings_string_descriptor *static_strings_concatenate_and_clean(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate);
 
+/** static_strings_string_descriptor *static_strings_concatenate_and_clean(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate)
+ * \brief Concatenate the second string at the end of the first in a new string and deallocate both parameters.
+ * \param concatenate_at A pointer to the string to concatenate at, it is deallocates if success.
+ * \param concatenate A pointer to the string to concatenate at the end of the concatenate_at string, it is deallocates if success.
+ * \return A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code.
+ */
+static_strings_string_descriptor *static_strings_concatenate_and_clean_both(static_strings_string_descriptor* concatenate_at,static_strings_string_descriptor* concatenate);
+
 /** static_strings_string_descriptor *static_strings_concatenate_all(uint16_t arguments_quantity,...)
  * \brief Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter.
  * This function must be used careful.
@@ -254,6 +264,16 @@ static_strings_string_descriptor *static_strings_concatenate_and_clean(static_st
  * \return A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code.
  */
 static_strings_string_descriptor *static_strings_concatenate_all(uint16_t arguments_quantity,...);
+
+/** static_strings_string_descriptor *static_strings_concatenate_all(uint16_t arguments_quantity,...)
+ * \brief Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter.
+ * All the parameters are deallocated if success.
+ * This function must be used careful.
+ * \param arguments_quantity The number of strings to concatenate.
+ * \param ... Multiple arguments of type static_strigs_string_descriptor pointer, these parameters are deallocated if success.
+ * \return A pointer to the string descriptor with the concatenated string, if NULL check static_strings_error_code.
+ */
+static_strings_string_descriptor *static_strings_concatenate_and_clean_all(uint16_t arguments_quantity,...);
 
 /** int static_strings_contains_string(static_strings_string_descriptor* search_in,static_strings_string_descriptor* search_for)
  * \brief Search a string in other string.

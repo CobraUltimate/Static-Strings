@@ -210,6 +210,11 @@ int main(void)
 
   //test 24
 
+  string_descriptor = static_strings_save((uint8_t *)"useless_string");
+  while(string_descriptor != NULL){
+	  string_descriptor = static_strings_save((uint8_t *)"useless_string");
+  }
+
   uint8_t no_memory_string[800];
   for(i = 0; i < 798; i++){
 	  no_memory_string[i] = 'a';
@@ -225,14 +230,16 @@ int main(void)
   }
   HAL_UART_Transmit(&huart1,&error_code_char,1,HAL_MAX_DELAY);
 
+  static_strings_init();
+
   //test 25
 
-  uint8_t unallocable_invalid_string[1200];
-  for(i = 0; i < 1198; i++){
+  uint8_t unallocable_invalid_string[STATIC_STRINGS_VERY_LONG_STRING_SIZE + 100];
+  for(i = 0; i < STATIC_STRINGS_VERY_LONG_STRING_SIZE + 100; i++){
 	  unallocable_invalid_string[i] = 'a';
   }
-  unallocable_invalid_string[1198] = '\r';
-  unallocable_invalid_string[1199] = '\n';
+  unallocable_invalid_string[STATIC_STRINGS_VERY_LONG_STRING_SIZE + 100 - 2] = '\r';
+  unallocable_invalid_string[STATIC_STRINGS_VERY_LONG_STRING_SIZE + 100 - 1] = '\n';
   string_descriptor = static_strings_save(unallocable_invalid_string);
   if(string_descriptor == NULL){
 	  error_code_char = static_strings_error_code + 48;
@@ -242,7 +249,7 @@ int main(void)
   }
   HAL_UART_Transmit(&huart1,&error_code_char,1,HAL_MAX_DELAY);
 
-  //test 26
+  //test 26 deprecated
 
   uint8_t no_line_end_invalid_string[800];
   for(i = 0; i < 800; i++){
@@ -257,7 +264,7 @@ int main(void)
   }
   HAL_UART_Transmit(&huart1,&error_code_char,1,HAL_MAX_DELAY);
 
-  //test 27
+  //test 27 deprecated
 
   string_descriptor = static_strings_allocate(1200);
   if(string_descriptor == NULL){

@@ -6,7 +6,7 @@ from termcolor import colored
 init()
 
 ser = serial.Serial()
-ser.port = 'COM3'
+ser.port = 'COM7'
 ser.baudrate = 115200
 ser.open()
 
@@ -181,31 +181,23 @@ else:
 
 error_code = ser.read()
 print(error_code)
-if error_code == b'0':
+if error_code == b'1':
 	print(colored('success test 24','blue'))
 else:
 	print(colored('fail test 24','red'))
 
 error_code = ser.read()
 print(error_code)
-if error_code == b'1':
+if error_code == b'3':
 	print(colored('success test 25','blue'))
 else:
 	print(colored('fail test 25','red'))
 
 error_code = ser.read()
-print(error_code)
-if error_code == b'1':
-	print(colored('success test 26','blue'))
-else:
-	print(colored('fail test 26','red'))
+print(colored('success test 26 - deprecated','blue'))
 
 error_code = ser.read()
-print(error_code)
-if error_code == b'2':
-	print(colored('success test 27','blue'))
-else:
-	print(colored('fail test 27','red'))
+print(colored('success test 27 deprecated','blue'))
 
 null_terminated = ser.read(9)
 print(null_terminated)
