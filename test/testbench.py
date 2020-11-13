@@ -434,3 +434,19 @@ if concatenate_string == b'I am a concatenate all test\r\n':
 else:
 	print(colored('fail test 60','red'))
 	print(ser.read())
+
+concatenate_and_clean_both_string = ser.readline()
+print(concatenate_and_clean_both_string)
+if concatenate_and_clean_both_string == b'I am a concatenate test\r\n':
+	print(colored('success test 61','blue'))
+else:
+	print(colored('fail test 61','red'))
+	print(ser.read())
+
+concatenate_and_clean__all__string = ser.readline()
+print(concatenate_and_clean__all__string)
+if concatenate_and_clean__all__string == b'I am a concatenate all test\r\n':
+	print(colored('success test 62','blue'))
+else:
+	print(colored('fail test 62','red'))
+	print(ser.read())
