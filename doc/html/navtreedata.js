@@ -39,8 +39,10 @@ var NAVTREE =
         [ "Transform a integer and a float to a string", "index.html#autotoc_md10", null ],
         [ "Copy, move and clone a string", "index.html#autotoc_md11", null ],
         [ "Concatenate and clean two strings", "index.html#autotoc_md12", null ],
-        [ "Concatenate multiple strings", "index.html#autotoc_md13", null ],
-        [ "Configure quantity and size of the memory arrays", "index.html#autotoc_md14", null ]
+        [ "Also can be used", "index.html#autotoc_md13", null ],
+        [ "Concatenate multiple strings", "index.html#autotoc_md14", null ],
+        [ "Also can be used", "index.html#autotoc_md15", null ],
+        [ "Configure quantity and size of the memory arrays", "index.html#autotoc_md16", null ]
       ] ]
     ] ],
     [ "Modules", "modules.html", "modules" ],
