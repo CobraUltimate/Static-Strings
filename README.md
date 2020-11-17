@@ -220,6 +220,20 @@ if(concatenate_at != NULL && concatenate != NULL){
 }
  ```
 
+## Also can be used
+
+ ```C
+static_strings_string_descriptor *concatenate_at = static_strings_save((uint8_t *)"I am a ");
+static_strings_string_descriptor *concatenate = static_strings_save((uint8_t *)"concatenate test\r\n");
+if(concatenate_at != NULL && concatenate != NULL){
+	static_strings_string_descriptor *concatenated_string = static_strings_concatenate_and_clean_both(concatenate_at,concatenate);
+	if(concatenated_string != NULL){
+    	HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
+		static_strings_deallocate(concatenated_string);
+    }
+}
+ ```
+
 ## Concatenate multiple strings
 
  ```C
@@ -229,10 +243,25 @@ static_strings_string_descriptor *three = static_strings_save((uint8_t *)"test\r
 if(one != NULL && two != NULL && three != NULL){
 	static_strings_string_descriptor *concatenated_string = static_strings_concatenate_all(3,one,two,three);
 	if(concatenated_string != NULL){
-    	HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
+    		HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
 		static_strings_deallocate(one);
-        static_strings_deallocate(two);
-        static_strings_deallocate(three);
+        	static_strings_deallocate(two);
+        	static_strings_deallocate(three);
+		static_strings_deallocate(concatenated_string);
+    }
+}
+ ```
+
+## Also can be used
+
+ ```C
+static_strings_string_descriptor *one = static_strings_save((uint8_t *)"I am a ");
+static_strings_string_descriptor *two = static_strings_save((uint8_t *)"concatenate all ");
+static_strings_string_descriptor *three = static_strings_save((uint8_t *)"test\r\n");
+if(one != NULL && two != NULL && three != NULL){
+	static_strings_string_descriptor *concatenated_string = static_strings_concatenate_and_clean_all(3,one,two,three);
+	if(concatenated_string != NULL){
+    		HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
 		static_strings_deallocate(concatenated_string);
     }
 }

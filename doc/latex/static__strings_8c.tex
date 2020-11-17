@@ -10,7 +10,7 @@ Strings allocation with static memory.
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{static__strings_8c_a755f8f841ccebea253245eaf7c467f43}{static\+\_\+strings\+\_\+init}} ()
-\begin{DoxyCompactList}\small\item\em Link the descriptors with the arrays and initialize the status as deallocated. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Link the descriptors with the arrays and initialize the status as deallocated. Also can be used to reset the state of all the string descriptors. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{static__strings_8c_a04d1917b2d23ead78a97b325cf2d61d0}{static\+\_\+strings\+\_\+get\+\_\+string\+\_\+max\+\_\+length}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$string)
 \begin{DoxyCompactList}\small\item\em get the maximum length allowed by the type of the string. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_ad4114a5410a819771dbf95b69653a8c4}{static\+\_\+strings\+\_\+copy}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+to, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$copy\+\_\+from, uint16\+\_\+t copy\+\_\+to\+\_\+offset)
@@ -41,8 +41,12 @@ int \mbox{\hyperlink{static__strings_8c_ac6f737921cf90208b24245d293513891}{stati
 \begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first in a new string. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a65ec0229070ea29795656a30c4cd3c84}{static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate\+\_\+at, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate)
 \begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first in a new string and deallocate the concatenate at parameter if success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_aa3886674f3c76f84ae6a58f55b8f497b}{static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean\+\_\+both}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate\+\_\+at, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$concatenate)
+\begin{DoxyCompactList}\small\item\em Concatenate the second string at the end of the first in a new string and deallocate both parameters. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a066ed88b7d60d317eef83b3f4cffe28b}{static\+\_\+strings\+\_\+concatenate\+\_\+all}} (uint16\+\_\+t arguments\+\_\+quantity,...)
 \begin{DoxyCompactList}\small\item\em Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter. This function must be used careful. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{static__strings_8c_a88cde7e5cf3977f1003cd9ea1baf31fe}{static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean\+\_\+all}} (uint16\+\_\+t arguments\+\_\+quantity,...)
+\begin{DoxyCompactList}\small\item\em Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter. All the parameters are deallocated if success. This function must be used careful. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{static__strings_8c_a75d874016cceab1a187f151c1bf39ac2}{static\+\_\+strings\+\_\+contains\+\_\+string}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+in, \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+for)
 \begin{DoxyCompactList}\small\item\em Search a string in other string. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{static__strings_8c_acdbbe803d3bccbd8c36e0d64941b628d}{static\+\_\+strings\+\_\+contains\+\_\+char}} (\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$search\+\_\+in, uint8\+\_\+t search\+\_\+for)
@@ -189,6 +193,46 @@ Concatenate the second string at the end of the first in a new string and deallo
 {\em concatenate\+\_\+at} & A pointer to the string to concatenate at, it is deallocates if success. \\
 \hline
 {\em concatenate} & A pointer to the string to concatenate at the end of the concatenate\+\_\+at string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the concatenated string, if N\+U\+LL check static\+\_\+strings\+\_\+error\+\_\+code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_a88cde7e5cf3977f1003cd9ea1baf31fe}\label{static__strings_8c_a88cde7e5cf3977f1003cd9ea1baf31fe}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_concatenate\_and\_clean\_all@{static\_strings\_concatenate\_and\_clean\_all}}
+\index{static\_strings\_concatenate\_and\_clean\_all@{static\_strings\_concatenate\_and\_clean\_all}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_concatenate\_and\_clean\_all()}{static\_strings\_concatenate\_and\_clean\_all()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean\+\_\+all (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{arguments\+\_\+quantity,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Concatenates multiple strings in the order of the arguments, the number of arguments must be provided in the first parameter. All the parameters are deallocated if success. This function must be used careful. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$static\+\_\+strings\+\_\+concatenate\+\_\+all(uint16\+\_\+t arguments\+\_\+quantity,...) 
+\begin{DoxyParams}{Parameters}
+{\em arguments\+\_\+quantity} & The number of strings to concatenate. \\
+\hline
+{\em ...} & Multiple arguments of type static\+\_\+strigs\+\_\+string\+\_\+descriptor pointer, these parameters are deallocated if success. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the string descriptor with the concatenated string, if N\+U\+LL check static\+\_\+strings\+\_\+error\+\_\+code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{static__strings_8c_aa3886674f3c76f84ae6a58f55b8f497b}\label{static__strings_8c_aa3886674f3c76f84ae6a58f55b8f497b}} 
+\index{static\_strings.c@{static\_strings.c}!static\_strings\_concatenate\_and\_clean\_both@{static\_strings\_concatenate\_and\_clean\_both}}
+\index{static\_strings\_concatenate\_and\_clean\_both@{static\_strings\_concatenate\_and\_clean\_both}!static\_strings.c@{static\_strings.c}}
+\doxysubsubsection{\texorpdfstring{static\_strings\_concatenate\_and\_clean\_both()}{static\_strings\_concatenate\_and\_clean\_both()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}$\ast$ static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean\+\_\+both (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{concatenate\+\_\+at,  }\item[{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$}]{concatenate }\end{DoxyParamCaption})}
+
+
+
+Concatenate the second string at the end of the first in a new string and deallocate both parameters. 
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} {\itshape static\+\_\+strings\+\_\+concatenate\+\_\+and\+\_\+clean(\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}}} concatenate\+\_\+at,static\+\_\+strings\+\_\+string\+\_\+descriptor$\ast$ concatenate) 
+\begin{DoxyParams}{Parameters}
+{\em concatenate\+\_\+at} & A pointer to the string to concatenate at, it is deallocates if success. \\
+\hline
+{\em concatenate} & A pointer to the string to concatenate at the end of the concatenate\+\_\+at string, it is deallocates if success. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -353,7 +397,7 @@ The maximum allowed length of the string as an integer.
 
 
 
-Link the descriptors with the arrays and initialize the status as deallocated. 
+Link the descriptors with the arrays and initialize the status as deallocated. Also can be used to reset the state of all the string descriptors. 
 
 void \mbox{\hyperlink{static__strings_8h_a755f8f841ccebea253245eaf7c467f43}{static\+\_\+strings\+\_\+init()}} \mbox{\Hypertarget{static__strings_8c_a7d4d4492155bb34124b67eb1f108f2f7}\label{static__strings_8c_a7d4d4492155bb34124b67eb1f108f2f7}} 
 \index{static\_strings.c@{static\_strings.c}!static\_strings\_int16\_to\_string@{static\_strings\_int16\_to\_string}}

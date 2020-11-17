@@ -6,6 +6,8 @@ var static__strings_8c =
     [ "static_strings_concatenate", "static__strings_8c.html#a9b449c5815fe472c22a37bc0d1ff7348", null ],
     [ "static_strings_concatenate_all", "static__strings_8c.html#a066ed88b7d60d317eef83b3f4cffe28b", null ],
     [ "static_strings_concatenate_and_clean", "static__strings_8c.html#a65ec0229070ea29795656a30c4cd3c84", null ],
+    [ "static_strings_concatenate_and_clean_all", "static__strings_8c.html#a88cde7e5cf3977f1003cd9ea1baf31fe", null ],
+    [ "static_strings_concatenate_and_clean_both", "static__strings_8c.html#aa3886674f3c76f84ae6a58f55b8f497b", null ],
     [ "static_strings_contains_char", "static__strings_8c.html#acdbbe803d3bccbd8c36e0d64941b628d", null ],
     [ "static_strings_contains_string", "static__strings_8c.html#a75d874016cceab1a187f151c1bf39ac2", null ],
     [ "static_strings_copy", "static__strings_8c.html#ad4114a5410a819771dbf95b69653a8c4", null ],

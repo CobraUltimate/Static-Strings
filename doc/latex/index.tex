@@ -208,7 +208,20 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+E
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{\}}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md13}{}\doxysubsection{Concatenate multiple strings}\label{index_autotoc_md13}
+\hypertarget{index_autotoc_md13}{}\doxysubsection{Also can be used}\label{index_autotoc_md13}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *concatenate\_at = \mbox{\hyperlink{static__strings_8h_a279d5c443455117945d8725a6b09ca80}{static\_strings\_save}}((uint8\_t *)\textcolor{stringliteral}{"I am a "});}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *concatenate = \mbox{\hyperlink{static__strings_8h_a279d5c443455117945d8725a6b09ca80}{static\_strings\_save}}((uint8\_t *)\textcolor{stringliteral}{"concatenate test\(\backslash\)r\(\backslash\)n"});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(concatenate\_at != NULL \&\& concatenate != NULL)\{}
+\DoxyCodeLine{    \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *concatenated\_string = \mbox{\hyperlink{static__strings_8h_aa3886674f3c76f84ae6a58f55b8f497b}{static\_strings\_concatenate\_and\_clean\_both}}(concatenate\_at,concatenate);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}(concatenated\_string != NULL)\{}
+\DoxyCodeLine{        HAL\_UART\_Transmit(\&huart1,concatenated\_string-\/>string,concatenated\_string-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(concatenated\_string);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md14}{}\doxysubsection{Concatenate multiple strings}\label{index_autotoc_md14}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *one = \mbox{\hyperlink{static__strings_8h_a279d5c443455117945d8725a6b09ca80}{static\_strings\_save}}((uint8\_t *)\textcolor{stringliteral}{"I am a "});}
@@ -217,15 +230,29 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+E
 \DoxyCodeLine{\textcolor{keywordflow}{if}(one != NULL \&\& two != NULL \&\& three != NULL)\{}
 \DoxyCodeLine{    \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *concatenated\_string = \mbox{\hyperlink{static__strings_8h_a066ed88b7d60d317eef83b3f4cffe28b}{static\_strings\_concatenate\_all}}(3,one,two,three);}
 \DoxyCodeLine{    \textcolor{keywordflow}{if}(concatenated\_string != NULL)\{}
-\DoxyCodeLine{        HAL\_UART\_Transmit(\&huart1,concatenated\_string-\/>string,concatenated\_string-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{            HAL\_UART\_Transmit(\&huart1,concatenated\_string-\/>string,concatenated\_string-\/>length,HAL\_MAX\_DELAY);}
 \DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(one);}
-\DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(two);}
-\DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(three);}
+\DoxyCodeLine{            \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(two);}
+\DoxyCodeLine{            \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(three);}
 \DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(concatenated\_string);}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{\}}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md14}{}\doxysubsection{Configure quantity and size of the memory arrays}\label{index_autotoc_md14}
+\hypertarget{index_autotoc_md15}{}\doxysubsection{Also can be used}\label{index_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *one = \mbox{\hyperlink{static__strings_8h_a279d5c443455117945d8725a6b09ca80}{static\_strings\_save}}((uint8\_t *)\textcolor{stringliteral}{"I am a "});}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *two = \mbox{\hyperlink{static__strings_8h_a279d5c443455117945d8725a6b09ca80}{static\_strings\_save}}((uint8\_t *)\textcolor{stringliteral}{"concatenate all "});}
+\DoxyCodeLine{\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *three = \mbox{\hyperlink{static__strings_8h_a279d5c443455117945d8725a6b09ca80}{static\_strings\_save}}((uint8\_t *)\textcolor{stringliteral}{"test\(\backslash\)r\(\backslash\)n"});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(one != NULL \&\& two != NULL \&\& three != NULL)\{}
+\DoxyCodeLine{    \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *concatenated\_string = \mbox{\hyperlink{static__strings_8h_a88cde7e5cf3977f1003cd9ea1baf31fe}{static\_strings\_concatenate\_and\_clean\_all}}(3,one,two,three);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}(concatenated\_string != NULL)\{}
+\DoxyCodeLine{            HAL\_UART\_Transmit(\&huart1,concatenated\_string-\/>string,concatenated\_string-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(concatenated\_string);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md16}{}\doxysubsection{Configure quantity and size of the memory arrays}\label{index_autotoc_md16}
 Just edit these constants in \mbox{\hyperlink{static__strings_8h}{static\+\_\+strings.\+h}}
 
 

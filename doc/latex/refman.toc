@@ -13,101 +13,107 @@
 \contentsline {subsection}{\numberline {1.2.9}Transform a integer and a float to a string}{3}{subsection.1.2.9}%
 \contentsline {subsection}{\numberline {1.2.10}Copy, move and clone a string}{3}{subsection.1.2.10}%
 \contentsline {subsection}{\numberline {1.2.11}Concatenate and clean two strings}{4}{subsection.1.2.11}%
-\contentsline {subsection}{\numberline {1.2.12}Concatenate multiple strings}{4}{subsection.1.2.12}%
-\contentsline {subsection}{\numberline {1.2.13}Configure quantity and size of the memory arrays}{4}{subsection.1.2.13}%
-\contentsline {chapter}{\numberline {2}Module Index}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Modules}{5}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Data Structure Index}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Data Structures}{7}{section.3.1}%
-\contentsline {chapter}{\numberline {4}File Index}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}File List}{9}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Module Documentation}{11}{chapter.5}%
-\contentsline {section}{\numberline {5.1}String types size and quantity}{11}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{11}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}String types}{12}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{12}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}String status}{13}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{13}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}Error handling}{14}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{14}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Variable Documentation}{14}{subsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.2.1}static\_strings\_error\_code}{14}{subsubsection.5.4.2.1}%
-\contentsline {section}{\numberline {5.5}Static memory arrays}{15}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{15}{subsection.5.5.1}%
-\contentsline {section}{\numberline {5.6}String descriptors}{16}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{16}{subsection.5.6.1}%
-\contentsline {chapter}{\numberline {6}Data Structure Documentation}{17}{chapter.6}%
-\contentsline {section}{\numberline {6.1}static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}string\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}descriptor Struct Reference}{17}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{17}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}string\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}splitter\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}parameters Struct Reference}{17}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{17}{subsection.6.2.1}%
-\contentsline {chapter}{\numberline {7}File Documentation}{19}{chapter.7}%
-\contentsline {section}{\numberline {7.1}int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}types.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{19}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{19}{subsection.7.1.1}%
-\contentsline {section}{\numberline {7.2}static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strings.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{19}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{21}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Function Documentation}{21}{subsection.7.2.2}%
-\contentsline {subsubsection}{\numberline {7.2.2.1}static\_strings\_allocate()}{21}{subsubsection.7.2.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2.2}static\_strings\_clone()}{22}{subsubsection.7.2.2.2}%
-\contentsline {subsubsection}{\numberline {7.2.2.3}static\_strings\_compare()}{22}{subsubsection.7.2.2.3}%
-\contentsline {subsubsection}{\numberline {7.2.2.4}static\_strings\_concatenate()}{23}{subsubsection.7.2.2.4}%
-\contentsline {subsubsection}{\numberline {7.2.2.5}static\_strings\_concatenate\_all()}{23}{subsubsection.7.2.2.5}%
-\contentsline {subsubsection}{\numberline {7.2.2.6}static\_strings\_concatenate\_and\_clean()}{24}{subsubsection.7.2.2.6}%
-\contentsline {subsubsection}{\numberline {7.2.2.7}static\_strings\_contains\_char()}{24}{subsubsection.7.2.2.7}%
-\contentsline {subsubsection}{\numberline {7.2.2.8}static\_strings\_contains\_string()}{24}{subsubsection.7.2.2.8}%
-\contentsline {subsubsection}{\numberline {7.2.2.9}static\_strings\_copy()}{26}{subsubsection.7.2.2.9}%
-\contentsline {subsubsection}{\numberline {7.2.2.10}static\_strings\_create\_custom\_string()}{26}{subsubsection.7.2.2.10}%
-\contentsline {subsubsection}{\numberline {7.2.2.11}static\_strings\_deallocate()}{27}{subsubsection.7.2.2.11}%
-\contentsline {subsubsection}{\numberline {7.2.2.12}static\_strings\_double\_to\_string()}{27}{subsubsection.7.2.2.12}%
-\contentsline {subsubsection}{\numberline {7.2.2.13}static\_strings\_float\_to\_string()}{27}{subsubsection.7.2.2.13}%
-\contentsline {subsubsection}{\numberline {7.2.2.14}static\_strings\_get\_string\_max\_length()}{28}{subsubsection.7.2.2.14}%
-\contentsline {subsubsection}{\numberline {7.2.2.15}static\_strings\_init()}{28}{subsubsection.7.2.2.15}%
-\contentsline {subsubsection}{\numberline {7.2.2.16}static\_strings\_int16\_to\_string()}{28}{subsubsection.7.2.2.16}%
-\contentsline {subsubsection}{\numberline {7.2.2.17}static\_strings\_int32\_to\_string()}{29}{subsubsection.7.2.2.17}%
-\contentsline {subsubsection}{\numberline {7.2.2.18}static\_strings\_int8\_to\_string()}{29}{subsubsection.7.2.2.18}%
-\contentsline {subsubsection}{\numberline {7.2.2.19}static\_strings\_is\_line()}{30}{subsubsection.7.2.2.19}%
-\contentsline {subsubsection}{\numberline {7.2.2.20}static\_strings\_move()}{30}{subsubsection.7.2.2.20}%
-\contentsline {subsubsection}{\numberline {7.2.2.21}static\_strings\_save()}{30}{subsubsection.7.2.2.21}%
-\contentsline {subsubsection}{\numberline {7.2.2.22}static\_strings\_string\_splitter\_get\_next\_token()}{31}{subsubsection.7.2.2.22}%
-\contentsline {subsubsection}{\numberline {7.2.2.23}static\_strings\_string\_splitter\_set\_parameters()}{31}{subsubsection.7.2.2.23}%
-\contentsline {subsubsection}{\numberline {7.2.2.24}static\_strings\_strlen()}{32}{subsubsection.7.2.2.24}%
-\contentsline {subsubsection}{\numberline {7.2.2.25}static\_strings\_substring()}{32}{subsubsection.7.2.2.25}%
-\contentsline {subsubsection}{\numberline {7.2.2.26}static\_strings\_uint16\_to\_string()}{33}{subsubsection.7.2.2.26}%
-\contentsline {subsubsection}{\numberline {7.2.2.27}static\_strings\_uint32\_to\_string()}{33}{subsubsection.7.2.2.27}%
-\contentsline {subsubsection}{\numberline {7.2.2.28}static\_strings\_uint8\_to\_string()}{33}{subsubsection.7.2.2.28}%
-\contentsline {subsection}{\numberline {7.2.3}Variable Documentation}{34}{subsection.7.2.3}%
-\contentsline {subsubsection}{\numberline {7.2.3.1}static\_strings\_string\_splitter}{34}{subsubsection.7.2.3.1}%
-\contentsline {section}{\numberline {7.3}static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strings.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{34}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{37}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Function Documentation}{37}{subsection.7.3.2}%
-\contentsline {subsubsection}{\numberline {7.3.2.1}static\_strings\_allocate()}{37}{subsubsection.7.3.2.1}%
-\contentsline {subsubsection}{\numberline {7.3.2.2}static\_strings\_clone()}{38}{subsubsection.7.3.2.2}%
-\contentsline {subsubsection}{\numberline {7.3.2.3}static\_strings\_compare()}{38}{subsubsection.7.3.2.3}%
-\contentsline {subsubsection}{\numberline {7.3.2.4}static\_strings\_concatenate()}{39}{subsubsection.7.3.2.4}%
-\contentsline {subsubsection}{\numberline {7.3.2.5}static\_strings\_concatenate\_all()}{39}{subsubsection.7.3.2.5}%
-\contentsline {subsubsection}{\numberline {7.3.2.6}static\_strings\_concatenate\_and\_clean()}{40}{subsubsection.7.3.2.6}%
-\contentsline {subsubsection}{\numberline {7.3.2.7}static\_strings\_contains\_char()}{40}{subsubsection.7.3.2.7}%
-\contentsline {subsubsection}{\numberline {7.3.2.8}static\_strings\_contains\_string()}{40}{subsubsection.7.3.2.8}%
-\contentsline {subsubsection}{\numberline {7.3.2.9}static\_strings\_copy()}{42}{subsubsection.7.3.2.9}%
-\contentsline {subsubsection}{\numberline {7.3.2.10}static\_strings\_create\_custom\_string()}{42}{subsubsection.7.3.2.10}%
-\contentsline {subsubsection}{\numberline {7.3.2.11}static\_strings\_deallocate()}{43}{subsubsection.7.3.2.11}%
-\contentsline {subsubsection}{\numberline {7.3.2.12}static\_strings\_double\_to\_string()}{43}{subsubsection.7.3.2.12}%
-\contentsline {subsubsection}{\numberline {7.3.2.13}static\_strings\_float\_to\_string()}{43}{subsubsection.7.3.2.13}%
-\contentsline {subsubsection}{\numberline {7.3.2.14}static\_strings\_get\_string\_max\_length()}{44}{subsubsection.7.3.2.14}%
-\contentsline {subsubsection}{\numberline {7.3.2.15}static\_strings\_init()}{44}{subsubsection.7.3.2.15}%
-\contentsline {subsubsection}{\numberline {7.3.2.16}static\_strings\_int16\_to\_string()}{44}{subsubsection.7.3.2.16}%
-\contentsline {subsubsection}{\numberline {7.3.2.17}static\_strings\_int32\_to\_string()}{45}{subsubsection.7.3.2.17}%
-\contentsline {subsubsection}{\numberline {7.3.2.18}static\_strings\_int8\_to\_string()}{45}{subsubsection.7.3.2.18}%
-\contentsline {subsubsection}{\numberline {7.3.2.19}static\_strings\_is\_line()}{46}{subsubsection.7.3.2.19}%
-\contentsline {subsubsection}{\numberline {7.3.2.20}static\_strings\_move()}{46}{subsubsection.7.3.2.20}%
-\contentsline {subsubsection}{\numberline {7.3.2.21}static\_strings\_save()}{46}{subsubsection.7.3.2.21}%
-\contentsline {subsubsection}{\numberline {7.3.2.22}static\_strings\_string\_splitter\_get\_next\_token()}{47}{subsubsection.7.3.2.22}%
-\contentsline {subsubsection}{\numberline {7.3.2.23}static\_strings\_string\_splitter\_set\_parameters()}{47}{subsubsection.7.3.2.23}%
-\contentsline {subsubsection}{\numberline {7.3.2.24}static\_strings\_strlen()}{48}{subsubsection.7.3.2.24}%
-\contentsline {subsubsection}{\numberline {7.3.2.25}static\_strings\_substring()}{48}{subsubsection.7.3.2.25}%
-\contentsline {subsubsection}{\numberline {7.3.2.26}static\_strings\_uint16\_to\_string()}{49}{subsubsection.7.3.2.26}%
-\contentsline {subsubsection}{\numberline {7.3.2.27}static\_strings\_uint32\_to\_string()}{49}{subsubsection.7.3.2.27}%
-\contentsline {subsubsection}{\numberline {7.3.2.28}static\_strings\_uint8\_to\_string()}{49}{subsubsection.7.3.2.28}%
-\contentsline {subsection}{\numberline {7.3.3}Variable Documentation}{50}{subsection.7.3.3}%
-\contentsline {subsubsection}{\numberline {7.3.3.1}static\_strings\_string\_splitter}{50}{subsubsection.7.3.3.1}%
-\contentsline {chapter}{Index}{51}{section*.18}%
+\contentsline {subsection}{\numberline {1.2.12}Also can be used}{4}{subsection.1.2.12}%
+\contentsline {subsection}{\numberline {1.2.13}Concatenate multiple strings}{4}{subsection.1.2.13}%
+\contentsline {subsection}{\numberline {1.2.14}Also can be used}{4}{subsection.1.2.14}%
+\contentsline {subsection}{\numberline {1.2.15}Configure quantity and size of the memory arrays}{5}{subsection.1.2.15}%
+\contentsline {chapter}{\numberline {2}Module Index}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Modules}{7}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Data Structure Index}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data Structures}{9}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{11}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Module Documentation}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}String types size and quantity}{13}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{13}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}String types}{14}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{14}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}String status}{15}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{15}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Error handling}{16}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{16}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Variable Documentation}{16}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}static\_strings\_error\_code}{16}{subsubsection.5.4.2.1}%
+\contentsline {section}{\numberline {5.5}Static memory arrays}{17}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{17}{subsection.5.5.1}%
+\contentsline {section}{\numberline {5.6}String descriptors}{18}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{18}{subsection.5.6.1}%
+\contentsline {chapter}{\numberline {6}Data Structure Documentation}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}string\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}descriptor Struct Reference}{19}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{19}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}string\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}splitter\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}parameters Struct Reference}{19}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{19}{subsection.6.2.1}%
+\contentsline {chapter}{\numberline {7}File Documentation}{21}{chapter.7}%
+\contentsline {section}{\numberline {7.1}int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}types.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{21}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{21}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strings.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{21}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{23}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Function Documentation}{23}{subsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}static\_strings\_allocate()}{23}{subsubsection.7.2.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}static\_strings\_clone()}{24}{subsubsection.7.2.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.3}static\_strings\_compare()}{24}{subsubsection.7.2.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.2.4}static\_strings\_concatenate()}{25}{subsubsection.7.2.2.4}%
+\contentsline {subsubsection}{\numberline {7.2.2.5}static\_strings\_concatenate\_all()}{25}{subsubsection.7.2.2.5}%
+\contentsline {subsubsection}{\numberline {7.2.2.6}static\_strings\_concatenate\_and\_clean()}{26}{subsubsection.7.2.2.6}%
+\contentsline {subsubsection}{\numberline {7.2.2.7}static\_strings\_concatenate\_and\_clean\_all()}{26}{subsubsection.7.2.2.7}%
+\contentsline {subsubsection}{\numberline {7.2.2.8}static\_strings\_concatenate\_and\_clean\_both()}{26}{subsubsection.7.2.2.8}%
+\contentsline {subsubsection}{\numberline {7.2.2.9}static\_strings\_contains\_char()}{27}{subsubsection.7.2.2.9}%
+\contentsline {subsubsection}{\numberline {7.2.2.10}static\_strings\_contains\_string()}{27}{subsubsection.7.2.2.10}%
+\contentsline {subsubsection}{\numberline {7.2.2.11}static\_strings\_copy()}{28}{subsubsection.7.2.2.11}%
+\contentsline {subsubsection}{\numberline {7.2.2.12}static\_strings\_create\_custom\_string()}{28}{subsubsection.7.2.2.12}%
+\contentsline {subsubsection}{\numberline {7.2.2.13}static\_strings\_deallocate()}{29}{subsubsection.7.2.2.13}%
+\contentsline {subsubsection}{\numberline {7.2.2.14}static\_strings\_double\_to\_string()}{29}{subsubsection.7.2.2.14}%
+\contentsline {subsubsection}{\numberline {7.2.2.15}static\_strings\_float\_to\_string()}{29}{subsubsection.7.2.2.15}%
+\contentsline {subsubsection}{\numberline {7.2.2.16}static\_strings\_get\_string\_max\_length()}{30}{subsubsection.7.2.2.16}%
+\contentsline {subsubsection}{\numberline {7.2.2.17}static\_strings\_init()}{30}{subsubsection.7.2.2.17}%
+\contentsline {subsubsection}{\numberline {7.2.2.18}static\_strings\_int16\_to\_string()}{30}{subsubsection.7.2.2.18}%
+\contentsline {subsubsection}{\numberline {7.2.2.19}static\_strings\_int32\_to\_string()}{31}{subsubsection.7.2.2.19}%
+\contentsline {subsubsection}{\numberline {7.2.2.20}static\_strings\_int8\_to\_string()}{31}{subsubsection.7.2.2.20}%
+\contentsline {subsubsection}{\numberline {7.2.2.21}static\_strings\_is\_line()}{32}{subsubsection.7.2.2.21}%
+\contentsline {subsubsection}{\numberline {7.2.2.22}static\_strings\_move()}{32}{subsubsection.7.2.2.22}%
+\contentsline {subsubsection}{\numberline {7.2.2.23}static\_strings\_save()}{32}{subsubsection.7.2.2.23}%
+\contentsline {subsubsection}{\numberline {7.2.2.24}static\_strings\_string\_splitter\_get\_next\_token()}{33}{subsubsection.7.2.2.24}%
+\contentsline {subsubsection}{\numberline {7.2.2.25}static\_strings\_string\_splitter\_set\_parameters()}{33}{subsubsection.7.2.2.25}%
+\contentsline {subsubsection}{\numberline {7.2.2.26}static\_strings\_strlen()}{34}{subsubsection.7.2.2.26}%
+\contentsline {subsubsection}{\numberline {7.2.2.27}static\_strings\_substring()}{34}{subsubsection.7.2.2.27}%
+\contentsline {subsubsection}{\numberline {7.2.2.28}static\_strings\_uint16\_to\_string()}{35}{subsubsection.7.2.2.28}%
+\contentsline {subsubsection}{\numberline {7.2.2.29}static\_strings\_uint32\_to\_string()}{35}{subsubsection.7.2.2.29}%
+\contentsline {subsubsection}{\numberline {7.2.2.30}static\_strings\_uint8\_to\_string()}{35}{subsubsection.7.2.2.30}%
+\contentsline {subsection}{\numberline {7.2.3}Variable Documentation}{36}{subsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.1}static\_strings\_string\_splitter}{36}{subsubsection.7.2.3.1}%
+\contentsline {section}{\numberline {7.3}static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strings.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{36}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{39}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Function Documentation}{39}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}static\_strings\_allocate()}{40}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}static\_strings\_clone()}{40}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}static\_strings\_compare()}{40}{subsubsection.7.3.2.3}%
+\contentsline {subsubsection}{\numberline {7.3.2.4}static\_strings\_concatenate()}{41}{subsubsection.7.3.2.4}%
+\contentsline {subsubsection}{\numberline {7.3.2.5}static\_strings\_concatenate\_all()}{41}{subsubsection.7.3.2.5}%
+\contentsline {subsubsection}{\numberline {7.3.2.6}static\_strings\_concatenate\_and\_clean()}{42}{subsubsection.7.3.2.6}%
+\contentsline {subsubsection}{\numberline {7.3.2.7}static\_strings\_concatenate\_and\_clean\_all()}{42}{subsubsection.7.3.2.7}%
+\contentsline {subsubsection}{\numberline {7.3.2.8}static\_strings\_concatenate\_and\_clean\_both()}{43}{subsubsection.7.3.2.8}%
+\contentsline {subsubsection}{\numberline {7.3.2.9}static\_strings\_contains\_char()}{43}{subsubsection.7.3.2.9}%
+\contentsline {subsubsection}{\numberline {7.3.2.10}static\_strings\_contains\_string()}{43}{subsubsection.7.3.2.10}%
+\contentsline {subsubsection}{\numberline {7.3.2.11}static\_strings\_copy()}{45}{subsubsection.7.3.2.11}%
+\contentsline {subsubsection}{\numberline {7.3.2.12}static\_strings\_create\_custom\_string()}{45}{subsubsection.7.3.2.12}%
+\contentsline {subsubsection}{\numberline {7.3.2.13}static\_strings\_deallocate()}{46}{subsubsection.7.3.2.13}%
+\contentsline {subsubsection}{\numberline {7.3.2.14}static\_strings\_double\_to\_string()}{46}{subsubsection.7.3.2.14}%
+\contentsline {subsubsection}{\numberline {7.3.2.15}static\_strings\_float\_to\_string()}{46}{subsubsection.7.3.2.15}%
+\contentsline {subsubsection}{\numberline {7.3.2.16}static\_strings\_get\_string\_max\_length()}{47}{subsubsection.7.3.2.16}%
+\contentsline {subsubsection}{\numberline {7.3.2.17}static\_strings\_init()}{47}{subsubsection.7.3.2.17}%
+\contentsline {subsubsection}{\numberline {7.3.2.18}static\_strings\_int16\_to\_string()}{47}{subsubsection.7.3.2.18}%
+\contentsline {subsubsection}{\numberline {7.3.2.19}static\_strings\_int32\_to\_string()}{48}{subsubsection.7.3.2.19}%
+\contentsline {subsubsection}{\numberline {7.3.2.20}static\_strings\_int8\_to\_string()}{48}{subsubsection.7.3.2.20}%
+\contentsline {subsubsection}{\numberline {7.3.2.21}static\_strings\_is\_line()}{49}{subsubsection.7.3.2.21}%
+\contentsline {subsubsection}{\numberline {7.3.2.22}static\_strings\_move()}{49}{subsubsection.7.3.2.22}%
+\contentsline {subsubsection}{\numberline {7.3.2.23}static\_strings\_save()}{49}{subsubsection.7.3.2.23}%
+\contentsline {subsubsection}{\numberline {7.3.2.24}static\_strings\_string\_splitter\_get\_next\_token()}{50}{subsubsection.7.3.2.24}%
+\contentsline {subsubsection}{\numberline {7.3.2.25}static\_strings\_string\_splitter\_set\_parameters()}{50}{subsubsection.7.3.2.25}%
+\contentsline {subsubsection}{\numberline {7.3.2.26}static\_strings\_strlen()}{51}{subsubsection.7.3.2.26}%
+\contentsline {subsubsection}{\numberline {7.3.2.27}static\_strings\_substring()}{51}{subsubsection.7.3.2.27}%
+\contentsline {subsubsection}{\numberline {7.3.2.28}static\_strings\_uint16\_to\_string()}{52}{subsubsection.7.3.2.28}%
+\contentsline {subsubsection}{\numberline {7.3.2.29}static\_strings\_uint32\_to\_string()}{52}{subsubsection.7.3.2.29}%
+\contentsline {subsubsection}{\numberline {7.3.2.30}static\_strings\_uint8\_to\_string()}{52}{subsubsection.7.3.2.30}%
+\contentsline {subsection}{\numberline {7.3.3}Variable Documentation}{53}{subsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.1}static\_strings\_string\_splitter}{53}{subsubsection.7.3.3.1}%
+\contentsline {chapter}{Index}{55}{section*.18}%

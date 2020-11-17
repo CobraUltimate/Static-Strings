@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.6)  16 OCT 2020 00:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.6)  16 NOV 2020 21:55
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -902,32 +902,32 @@ Overfull \hbox (23.55554pt too wide) in paragraph at lines 191--191
 test_target_string->length,HAL_MAX_DELAY);  
  []
 
-) [4]
-Chapter 2.
-(modules.tex) [5
+[4]) [5] [6
 
-] [6
+]
+Chapter 2.
+(modules.tex) [7] [8
 
 ]
 Chapter 3.
-(annotated.tex) [7] [8
+(annotated.tex) [9] [10
 
 ]
 Chapter 4.
-(files.tex) [9] [10
+(files.tex) [11] [12
 
 ]
 Chapter 5.
-(group__string__types__sizes__quantities.tex) [11]
+(group__string__types__sizes__quantities.tex) [13]
 \openout2 = `group__string__types.aux'.
 
  (group__string__types.tex)
-[12
+[14
 
 ]
 \openout2 = `group__string__status.aux'.
 
- (group__string__status.tex) [13
+ (group__string__status.tex) [15
 
 
 ]
@@ -935,14 +935,14 @@ Chapter 5.
 
  (group__error__handling.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 33.
+(Font)              scaled to size 8.09995pt on input line 36.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 33.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 36.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 33.
+(Font)              scaled to size 8.09995pt on input line 36.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 46.
-) [14
+(Font)              scaled to size 7.19995pt on input line 49.
+) [16
 
 
 ]
@@ -956,22 +956,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--20
 []_[][]M[]E[]D[]I[]U[]M[]_[][]S[]T[]R[]I[]N[]G[]_[][]Q[]U[]A[]N[]T[]I[]
  []
 
-) [15
+) [17
 
 
 ]
 \openout2 = `group__string__descriptors.aux'.
 
- (group__string__descriptors.tex) [16
+ (group__string__descriptors.tex) [18
 
 
 ]
 Chapter 6.
 (structstatic__strings__string__descriptor.tex)
-(structstatic__strings__string__splitter__parameters.tex) [17
+(structstatic__strings__string__splitter__parameters.tex) [19
 
 
-] [18
+] [20
 
 ]
 Chapter 7.
@@ -980,7 +980,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[19]
+[21]
 Overfull \hbox (75.51282pt too wide) in paragraph at lines 16--17
 [][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n
 /10 copy[]_[]to, []
@@ -1011,141 +1011,156 @@ Underfull \hbox (badness 2245) in paragraph at lines 42--43
 [][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 ([]
  []
 
-[20]
-Overfull \hbox (21.08574pt too wide) in paragraph at lines 50--51
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+[][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 (uint16[]_[]t arguments[]_[]
+ []
+
+[22]
+Overfull \hbox (21.08574pt too wide) in paragraph at lines 54--55
 []\T1/phv/m/n/10 int [] ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 compare[]_[]stri
 ng[]_[]one, []
  []
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 85.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 89.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 85.
-[21]
-Underfull \hbox (badness 10000) detected at line 96
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 89.
+[23]
+Underfull \hbox (badness 10000) detected at line 100
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 114
+Underfull \hbox (badness 10000) detected at line 118
 [][][]
  []
 
 
-Overfull \hbox (84.31416pt too wide) in paragraph at lines 127--128
+Overfull \hbox (84.31416pt too wide) in paragraph at lines 131--132
 []\T1/phv/m/n/10 int [] 
  []
 
-[22]
-Underfull \hbox (badness 10000) detected at line 134
+[24]
+Underfull \hbox (badness 10000) detected at line 138
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 [][] \T1/phv/m/sl/10 static[]_[]strings[]_[]concatenate([] \T1/phv/m/n/10 conca
 tenate[]_[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 154
+Underfull \hbox (badness 10000) detected at line 158
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 174
+Underfull \hbox (badness 10000) detected at line 178
 [][][]
  []
 
-[23]
-Underfull \hbox (badness 10000) detected at line 194
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 214
+[25]
+Underfull \hbox (badness 10000) detected at line 198
 [][][]
  []
 
 
-Overfull \hbox (28.11922pt too wide) in paragraph at lines 227--228
+Underfull \hbox (badness 10000) detected at line 218
+[][][]
+ []
+
+[26]
+Underfull \hbox (badness 10000) detected at line 238
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 258
+[][][]
+ []
+
+
+Overfull \hbox (28.11922pt too wide) in paragraph at lines 271--272
 []\T1/phv/m/n/10 int [] 
  []
 
-[24] [25]
-Underfull \hbox (badness 10000) detected at line 234
+[27]
+Underfull \hbox (badness 10000) detected at line 278
 [][][]
  []
 
 
-Overfull \hbox (44.67007pt too wide) in paragraph at lines 247--248
+Overfull \hbox (44.67007pt too wide) in paragraph at lines 291--292
 [][] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 static[]_[]strings[]_[]copy([] $\OMS/cm
 sy/m/n/10 $\T1/phv/m/n/10 copy[]_[]to,[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 256
-[][][]
- []
-
-[26]
-Underfull \hbox (badness 10000) detected at line 276
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 309
-[][][]
- []
-
-[27]
-Underfull \hbox (badness 10000) detected at line 327
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 345
+Underfull \hbox (badness 10000) detected at line 300
 [][][]
  []
 
 [28]
-Underfull \hbox (badness 10000) detected at line 373
+Underfull \hbox (badness 10000) detected at line 320
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 391
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 409
+Underfull \hbox (badness 10000) detected at line 353
 [][][]
  []
 
 [29]
-Underfull \hbox (badness 10000) detected at line 427
+Underfull \hbox (badness 10000) detected at line 371
 [][][]
  []
 
 
-Overfull \hbox (50.48398pt too wide) in paragraph at lines 440--441
+Underfull \hbox (badness 10000) detected at line 389
+[][][]
+ []
+
+[30]
+Underfull \hbox (badness 10000) detected at line 417
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 435
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 453
+[][][]
+ []
+
+[31]
+Underfull \hbox (badness 10000) detected at line 471
+[][][]
+ []
+
+
+Overfull \hbox (50.48398pt too wide) in paragraph at lines 484--485
 [][] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 static[]_[]strings[]_[]move([] $\OMS/cm
 sy/m/n/10 $\T1/phv/m/n/10 move[]_[]to,[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 449
+Underfull \hbox (badness 10000) detected at line 493
 [][][]
  []
 
-[30]
-Underfull \hbox (badness 10000) detected at line 467
+[32]
+Underfull \hbox (badness 10000) detected at line 511
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 485
+Underfull \hbox (badness 10000) detected at line 529
 [][][]
  []
 
@@ -1153,33 +1168,33 @@ Underfull \hbox (badness 10000) detected at line 485
 Overfull \vbox (3.74483pt too high) has occurred while \output is active []
 
 
-[31]
-Underfull \hbox (badness 10000) detected at line 520
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 542
-[][][]
- []
-
-[32]
-Underfull \hbox (badness 10000) detected at line 560
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 578
-[][][]
- []
-
 [33]
-Underfull \hbox (badness 10000) detected at line 596
+Underfull \hbox (badness 10000) detected at line 564
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 586
+[][][]
+ []
+
+[34]
+Underfull \hbox (badness 10000) detected at line 604
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 622
+[][][]
+ []
+
+[35]
+Underfull \hbox (badness 10000) detected at line 640
 [][][]
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 6
-06.
+50.
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )) (static__strings_8h.tex
@@ -1187,123 +1202,131 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--13
 
  []
 
-[34]
-Overfull \hbox (75.51282pt too wide) in paragraph at lines 89--90
+[36]
+Overfull \hbox (75.51282pt too wide) in paragraph at lines 91--92
 [][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n
 /10 copy[]_[]to, []
  []
 
 
-Overfull \hbox (81.32672pt too wide) in paragraph at lines 91--92
+Overfull \hbox (81.32672pt too wide) in paragraph at lines 93--94
 [][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n
 /10 move[]_[]to, []
  []
 
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 []\T1/phv/m/n/10 void [] ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 string[]_[]desc
 riptor,
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 115--116
+Underfull \hbox (badness 2245) in paragraph at lines 117--118
 [][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 ([]
  []
 
 
-Overfull \hbox (21.08574pt too wide) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+[][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 (uint16[]_[]t arguments[]_[]
+ []
+
+
+Overfull \hbox (21.08574pt too wide) in paragraph at lines 129--130
 []\T1/phv/m/n/10 int [] ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 compare[]_[]stri
 ng[]_[]one, []
  []
 
-[36] [37]
-Underfull \hbox (badness 10000) detected at line 191
+[38] [39]
+Underfull \hbox (badness 10000) detected at line 197
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 209
+Underfull \hbox (badness 10000) detected at line 215
 [][][]
  []
 
 
-Overfull \hbox (84.31416pt too wide) in paragraph at lines 222--223
+Overfull \hbox (84.31416pt too wide) in paragraph at lines 228--229
 []\T1/phv/m/n/10 int [] 
  []
 
-[38]
-Underfull \hbox (badness 10000) detected at line 229
+[40]
+Underfull \hbox (badness 10000) detected at line 235
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 [][] \T1/phv/m/sl/10 static[]_[]strings[]_[]concatenate([] \T1/phv/m/n/10 conca
 tenate[]_[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 249
+Underfull \hbox (badness 10000) detected at line 255
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 269
-[][][]
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[39]
-Underfull \hbox (badness 10000) detected at line 289
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 309
+ [41]
+Underfull \hbox (badness 10000) detected at line 275
 [][][]
  []
 
 
-Overfull \hbox (28.11922pt too wide) in paragraph at lines 322--323
+Underfull \hbox (badness 10000) detected at line 295
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 315
+[][][]
+ []
+
+[42]
+Underfull \hbox (badness 10000) detected at line 335
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 355
+[][][]
+ []
+
+
+Overfull \hbox (28.11922pt too wide) in paragraph at lines 368--369
 []\T1/phv/m/n/10 int [] 
  []
 
-[40] [41]
-Underfull \hbox (badness 10000) detected at line 329
+[43] [44]
+Underfull \hbox (badness 10000) detected at line 375
 [][][]
  []
 
 
-Overfull \hbox (44.67007pt too wide) in paragraph at lines 342--343
+Overfull \hbox (44.67007pt too wide) in paragraph at lines 388--389
 [][] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 static[]_[]strings[]_[]copy([] $\OMS/cm
 sy/m/n/10 $\T1/phv/m/n/10 copy[]_[]to,[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 351
+Underfull \hbox (badness 10000) detected at line 397
 [][][]
  []
 
-[42]
-Underfull \hbox (badness 10000) detected at line 371
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 404
-[][][]
- []
-
-[43]
-Underfull \hbox (badness 10000) detected at line 422
+[45]
+Underfull \hbox (badness 10000) detected at line 417
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 440
+Underfull \hbox (badness 10000) detected at line 450
 [][][]
  []
 
-[44]
+[46]
 Underfull \hbox (badness 10000) detected at line 468
 [][][]
  []
@@ -1313,34 +1336,44 @@ Underfull \hbox (badness 10000) detected at line 486
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 504
-[][][]
- []
-
-[45]
-Underfull \hbox (badness 10000) detected at line 522
+[47]
+Underfull \hbox (badness 10000) detected at line 514
 [][][]
  []
 
 
-Overfull \hbox (50.48398pt too wide) in paragraph at lines 535--536
+Underfull \hbox (badness 10000) detected at line 532
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 550
+[][][]
+ []
+
+[48]
+Underfull \hbox (badness 10000) detected at line 568
+[][][]
+ []
+
+
+Overfull \hbox (50.48398pt too wide) in paragraph at lines 581--582
 [][] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 static[]_[]strings[]_[]move([] $\OMS/cm
 sy/m/n/10 $\T1/phv/m/n/10 move[]_[]to,[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 544
+Underfull \hbox (badness 10000) detected at line 590
 [][][]
  []
 
-[46]
-Underfull \hbox (badness 10000) detected at line 562
+[49]
+Underfull \hbox (badness 10000) detected at line 608
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 580
+Underfull \hbox (badness 10000) detected at line 626
 [][][]
  []
 
@@ -1348,36 +1381,37 @@ Underfull \hbox (badness 10000) detected at line 580
 Overfull \vbox (3.74483pt too high) has occurred while \output is active []
 
 
-[47]
-Underfull \hbox (badness 10000) detected at line 615
+[50]
+Underfull \hbox (badness 10000) detected at line 661
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 637
+Underfull \hbox (badness 10000) detected at line 683
 [][][]
  []
 
-[48]
-Underfull \hbox (badness 10000) detected at line 655
+[51]
+Underfull \hbox (badness 10000) detected at line 701
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 673
+Underfull \hbox (badness 10000) detected at line 719
 [][][]
  []
 
-[49]
-Underfull \hbox (badness 10000) detected at line 691
+[52]
+Underfull \hbox (badness 10000) detected at line 737
 [][][]
  []
 
-) [50] (refman.ind [51
+) [53] [54
+
+] (refman.ind [55
 
 
-
-] [52])
+] [56])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
  (refman.aux (group__string__types.aux)
@@ -1386,13 +1420,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 206.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 206.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 8A3921E2FBD87F62B8D445A7E18C4262;27916.
+(rerunfilecheck)             Checksum: 43E2DFEC1A4EE7153BA3C0D52F40679F;29720.
  ) 
 Here is how much of TeX's memory you used:
- 17322 strings out of 480790
- 263729 string characters out of 2907056
- 601972 words of memory out of 3000000
- 32572 multiletter control sequences out of 15000+200000
+ 17360 strings out of 480790
+ 264695 string characters out of 2907056
+ 606309 words of memory out of 3000000
+ 32589 multiletter control sequences out of 15000+200000
  590594 words of font info for 95 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,16n,96p,944b,629s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1406,9 +1440,9 @@ nts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helv
 etic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><
 C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/M
 iKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (58 pages, 434212 bytes).
+Output written on refman.pdf (62 pages, 457467 bytes).
 PDF statistics:
- 1679 PDF objects out of 1728 (max. 8388607)
- 386 named destinations out of 1000 (max. 500000)
- 897 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1791 PDF objects out of 2073 (max. 8388607)
+ 407 named destinations out of 1000 (max. 500000)
+ 945 words of extra memory for PDF output out of 10000 (max. 10000000)
 
