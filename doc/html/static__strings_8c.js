@@ -6,6 +6,8 @@ var static__strings_8c =
     [ "static_strings_concatenate", "static__strings_8c.html#a9b449c5815fe472c22a37bc0d1ff7348", null ],
     [ "static_strings_concatenate_all", "static__strings_8c.html#a066ed88b7d60d317eef83b3f4cffe28b", null ],
     [ "static_strings_concatenate_and_clean", "static__strings_8c.html#a65ec0229070ea29795656a30c4cd3c84", null ],
+    [ "static_strings_concatenate_and_clean_all", "static__strings_8c.html#a88cde7e5cf3977f1003cd9ea1baf31fe", null ],
+    [ "static_strings_concatenate_and_clean_both", "static__strings_8c.html#aa3886674f3c76f84ae6a58f55b8f497b", null ],
     [ "static_strings_contains_char", "static__strings_8c.html#acdbbe803d3bccbd8c36e0d64941b628d", null ],
     [ "static_strings_contains_string", "static__strings_8c.html#a75d874016cceab1a187f151c1bf39ac2", null ],
     [ "static_strings_copy", "static__strings_8c.html#ad4114a5410a819771dbf95b69653a8c4", null ],
@@ -28,5 +30,7 @@ var static__strings_8c =
     [ "static_strings_uint16_to_string", "static__strings_8c.html#a8c01d9034bdbd35f225bd84eb45a5c79", null ],
     [ "static_strings_uint32_to_string", "static__strings_8c.html#a5c0159303e872732c2f436112e2d25be", null ],
     [ "static_strings_uint8_to_string", "static__strings_8c.html#a72d2b081fd8cfd4370ff9b4bcb809917", null ],
+    [ "static_strings_empty", "group__constant__strings.html#gaf78abe0941625c3bbb872b2a17bf9aa1", null ],
+    [ "static_strings_new_line", "group__constant__strings.html#ga2f40440e232b8523ef2c95e35680f8c4", null ],
     [ "static_strings_string_splitter", "static__strings_8c.html#ad04398bbc2b8a2380f5f2c71be1457a2", null ]
 ];

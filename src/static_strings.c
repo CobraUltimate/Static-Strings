@@ -6,6 +6,9 @@
 
 static_strings_string_splitter_parameters static_strings_string_splitter = {NULL,'\0'};
 
+static_strings_string_descriptor *static_strings_new_line = &(static_strings_string_descriptor){(uint8_t *)"\r\n",2,STATIC_STRINGS_STRING_TYPE_CUSTOM,STATIC_STRINGS_STRING_STATUS_CONSTANT};
+static_strings_string_descriptor *static_strings_empty = &(static_strings_string_descriptor){(uint8_t *)"\0",0,STATIC_STRINGS_STRING_TYPE_CUSTOM,STATIC_STRINGS_STRING_STATUS_CONSTANT};
+
 void static_strings_init(){
 	int i;
 	for(i = 0; i < STATIC_STRINGS_VERY_SHORT_STRING_QUANTITY;i++){
