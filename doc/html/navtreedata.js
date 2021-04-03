@@ -42,7 +42,8 @@ var NAVTREE =
         [ "Also can be used", "index.html#autotoc_md13", null ],
         [ "Concatenate multiple strings", "index.html#autotoc_md14", null ],
         [ "Also can be used", "index.html#autotoc_md15", null ],
-        [ "Configure quantity and size of the memory arrays", "index.html#autotoc_md16", null ]
+        [ "Configure quantity and size of the memory arrays", "index.html#autotoc_md16", null ],
+        [ "Using the constant strings", "index.html#autotoc_md17", null ]
       ] ]
     ] ],
     [ "Modules", "modules.html", "modules" ],

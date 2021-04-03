@@ -19,6 +19,7 @@ Static Strings {#mainpage}
  - Contains string, contains char and compare function.
  - Transforms integers and floats to strings
  - Get string maximum length.
+ - Common use constant strings like new line and empty.
 
  # Getting Started
 
@@ -243,10 +244,10 @@ static_strings_string_descriptor *three = static_strings_save((uint8_t *)"test\r
 if(one != NULL && two != NULL && three != NULL){
 	static_strings_string_descriptor *concatenated_string = static_strings_concatenate_all(3,one,two,three);
 	if(concatenated_string != NULL){
-    		HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
+        HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
 		static_strings_deallocate(one);
-        	static_strings_deallocate(two);
-        	static_strings_deallocate(three);
+        static_strings_deallocate(two);
+        static_strings_deallocate(three);
 		static_strings_deallocate(concatenated_string);
     }
 }
@@ -261,7 +262,7 @@ static_strings_string_descriptor *three = static_strings_save((uint8_t *)"test\r
 if(one != NULL && two != NULL && three != NULL){
 	static_strings_string_descriptor *concatenated_string = static_strings_concatenate_and_clean_all(3,one,two,three);
 	if(concatenated_string != NULL){
-    		HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
+        HAL_UART_Transmit(&huart1,concatenated_string->string,concatenated_string->length,HAL_MAX_DELAY);
 		static_strings_deallocate(concatenated_string);
     }
 }
@@ -287,3 +288,15 @@ if(one != NULL && two != NULL && three != NULL){
  #define STATIC_STRINGS_VERY_LONG_STRING_SIZE 1000
  #define STATIC_STRINGS_VERY_LONG_STRING_QUANTITY 1
  ```
+
+ ## Using the constant strings
+
+	HAL_UART_Transmit(&huart1,static_strings_new_line->string,static_strings_new_line->length,HAL_MAX_DELAY);
+	
+	static_strings_string_descriptor *empty = static_strings_allocate(0);
+	if(empty == NULL)
+		HAL_UART_Transmit(&huart1,(uint8_t *)"error1\r\n",8,HAL_MAX_DELAY);
+	else if(!static_strings_compare(static_strings_empty,empty))
+		HAL_UART_Transmit(&huart1,(uint8_t *)"error2\r\n",8,HAL_MAX_DELAY);
+	else
+		HAL_UART_Transmit(&huart1,(uint8_t *)"success\r\n",9,HAL_MAX_DELAY);

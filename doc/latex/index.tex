@@ -19,6 +19,7 @@
 \item Contains string, contains char and compare function.
 \item Transforms integers and floats to strings
 \item Get string maximum length.
+\item Common use constant strings like new line and empty.
 \end{DoxyItemize}\hypertarget{index_autotoc_md1}{}\doxysection{Getting Started}\label{index_autotoc_md1}
 \hypertarget{index_autotoc_md2}{}\doxysubsection{Suggested names}\label{index_autotoc_md2}
 
@@ -230,10 +231,10 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+E
 \DoxyCodeLine{\textcolor{keywordflow}{if}(one != NULL \&\& two != NULL \&\& three != NULL)\{}
 \DoxyCodeLine{    \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *concatenated\_string = \mbox{\hyperlink{static__strings_8h_a066ed88b7d60d317eef83b3f4cffe28b}{static\_strings\_concatenate\_all}}(3,one,two,three);}
 \DoxyCodeLine{    \textcolor{keywordflow}{if}(concatenated\_string != NULL)\{}
-\DoxyCodeLine{            HAL\_UART\_Transmit(\&huart1,concatenated\_string-\/>string,concatenated\_string-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{        HAL\_UART\_Transmit(\&huart1,concatenated\_string-\/>string,concatenated\_string-\/>length,HAL\_MAX\_DELAY);}
 \DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(one);}
-\DoxyCodeLine{            \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(two);}
-\DoxyCodeLine{            \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(three);}
+\DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(two);}
+\DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(three);}
 \DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(concatenated\_string);}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{\}}
@@ -247,7 +248,7 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE A\+F\+T\+E
 \DoxyCodeLine{\textcolor{keywordflow}{if}(one != NULL \&\& two != NULL \&\& three != NULL)\{}
 \DoxyCodeLine{    \mbox{\hyperlink{structstatic__strings__string__descriptor}{static\_strings\_string\_descriptor}} *concatenated\_string = \mbox{\hyperlink{static__strings_8h_a88cde7e5cf3977f1003cd9ea1baf31fe}{static\_strings\_concatenate\_and\_clean\_all}}(3,one,two,three);}
 \DoxyCodeLine{    \textcolor{keywordflow}{if}(concatenated\_string != NULL)\{}
-\DoxyCodeLine{            HAL\_UART\_Transmit(\&huart1,concatenated\_string-\/>string,concatenated\_string-\/>length,HAL\_MAX\_DELAY);}
+\DoxyCodeLine{        HAL\_UART\_Transmit(\&huart1,concatenated\_string-\/>string,concatenated\_string-\/>length,HAL\_MAX\_DELAY);}
 \DoxyCodeLine{        \mbox{\hyperlink{static__strings_8h_ad87f5f7a3206dd43cff96ec06631613c}{static\_strings\_deallocate}}(concatenated\_string);}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{\}}
@@ -272,4 +273,7 @@ Just edit these constants in \mbox{\hyperlink{static__strings_8h}{static\+\_\+st
 \DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_VERY\_LONG\_STRING\_SIZE 1000}}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define STATIC\_STRINGS\_VERY\_LONG\_STRING\_QUANTITY 1}}
 \end{DoxyCode}
- 
+\hypertarget{index_autotoc_md17}{}\doxysubsection{Using the constant strings}\label{index_autotoc_md17}
+H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Transmit(\&huart1,static\+\_\+strings\+\_\+new\+\_\+line-\/$>$string,static\+\_\+strings\+\_\+new\+\_\+line-\/$>$length,H\+A\+L\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY);
+
+\mbox{\hyperlink{structstatic__strings__string__descriptor}{static\+\_\+strings\+\_\+string\+\_\+descriptor}} $\ast$empty = static\+\_\+strings\+\_\+allocate(0); if(empty == N\+U\+LL) H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Transmit(\&huart1,(uint8\+\_\+t $\ast$)\char`\"{}error1\textbackslash{}r\textbackslash{}n\char`\"{},8,H\+A\+L\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY); else if(!static\+\_\+strings\+\_\+compare(static\+\_\+strings\+\_\+empty,empty)) H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Transmit(\&huart1,(uint8\+\_\+t $\ast$)\char`\"{}error2\textbackslash{}r\textbackslash{}n\char`\"{},8,H\+A\+L\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY); else H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Transmit(\&huart1,(uint8\+\_\+t $\ast$)\char`\"{}success\textbackslash{}r\textbackslash{}n\char`\"{},9,H\+A\+L\+\_\+\+M\+A\+X\+\_\+\+D\+E\+L\+AY); 

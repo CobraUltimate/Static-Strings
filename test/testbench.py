@@ -6,7 +6,7 @@ from termcolor import colored
 init()
 
 ser = serial.Serial()
-ser.port = 'COM7'
+ser.port = 'COM8'
 ser.baudrate = 115200
 ser.open()
 
@@ -450,3 +450,17 @@ if concatenate_and_clean__all__string == b'I am a concatenate all test\r\n':
 else:
 	print(colored('fail test 62','red'))
 	print(ser.read())
+
+new_line = ser.readline()
+print(new_line)
+if new_line == b'\r\n':
+	print(colored('success test 63','blue'))
+else:
+	print(colored('fail test 63','red'))
+
+empty_line_test_result = ser.readline()
+print(empty_line_test_result)
+if empty_line_test_result == b'success\r\n':
+	print(colored('success test 64','blue'))
+else:
+	print(colored('fail test 64','red'))

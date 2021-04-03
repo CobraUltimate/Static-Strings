@@ -114,6 +114,14 @@ static_strings_string_descriptor static_strings_long_strings_descriptors[STATIC_
 static_strings_string_descriptor static_strings_very_long_strings_descriptors[STATIC_STRINGS_VERY_LONG_STRING_QUANTITY];
 ///@}
 
+/** \defgroup constant_strings Constant strings
+ * \brief Common use constant strings.
+ */
+///@{
+extern static_strings_string_descriptor *static_strings_new_line;
+extern static_strings_string_descriptor *static_strings_empty;
+///@}
+
 /** void static_strings_init()
  * \brief Link the descriptors with the arrays and initialize the status as deallocated.
  * Also can be used to reset the state of all the string descriptors.

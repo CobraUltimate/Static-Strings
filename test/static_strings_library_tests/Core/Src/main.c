@@ -724,6 +724,20 @@ int main(void)
 		HAL_UART_Transmit(&huart1,(uint8_t *)&static_strings_error_code,1,HAL_MAX_DELAY);
 	}
 
+	// test 63
+
+	HAL_UART_Transmit(&huart1,static_strings_new_line->string,static_strings_new_line->length,HAL_MAX_DELAY);
+
+	// test 64
+
+	static_strings_string_descriptor *empty = static_strings_allocate(0);
+	if(empty == NULL)
+		HAL_UART_Transmit(&huart1,(uint8_t *)"error1\r\n",8,HAL_MAX_DELAY);
+	else if(!static_strings_compare(static_strings_empty,empty))
+		HAL_UART_Transmit(&huart1,(uint8_t *)"error2\r\n",8,HAL_MAX_DELAY);
+	else
+		HAL_UART_Transmit(&huart1,(uint8_t *)"success\r\n",9,HAL_MAX_DELAY);
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */

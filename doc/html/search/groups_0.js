@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['error_20handling_81',['Error handling',['../group__error__handling.html',1,'']]]
+  ['constant_20strings_82',['Constant strings',['../group__constant__strings.html',1,'']]]
 ];
