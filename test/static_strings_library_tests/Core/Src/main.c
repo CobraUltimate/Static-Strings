@@ -737,6 +737,7 @@ int main(void)
 		HAL_UART_Transmit(&huart1,(uint8_t *)"error2\r\n",8,HAL_MAX_DELAY);
 	else
 		HAL_UART_Transmit(&huart1,(uint8_t *)"success\r\n",9,HAL_MAX_DELAY);
+	static_strings_deallocate(empty);
 
 	/* USER CODE END 2 */
 
